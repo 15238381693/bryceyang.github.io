@@ -5,9 +5,9 @@
   <subtitle>For man is man and master of his fate.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://todebug.com/"/>
+  <link href="https://bryceyang.github.io/"/>
   <updated>2018-11-05T11:43:52.304Z</updated>
-  <id>https://todebug.com/</id>
+  <id>https://bryceyang.github.io/</id>
   
   <author>
     <name>Kai Yang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>使用Python实现并查集</title>
-    <link href="https://todebug.com/2018/10/22/union-find/"/>
-    <id>https://todebug.com/2018/10/22/union-find/</id>
+    <link href="https://bryceyang.github.io/2018/10/22/union-find/"/>
+    <id>https://bryceyang.github.io/2018/10/22/union-find/</id>
     <published>2018-10-21T16:00:00.000Z</published>
     <updated>2018-11-05T11:43:52.304Z</updated>
     
@@ -35,15 +35,15 @@
     
     </summary>
     
-      <category term="数据结构" scheme="https://todebug.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://bryceyang.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
   </entry>
   
   <entry>
     <title>BFPRT算法——Top-K问题求解</title>
-    <link href="https://todebug.com/2018/10/06/BFPRT/"/>
-    <id>https://todebug.com/2018/10/06/BFPRT/</id>
+    <link href="https://bryceyang.github.io/2018/10/06/BFPRT/"/>
+    <id>https://bryceyang.github.io/2018/10/06/BFPRT/</id>
     <published>2018-10-05T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:49.690Z</updated>
     
@@ -55,17 +55,17 @@
     
     </summary>
     
-      <category term="Algorithm" scheme="https://todebug.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://bryceyang.github.io/categories/Algorithm/"/>
     
     
-      <category term="algorithm" scheme="https://todebug.com/tags/algorithm/"/>
+      <category term="algorithm" scheme="https://bryceyang.github.io/tags/algorithm/"/>
     
   </entry>
   
   <entry>
     <title>Manacher算法</title>
-    <link href="https://todebug.com/2018/09/27/manacher/"/>
-    <id>https://todebug.com/2018/09/27/manacher/</id>
+    <link href="https://bryceyang.github.io/2018/09/27/manacher/"/>
+    <id>https://bryceyang.github.io/2018/09/27/manacher/</id>
     <published>2018-09-26T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:49.530Z</updated>
     
@@ -77,21 +77,21 @@
     
     </summary>
     
-      <category term="Algorithm" scheme="https://todebug.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://bryceyang.github.io/categories/Algorithm/"/>
     
     
-      <category term="algorithm" scheme="https://todebug.com/tags/algorithm/"/>
+      <category term="algorithm" scheme="https://bryceyang.github.io/tags/algorithm/"/>
     
   </entry>
   
   <entry>
     <title>使用fail2ban防止ssh暴力登录</title>
-    <link href="https://todebug.com/2018/09/27/use-fail2ban-to-protest-your-vps/"/>
-    <id>https://todebug.com/2018/09/27/use-fail2ban-to-protest-your-vps/</id>
+    <link href="https://bryceyang.github.io/2018/09/27/use-fail2ban-to-protest-your-vps/"/>
+    <id>https://bryceyang.github.io/2018/09/27/use-fail2ban-to-protest-your-vps/</id>
     <published>2018-09-26T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:49.610Z</updated>
     
-    <content type="html"><![CDATA[<p>今儿中午，心血来潮统计了一下ssh失败次数，发现最高的一个ip有4000多次登录失败记录。这让我想起了那个传闻：暴露在外网的机器，如果不做防护，八个小时内就易主了。所以找了找防止暴力尝试的方法，发现现在常规方法就是使用fail2ban监控，然后自动禁用可疑ip，部署方法如下：</p><a id="more"></a><h2 id="安装fail2ban"><a href="#安装fail2ban" class="headerlink" title="安装fail2ban"></a>安装fail2ban</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install fail2ban</span><br></pre></td></tr></table></figure><p><strong>请注意防火墙软件是<code>firewalld</code>而不是<code>iptables</code></strong></p><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span> 查看状态</span><br><span class="line">firewall-cmd --state</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span> 启动firewalld</span><br><span class="line">systemctl start firewalld</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span> 开机启动</span><br><span class="line">systemctl enable firewalld</span><br></pre></td></tr></table></figure><p>默认的<code>firewalld</code>会禁用所有端口连接，因此你需要手动的放行端口，比如你的博客服务的web端口：<br><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span> 重载配置</span><br><span class="line">firewall-cmd --reload</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span> 查看已经放行的端口</span><br><span class="line">firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure></p><h2 id="配置fail2ban"><a href="#配置fail2ban" class="headerlink" title="配置fail2ban"></a>配置fail2ban</h2><p>fail2ban的配置文件位于<code>/etc/fail2ban/</code>， 我们在该目录新建一个自定义配置文件<code>jail.local</code><br>然后加入如下信息：<br><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[DEFAULT]</span><br><span class="line">ignoreip = 127.0.0.1/8</span><br><span class="line">bantime = 86400</span><br><span class="line">findtime = 600</span><br><span class="line">maxretry = 5</span><br><span class="line">banaction = firewallcmd-ipset</span><br><span class="line">sender = email@email.com</span><br><span class="line">senername = Fail2Ban</span><br><span class="line">action = %(action_mwl)s</span><br><span class="line"></span><br><span class="line">[sshd]</span><br><span class="line">enabled = true</span><br><span class="line">filter = sshd</span><br><span class="line">port = 22</span><br><span class="line">action = %(action_mwl)s</span><br><span class="line">logpath = /var/log/secure</span><br></pre></td></tr></table></figure></p><h2 id="启动fail2ban"><a href="#启动fail2ban" class="headerlink" title="启动fail2ban"></a>启动fail2ban</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start fail2ban</span><br></pre></td></tr></table></figure><h2 id="查看fail2ban日志以及ip禁用列表"><a href="#查看fail2ban日志以及ip禁用列表" class="headerlink" title="查看fail2ban日志以及ip禁用列表"></a>查看fail2ban日志以及ip禁用列表</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span> 查看日志</span><br><span class="line">tail -F /var/log/fail2ban</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span> 查看禁用ip</span><br><span class="line">fail2ban-client status sshd</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>今儿中午，心血来潮统计了一下ssh失败次数，发现最高的一个ip有4000多次登录失败记录。这让我想起了那个传闻：暴露在外网的机器，如果不做防护，八个小时内就易主了。所以找了找防止暴力尝试的方法，发现现在常规方法就是使用fail2ban监控，然后自动禁用可疑ip，部署方法如下：</p><a id="more"></a><h2 id="安装fail2ban"><a href="#安装fail2ban" class="headerlink" title="安装fail2ban"></a>安装fail2ban</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install fail2ban</span><br></pre></td></tr></table></figure><p><strong>请注意防火墙软件是<code>firewalld</code>而不是<code>iptables</code></strong></p><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 查看状态</span></span><br><span class="line">firewall-cmd --state</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 启动firewalld</span></span><br><span class="line">systemctl start firewalld</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 开机启动</span></span><br><span class="line">systemctl enable firewalld</span><br></pre></td></tr></table></figure><p>默认的<code>firewalld</code>会禁用所有端口连接，因此你需要手动的放行端口，比如你的博客服务的web端口：<br><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 重载配置</span></span><br><span class="line">firewall-cmd --reload</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 查看已经放行的端口</span></span><br><span class="line">firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure></p><h2 id="配置fail2ban"><a href="#配置fail2ban" class="headerlink" title="配置fail2ban"></a>配置fail2ban</h2><p>fail2ban的配置文件位于<code>/etc/fail2ban/</code>， 我们在该目录新建一个自定义配置文件<code>jail.local</code><br>然后加入如下信息：<br><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[DEFAULT]</span><br><span class="line">ignoreip = 127.0.0.1/8</span><br><span class="line">bantime = 86400</span><br><span class="line">findtime = 600</span><br><span class="line">maxretry = 5</span><br><span class="line">banaction = firewallcmd-ipset</span><br><span class="line">sender = email@email.com</span><br><span class="line">senername = Fail2Ban</span><br><span class="line">action = %(action_mwl)s</span><br><span class="line"></span><br><span class="line">[sshd]</span><br><span class="line">enabled = true</span><br><span class="line">filter = sshd</span><br><span class="line">port = 22</span><br><span class="line">action = %(action_mwl)s</span><br><span class="line">logpath = /var/log/secure</span><br></pre></td></tr></table></figure></p><h2 id="启动fail2ban"><a href="#启动fail2ban" class="headerlink" title="启动fail2ban"></a>启动fail2ban</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start fail2ban</span><br></pre></td></tr></table></figure><h2 id="查看fail2ban日志以及ip禁用列表"><a href="#查看fail2ban日志以及ip禁用列表" class="headerlink" title="查看fail2ban日志以及ip禁用列表"></a>查看fail2ban日志以及ip禁用列表</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 查看日志</span></span><br><span class="line">tail -F /var/log/fail2ban</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 查看禁用ip</span></span><br><span class="line">fail2ban-client status sshd</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -99,15 +99,15 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://todebug.com/categories/Linux/"/>
+      <category term="Linux" scheme="https://bryceyang.github.io/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
     <title>在vim中使用snippets</title>
-    <link href="https://todebug.com/2018/09/23/vim-snippets/"/>
-    <id>https://todebug.com/2018/09/23/vim-snippets/</id>
+    <link href="https://bryceyang.github.io/2018/09/23/vim-snippets/"/>
+    <id>https://bryceyang.github.io/2018/09/23/vim-snippets/</id>
     <published>2018-09-22T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:49.258Z</updated>
     
@@ -119,17 +119,17 @@
     
     </summary>
     
-      <category term="VIM" scheme="https://todebug.com/categories/VIM/"/>
+      <category term="VIM" scheme="https://bryceyang.github.io/categories/VIM/"/>
     
     
-      <category term="vim" scheme="https://todebug.com/tags/vim/"/>
+      <category term="vim" scheme="https://bryceyang.github.io/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>Jekyll tips</title>
-    <link href="https://todebug.com/2018/09/21/jekyll-tips/"/>
-    <id>https://todebug.com/2018/09/21/jekyll-tips/</id>
+    <link href="https://bryceyang.github.io/2018/09/21/jekyll-tips/"/>
+    <id>https://bryceyang.github.io/2018/09/21/jekyll-tips/</id>
     <published>2018-09-20T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:49.176Z</updated>
     
@@ -141,21 +141,21 @@
     
     </summary>
     
-      <category term="Tips" scheme="https://todebug.com/categories/Tips/"/>
+      <category term="Tips" scheme="https://bryceyang.github.io/categories/Tips/"/>
     
-      <category term="Jekyll" scheme="https://todebug.com/categories/Tips/Jekyll/"/>
+      <category term="Jekyll" scheme="https://bryceyang.github.io/categories/Tips/Jekyll/"/>
     
     
-      <category term="tips" scheme="https://todebug.com/tags/tips/"/>
+      <category term="tips" scheme="https://bryceyang.github.io/tags/tips/"/>
     
-      <category term="jekyll" scheme="https://todebug.com/tags/jekyll/"/>
+      <category term="jekyll" scheme="https://bryceyang.github.io/tags/jekyll/"/>
     
   </entry>
   
   <entry>
     <title>KMP算法</title>
-    <link href="https://todebug.com/2018/09/20/kmp/"/>
-    <id>https://todebug.com/2018/09/20/kmp/</id>
+    <link href="https://bryceyang.github.io/2018/09/20/kmp/"/>
+    <id>https://bryceyang.github.io/2018/09/20/kmp/</id>
     <published>2018-09-19T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:49.096Z</updated>
     
@@ -167,17 +167,17 @@
     
     </summary>
     
-      <category term="Algorithm" scheme="https://todebug.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://bryceyang.github.io/categories/Algorithm/"/>
     
     
-      <category term="algorithm" scheme="https://todebug.com/tags/algorithm/"/>
+      <category term="algorithm" scheme="https://bryceyang.github.io/tags/algorithm/"/>
     
   </entry>
   
   <entry>
     <title>深入浅出mysql数据库开发 第二章学习笔记</title>
-    <link href="https://todebug.com/2018/09/19/reading-notes-of-chapter-2-in-depth-explantion-of-mysql/"/>
-    <id>https://todebug.com/2018/09/19/reading-notes-of-chapter-2-in-depth-explantion-of-mysql/</id>
+    <link href="https://bryceyang.github.io/2018/09/19/reading-notes-of-chapter-2-in-depth-explantion-of-mysql/"/>
+    <id>https://bryceyang.github.io/2018/09/19/reading-notes-of-chapter-2-in-depth-explantion-of-mysql/</id>
     <published>2018-09-18T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:49.009Z</updated>
     
@@ -189,19 +189,19 @@
     
     </summary>
     
-      <category term="读书笔记" scheme="https://todebug.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="https://bryceyang.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="MySQL" scheme="https://todebug.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/MySQL/"/>
+      <category term="MySQL" scheme="https://bryceyang.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/MySQL/"/>
     
     
-      <category term="mysql" scheme="https://todebug.com/tags/mysql/"/>
+      <category term="mysql" scheme="https://bryceyang.github.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode每日一题题解集</title>
-    <link href="https://todebug.com/2018/09/18/leetcode-daily/"/>
-    <id>https://todebug.com/2018/09/18/leetcode-daily/</id>
+    <link href="https://bryceyang.github.io/2018/09/18/leetcode-daily/"/>
+    <id>https://bryceyang.github.io/2018/09/18/leetcode-daily/</id>
     <published>2018-09-17T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:48.929Z</updated>
     
@@ -213,19 +213,19 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
-      <category term="Python" scheme="https://todebug.com/categories/Coding/Python/"/>
+      <category term="Python" scheme="https://bryceyang.github.io/categories/Coding/Python/"/>
     
     
-      <category term="leetcode" scheme="https://todebug.com/tags/leetcode/"/>
+      <category term="leetcode" scheme="https://bryceyang.github.io/tags/leetcode/"/>
     
   </entry>
   
   <entry>
     <title>给Jekyll博客添加Latex公式支持</title>
-    <link href="https://todebug.com/2018/09/13/add-eqution-support-in-jekyll/"/>
-    <id>https://todebug.com/2018/09/13/add-eqution-support-in-jekyll/</id>
+    <link href="https://bryceyang.github.io/2018/09/13/add-eqution-support-in-jekyll/"/>
+    <id>https://bryceyang.github.io/2018/09/13/add-eqution-support-in-jekyll/</id>
     <published>2018-09-12T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:48.763Z</updated>
     
@@ -237,19 +237,19 @@
     
     </summary>
     
-      <category term="Tips" scheme="https://todebug.com/categories/Tips/"/>
+      <category term="Tips" scheme="https://bryceyang.github.io/categories/Tips/"/>
     
     
-      <category term="tips" scheme="https://todebug.com/tags/tips/"/>
+      <category term="tips" scheme="https://bryceyang.github.io/tags/tips/"/>
     
-      <category term="jekyll" scheme="https://todebug.com/tags/jekyll/"/>
+      <category term="jekyll" scheme="https://bryceyang.github.io/tags/jekyll/"/>
     
   </entry>
   
   <entry>
     <title>递归时间复杂度计算：master公式</title>
-    <link href="https://todebug.com/2018/09/11/master-formula-of-recursive/"/>
-    <id>https://todebug.com/2018/09/11/master-formula-of-recursive/</id>
+    <link href="https://bryceyang.github.io/2018/09/11/master-formula-of-recursive/"/>
+    <id>https://bryceyang.github.io/2018/09/11/master-formula-of-recursive/</id>
     <published>2018-09-10T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:48.424Z</updated>
     
@@ -261,15 +261,15 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
     
   </entry>
   
   <entry>
     <title>PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued]</title>
-    <link href="https://todebug.com/2018/09/11/reading-notes-of-PEP3333-WSGI/"/>
-    <id>https://todebug.com/2018/09/11/reading-notes-of-PEP3333-WSGI/</id>
+    <link href="https://bryceyang.github.io/2018/09/11/reading-notes-of-PEP3333-WSGI/"/>
+    <id>https://bryceyang.github.io/2018/09/11/reading-notes-of-PEP3333-WSGI/</id>
     <published>2018-09-10T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:48.521Z</updated>
     
@@ -281,19 +281,19 @@
     
     </summary>
     
-      <category term="Python" scheme="https://todebug.com/categories/Python/"/>
+      <category term="Python" scheme="https://bryceyang.github.io/categories/Python/"/>
     
-      <category term="PEP" scheme="https://todebug.com/categories/Python/PEP/"/>
+      <category term="PEP" scheme="https://bryceyang.github.io/categories/Python/PEP/"/>
     
     
-      <category term="pep" scheme="https://todebug.com/tags/pep/"/>
+      <category term="pep" scheme="https://bryceyang.github.io/tags/pep/"/>
     
   </entry>
   
   <entry>
     <title>剑指offer 第五章 题39-52题解 Python版</title>
-    <link href="https://todebug.com/2018/08/25/offer39-52/"/>
-    <id>https://todebug.com/2018/08/25/offer39-52/</id>
+    <link href="https://bryceyang.github.io/2018/08/25/offer39-52/"/>
+    <id>https://bryceyang.github.io/2018/08/25/offer39-52/</id>
     <published>2018-08-24T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:48.019Z</updated>
     
@@ -305,17 +305,17 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
     
-      <category term="剑指offer" scheme="https://todebug.com/tags/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
   <entry>
     <title>剑指offer 第六章 题53-66题解 Python版</title>
-    <link href="https://todebug.com/2018/08/25/offer53-66/"/>
-    <id>https://todebug.com/2018/08/25/offer53-66/</id>
+    <link href="https://bryceyang.github.io/2018/08/25/offer53-66/"/>
+    <id>https://bryceyang.github.io/2018/08/25/offer53-66/</id>
     <published>2018-08-24T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:48.102Z</updated>
     
@@ -327,17 +327,17 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
     
-      <category term="剑指offer" scheme="https://todebug.com/tags/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://todebug.com/2018/08/23/how-the-heck-does-async-and-await-work-in-python3.5/"/>
-    <id>https://todebug.com/2018/08/23/how-the-heck-does-async-and-await-work-in-python3.5/</id>
+    <link href="https://bryceyang.github.io/2018/08/23/how-the-heck-does-async-and-await-work-in-python3.5/"/>
+    <id>https://bryceyang.github.io/2018/08/23/how-the-heck-does-async-and-await-work-in-python3.5/</id>
     <published>2018-08-22T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:47.936Z</updated>
     
@@ -349,17 +349,17 @@
     
     </summary>
     
-      <category term="Python" scheme="https://todebug.com/categories/Python/"/>
+      <category term="Python" scheme="https://bryceyang.github.io/categories/Python/"/>
     
     
-      <category term="翻译" scheme="https://todebug.com/tags/%E7%BF%BB%E8%AF%91/"/>
+      <category term="翻译" scheme="https://bryceyang.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
     
   </entry>
   
   <entry>
     <title>剑指offer 第四章 题27-38题解 Python版</title>
-    <link href="https://todebug.com/2018/08/21/offer27-38/"/>
-    <id>https://todebug.com/2018/08/21/offer27-38/</id>
+    <link href="https://bryceyang.github.io/2018/08/21/offer27-38/"/>
+    <id>https://bryceyang.github.io/2018/08/21/offer27-38/</id>
     <published>2018-08-20T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:47.852Z</updated>
     
@@ -371,17 +371,17 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
     
-      <category term="剑指offer" scheme="https://todebug.com/tags/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
   <entry>
     <title>剑指offer 第三章 题16-26题解 Python版</title>
-    <link href="https://todebug.com/2018/08/20/offer16-26/"/>
-    <id>https://todebug.com/2018/08/20/offer16-26/</id>
+    <link href="https://bryceyang.github.io/2018/08/20/offer16-26/"/>
+    <id>https://bryceyang.github.io/2018/08/20/offer16-26/</id>
     <published>2018-08-19T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:47.768Z</updated>
     
@@ -393,17 +393,17 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
     
-      <category term="剑指offer" scheme="https://todebug.com/tags/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
   <entry>
     <title>排序总结</title>
-    <link href="https://todebug.com/2018/08/19/summary-of-sort/"/>
-    <id>https://todebug.com/2018/08/19/summary-of-sort/</id>
+    <link href="https://bryceyang.github.io/2018/08/19/summary-of-sort/"/>
+    <id>https://bryceyang.github.io/2018/08/19/summary-of-sort/</id>
     <published>2018-08-18T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:47.687Z</updated>
     
@@ -415,15 +415,15 @@
     
     </summary>
     
-      <category term="Algorithm" scheme="https://todebug.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://bryceyang.github.io/categories/Algorithm/"/>
     
     
   </entry>
   
   <entry>
     <title>剑指offer 第二章 题3-15题解 Python版</title>
-    <link href="https://todebug.com/2018/08/19/offer3-15/"/>
-    <id>https://todebug.com/2018/08/19/offer3-15/</id>
+    <link href="https://bryceyang.github.io/2018/08/19/offer3-15/"/>
+    <id>https://bryceyang.github.io/2018/08/19/offer3-15/</id>
     <published>2018-08-18T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:47.606Z</updated>
     
@@ -435,17 +435,17 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
     
-      <category term="剑指offer" scheme="https://todebug.com/tags/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
   <entry>
     <title>单调栈题总结</title>
-    <link href="https://todebug.com/2018/08/16/summary-of-monotous-stack-questions/"/>
-    <id>https://todebug.com/2018/08/16/summary-of-monotous-stack-questions/</id>
+    <link href="https://bryceyang.github.io/2018/08/16/summary-of-monotous-stack-questions/"/>
+    <id>https://bryceyang.github.io/2018/08/16/summary-of-monotous-stack-questions/</id>
     <published>2018-08-15T16:00:00.000Z</published>
     <updated>2018-11-05T08:44:47.523Z</updated>
     
@@ -457,7 +457,7 @@
     
     </summary>
     
-      <category term="Algorithm" scheme="https://todebug.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://bryceyang.github.io/categories/Algorithm/"/>
     
     
   </entry>
