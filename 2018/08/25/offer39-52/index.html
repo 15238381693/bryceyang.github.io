@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>剑指offer 第五章 题39-52题解 Python版 - V</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="剑指offer39-52题解">
+<meta name="keywords" content="剑指offer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="剑指offer 第五章 题39-52题解 Python版">
+<meta property="og:url" content="https://todebug.com/2018/08/25/offer39-52/index.html">
+<meta property="og:site_name" content="V">
+<meta property="og:description" content="剑指offer39-52题解">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/occurrencesOf1.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/nth_int_in_sequence.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/arrange_list_to_min_value.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/convert_int_to_str.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/max_value_of_presents.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/max_length_of_undup_str.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/ugly_number.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/Inversed_pairs.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/common_node_of_LinkedLists.jpeg">
+<meta property="og:updated_time" content="2018-11-05T08:44:48.019Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="剑指offer 第五章 题39-52题解 Python版">
+<meta name="twitter:description" content="剑指offer39-52题解">
+<meta name="twitter:image" content="https://todebug.com/assets/blog_images/occurrencesOf1.jpeg">
+
+
+
+<link rel="alternative" href="atom.xml" title="剑指offer 第五章 题39-52题解 Python版" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+    
+
+    
+    
+    
+    <style>body>.navbar,body>.section,body>.footer{opacity: 0}</style>
+    
+
+    
+    
+    
+    
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+<style>
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: #3273dc;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}
+</style>
+
+    
+
+
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/favicon.svg" alt="" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/bryceyang">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-08-24T16:00:00.000Z">2018-08-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Coding/">Coding</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    34 minutes read (About 5133 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                剑指offer 第五章 题39-52题解 Python版
+            
+        </h1>
+        <div class="content">
+            <p><a href="https://github.com/bryceyang/python_to_the_offer" target="_blank" rel="noopener">Github</a></p>
+<a id="more"></a>
+<h2 id="时间效率类考察题："><a href="#时间效率类考察题：" class="headerlink" title="时间效率类考察题："></a>时间效率类考察题：</h2><p>节省时间就是延长生命。：）</p>
+<hr>
+<h3 id="题39：数组中出现次数超过一半的数字"><a href="#题39：数组中出现次数超过一半的数字" class="headerlink" title="题39：数组中出现次数超过一半的数字"></a>题39：数组中出现次数超过一半的数字</h3><blockquote>
+<p>数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如，输入一个长度为9的数组{1， 2， 3，2， 2， 2， 5， 4， 2}</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br>1.借用partition函数：<br></p>
+<blockquote>
+<p>如果一个元素在数组中出现次数超过一半，那么该元素一定也占据<strong>排序数组</strong>中位数位置。我们可以利用快排partition过程求得数组中位数元素。</p>
+</blockquote>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="hljs-keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">MoreThanHalfNum_Solution</span><span class="hljs-params">(self, numbers)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(numbers) &lt;= <span class="hljs-number">0</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line"></span><br><span class="line">        length = len(numbers)</span><br><span class="line">        l, r = <span class="hljs-number">0</span>, length - <span class="hljs-number">1</span></span><br><span class="line">        middle = length &gt;&gt; <span class="hljs-number">1</span></span><br><span class="line">        m_left, m_right = self.partition(numbers, l, r)</span><br><span class="line">        <span class="hljs-keyword">while</span> middle <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> range(m_left, m_right+<span class="hljs-number">1</span>):</span><br><span class="line">            <span class="hljs-keyword">if</span> middle &lt; m_left:</span><br><span class="line">                r = m_left - <span class="hljs-number">1</span></span><br><span class="line">                m_left, m_right = self.partition(numbers, l, r)</span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                l = m_right + <span class="hljs-number">1</span></span><br><span class="line">                m_left, m_right = self.partition(numbers, l, r)</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> numbers[middle] <span class="hljs-keyword">if</span> numbers.count(numbers[middle]) &gt; length // <span class="hljs-number">2</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">partition</span><span class="hljs-params">(self, numbers, l, r)</span>:</span></span><br><span class="line">        <span class="hljs-string">"""快排partition过程</span></span><br><span class="line"><span class="hljs-string"></span></span><br><span class="line"><span class="hljs-string">        Arguments:</span></span><br><span class="line"><span class="hljs-string">            numbers &#123;list&#125; -- 数组</span></span><br><span class="line"><span class="hljs-string">            l &#123;int&#125; -- 左边界</span></span><br><span class="line"><span class="hljs-string">            r &#123;int&#125; -- 右边界</span></span><br><span class="line"><span class="hljs-string"></span></span><br><span class="line"><span class="hljs-string">        Returns:</span></span><br><span class="line"><span class="hljs-string">            tuple -- 第一个元素为本轮选中元素占据的最左索引，第二个元素为本轮选中元素占据的最右索引</span></span><br><span class="line"><span class="hljs-string">                     如果本轮选中元素在数组中只有一个，那么tuple中两个元素就是相等的。</span></span><br><span class="line"><span class="hljs-string">        """</span></span><br><span class="line"></span><br><span class="line">        self.swap(numbers, random.randint(l, r), r)</span><br><span class="line">        start = l - <span class="hljs-number">1</span></span><br><span class="line">        end = r</span><br><span class="line">        <span class="hljs-keyword">while</span> l &lt; end:</span><br><span class="line">            <span class="hljs-keyword">if</span> numbers[l] &lt; numbers[r]:</span><br><span class="line">                start += <span class="hljs-number">1</span></span><br><span class="line">                <span class="hljs-keyword">if</span> start != l:</span><br><span class="line">                    self.swap(numbers, start, l)</span><br><span class="line">                l += <span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">elif</span> numbers[l] == numbers[r]:</span><br><span class="line">                l += <span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                end -= <span class="hljs-number">1</span></span><br><span class="line">                self.swap(numbers, l, end)</span><br><span class="line">        self.swap(numbers, end, r)</span><br><span class="line">        <span class="hljs-keyword">return</span> start + <span class="hljs-number">1</span>, end</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">swap</span><span class="hljs-params">(self, numbers, i, j)</span>:</span></span><br><span class="line">        numbers[i], numbers[j] = numbers[j], numbers[i]</span><br></pre></td></tr></table></figure>
+<p>2.使用题目中元素特性<br></p>
+<blockquote>
+<p>如果数组中一个元素出现的次数大于数组长度的一半，那么该元素出现的次数大于数组中其他元素出现的次数和。所以可以设计一个count变量用来统计元素个数，具体过程如下：<br><br>1.count初始值设为0， 遍历数组<br><br>2.当前遍历到的数组元素假定为cur，那么如果此时count值为0，count值就加一，继续遍历，如果遍历到的元素等于cur，count值就加一，反之就减一；<br><br>3.返回最后一个将count设为1的元素；<br><br>同样的，我们需要检测最后输出元素是否出现次数是大于数组长度的一半的。</p>
+</blockquote>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="hljs-keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">MoreThanHalfNum_Solution</span><span class="hljs-params">(self, numbers)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(numbers) &lt;= <span class="hljs-number">0</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line"></span><br><span class="line">        count = <span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(numbers)):</span><br><span class="line">            <span class="hljs-keyword">if</span> count == <span class="hljs-number">0</span>:</span><br><span class="line">                flag = numbers[i]</span><br><span class="line">                count += <span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                <span class="hljs-keyword">if</span> numbers[i] != flag:</span><br><span class="line">                    count -= <span class="hljs-number">1</span></span><br><span class="line">                <span class="hljs-keyword">else</span>:</span><br><span class="line">                    count += <span class="hljs-number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> flag <span class="hljs-keyword">if</span> numbers.count(flag) &gt; len(numbers) // <span class="hljs-number">2</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题39衍生题：给定整数K，求长度为N的数组中元素出现次数超过N-K的元素"><a href="#题39衍生题：给定整数K，求长度为N的数组中元素出现次数超过N-K的元素" class="headerlink" title="题39衍生题：给定整数K，求长度为N的数组中元素出现次数超过N/K的元素"></a>题39衍生题：给定整数K，求长度为N的数组中元素出现次数超过N/K的元素</h3><p><strong>解法：</strong> <br><br>这个题跟题39一脉相承，在题39中，我们的解法原型其实是每次都数组里删除两个不同的元素，如果数组中存在出现次数超过数组一般的元素，那么不同元素对删除完成之后剩下的元素一定是所求元素。<br><br>现在拓展开来，如果我们要求数组中出现次数大于N/K的元素，那么我们一次删除k-1个，最后剩余的k-1个也就包含出现次数大于N/K的元素。<br><br>拓展情况是包括题39的，拓展情况代码流程如下：<br><br>&emsp;&emsp;1.首先设定一个大小为k-1的字典（出现次数超过N/K的元素，最多只可能有k-1个）;<br><br>&emsp;&emsp;2.遍历数组，检测当前元素是否在字典里，<br><br>&emsp;&emsp;&emsp;&emsp;1.如果在字典里，字典里对应key的value值加一; <br><br>&emsp;&emsp;&emsp;&emsp;2.如果不在字典里:<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;字典未满时，以当前遍历到的数组元素为key，value设为1;<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;如果字典已满，那么将字典中所有key对应的value值都减去1（即从数组中删除了K个不同的元素）;<br><br>&emsp;&emsp;3.每遍历一个元素，删除字典中value值小于1的元素。<br><br>最后在字典里的元素就包括所求元素，我们做最后的检查就行了。<br>上面两种情况所求的的数据，我们都要最终校验数据是不是真的出现了符合要求的次数。</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_nk_item</span><span class="hljs-params">(arr, k)</span>:</span></span><br><span class="line">    <span class="hljs-string">"""求数组中出现次数超过N/K的元素</span></span><br><span class="line"><span class="hljs-string"></span></span><br><span class="line"><span class="hljs-string">    Arguments:</span></span><br><span class="line"><span class="hljs-string">        arr &#123;list&#125; -- 数组</span></span><br><span class="line"><span class="hljs-string">        k &#123;int&#125; -- 分母</span></span><br><span class="line"><span class="hljs-string"></span></span><br><span class="line"><span class="hljs-string">    Returns:</span></span><br><span class="line"><span class="hljs-string">        tuple -- 所求元素</span></span><br><span class="line"><span class="hljs-string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">if</span> len(arr) &lt; k:</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line"></span><br><span class="line">    buf_dict = &#123;&#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(arr)):</span><br><span class="line">        <span class="hljs-keyword">if</span> arr[i] <span class="hljs-keyword">in</span> buf_dict:</span><br><span class="line">            buf_dict[arr[i]] += <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            <span class="hljs-keyword">if</span> len(buf_dict) &lt; k - <span class="hljs-number">1</span>:</span><br><span class="line">                buf_dict[arr[i]] = <span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> buf_dict:</span><br><span class="line">                    buf_dict[item] -= <span class="hljs-number">1</span></span><br><span class="line">        remove_invalid(buf_dict)</span><br><span class="line"></span><br><span class="line">    check_valid(arr, k, buf_dict)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> tuple(buf_dict.keys())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">remove_invalid</span><span class="hljs-params">(buf_dict)</span>:</span></span><br><span class="line">    <span class="hljs-string">"""删除buf_dict中value值小于1的元素"""</span></span><br><span class="line"></span><br><span class="line">    buf_remove = []</span><br><span class="line">    <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> buf_dict:</span><br><span class="line">        <span class="hljs-keyword">if</span> buf_dict[item] &lt; <span class="hljs-number">1</span>:</span><br><span class="line">            buf_remove.append(item)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> buf_remove:</span><br><span class="line">        buf_dict.pop(item)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">check_valid</span><span class="hljs-params">(arr, k, buf_dict)</span>:</span></span><br><span class="line">    <span class="hljs-string">"""检测所求的元素是否满足次数要求"""</span></span><br><span class="line"></span><br><span class="line">    buf_remove = []</span><br><span class="line">    <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> buf_dict:</span><br><span class="line">        <span class="hljs-keyword">if</span> arr.count(item) &lt;= len(arr) // k:</span><br><span class="line">            buf_remove.append(item)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> buf_remove:</span><br><span class="line">        buf_dict.pop(item)</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题40：最小的k个数"><a href="#题40：最小的k个数" class="headerlink" title="题40：最小的k个数"></a>题40：最小的k个数</h3><blockquote>
+<p>输入n个整数，找出其中个最小的k个数。例如，输入4、5、1、6、2、7、3、8这八个数，则最小的4个数字是1、2、3、4.</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br>1.借用partition函数<br></p>
+<blockquote>
+<p>如题39，我们可以借用partition函数在O(n)的时间复杂度内找到排序数组中索引为k的元素，然后输出前k个元素就行了，<strong>注意：此时输出的前k个元素是无序的。</strong></p>
+</blockquote>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="hljs-keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">GetLeastNumbers_Solution</span><span class="hljs-params">(self, tinput, k)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> tinput <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">or</span> k <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">or</span> k &gt; len(tinput) <span class="hljs-keyword">or</span> k &lt;= <span class="hljs-number">0</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> []</span><br><span class="line">        <span class="hljs-keyword">if</span> k == len(tinput):</span><br><span class="line">            <span class="hljs-keyword">return</span> tinput</span><br><span class="line"></span><br><span class="line">        l, r = <span class="hljs-number">0</span>, len(tinput) - <span class="hljs-number">1</span></span><br><span class="line">        m_left, m_right = self.partition(tinput, l, r)</span><br><span class="line">        <span class="hljs-keyword">while</span> k <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> range(m_left, m_right+<span class="hljs-number">1</span>):</span><br><span class="line">            <span class="hljs-keyword">if</span> k &lt; m_left:</span><br><span class="line">                r = m_left - <span class="hljs-number">1</span></span><br><span class="line">                m_left, m_right = self.partition(tinput, l, r)</span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                l = m_right + <span class="hljs-number">1</span></span><br><span class="line">                m_left, m_right = self.partition(tinput, l, r)</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> tinput[:k]</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">partition</span><span class="hljs-params">(self, arr, l, r)</span>:</span></span><br><span class="line">        self.swap(arr, random.randint(l, r), r)</span><br><span class="line">        start = l - <span class="hljs-number">1</span></span><br><span class="line">        end = r</span><br><span class="line">        <span class="hljs-keyword">while</span> l &lt; end:</span><br><span class="line">            <span class="hljs-keyword">if</span> arr[l] &lt; arr[r]:</span><br><span class="line">                start += <span class="hljs-number">1</span></span><br><span class="line">                <span class="hljs-keyword">if</span> l != start:</span><br><span class="line">                    self.swap(arr, l, start)</span><br><span class="line">                l += <span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">elif</span> arr[l] == arr[r]:</span><br><span class="line">                l += <span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                end -= <span class="hljs-number">1</span></span><br><span class="line">                self.swap(arr, l, end)</span><br><span class="line">        self.swap(arr, end, r)</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> start+<span class="hljs-number">1</span>, end</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">swap</span><span class="hljs-params">(self, arr, i, j)</span>:</span></span><br><span class="line">        arr[i], arr[j] = arr[j], arr[i]</span><br></pre></td></tr></table></figure>
+<p>2.借用堆的概念<br></p>
+<blockquote>
+<p>使用partition函数我们会破坏原有数组，如果不破坏原有数组就得复制一个新数组，如果数组很长，那么无疑partition的解法就有了缺点；<br><br>使用堆我们就能很好的处理大数据的问题：<br><br>1.首先我们利用数组前k个元素建立一个大小为k的最大堆；<br><br>2.然后从数组第k+1个元素开始, <br><br>&emsp;&emsp;如果当前元素小于堆顶，那么将堆顶弹出，然后将当前元素加入堆，并再次调节好堆, 继续遍历过程；<br><br>&emsp;&emsp;如果当前元素大于堆顶，那么继续遍历；<br></p>
+</blockquote>
+<p><strong>在方法二的代码实现中，我利用了python自带模块<code>heapq</code>.</strong></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="hljs-keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">GetLeastNumbers_Solution</span><span class="hljs-params">(self, tinput, k)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> tinput <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">or</span> k <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">or</span> k &gt; len(tinput) <span class="hljs-keyword">or</span> k &lt;= <span class="hljs-number">0</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> []</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(k):</span><br><span class="line">            res.append(-tinput[i])</span><br><span class="line">        heapq.heapify(res)</span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(k, len(tinput)):</span><br><span class="line">            <span class="hljs-keyword">if</span> tinput[i] &lt; -res[<span class="hljs-number">0</span>]:</span><br><span class="line">                res[<span class="hljs-number">0</span>] = -tinput[i]</span><br><span class="line">                heapq.heapify(res)</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> sorted(list(map(<span class="hljs-keyword">lambda</span> x: -x, res)))</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题41：数据流中的中位数"><a href="#题41：数据流中的中位数" class="headerlink" title="题41：数据流中的中位数"></a>题41：数据流中的中位数</h3><blockquote>
+<p>如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数组排序之后位于中间的值。如果从数据流中读出偶数个个数值，那么中位数就是所有数组排序之后中间两个数的平均值。</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br>要求中位数随时可以求得，那么构建一个最大堆，一个最小堆，并且保持最大堆与最小堆中元素个数差值不超过2.</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="hljs-keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        self.min_heap = list([])</span><br><span class="line">        self.max_heap = list([])</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Insert</span><span class="hljs-params">(self, num)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> self.min_heap <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> self.max_heap:</span><br><span class="line">            heapq.heappush(self.min_heap, num)</span><br><span class="line">            <span class="hljs-keyword">return</span></span><br><span class="line">        <span class="hljs-keyword">if</span> num &gt; self.min_heap[<span class="hljs-number">0</span>]:</span><br><span class="line">            heapq.heappush(self.min_heap, num)</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            heapq.heappush(self.max_heap, -num)</span><br><span class="line">        <span class="hljs-keyword">if</span> abs(len(self.min_heap) - len(self.max_heap)) &gt; <span class="hljs-number">1</span>:</span><br><span class="line">            self.balance()</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">balance</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        pop_heap, push_heap = (self.min_heap, self.max_heap) <span class="hljs-keyword">if</span> len(</span><br><span class="line">            self.min_heap) &gt; len(self.max_heap) <span class="hljs-keyword">else</span> (self.max_heap, self.min_heap)</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">while</span> len(pop_heap) - len(push_heap) &gt; <span class="hljs-number">1</span>:</span><br><span class="line">            heapq.heappush(push_heap, -heapq.heappop(pop_heap))</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">GetMedian</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(self.max_heap) == len(self.min_heap):</span><br><span class="line">            <span class="hljs-keyword">return</span> (-self.max_heap[<span class="hljs-number">0</span>] + self.min_heap[<span class="hljs-number">0</span>]) / <span class="hljs-number">2</span></span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> -self.max_heap[<span class="hljs-number">0</span>] <span class="hljs-keyword">if</span> len(self.max_heap) &gt; len(self.min_heap) <span class="hljs-keyword">else</span> self.min_heap[<span class="hljs-number">0</span>]</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题42：连续子数组的最大和"><a href="#题42：连续子数组的最大和" class="headerlink" title="题42：连续子数组的最大和"></a>题42：连续子数组的最大和</h3><blockquote>
+<p>输入一个整型数组，数组里有正数也有负数。数组中一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。要求时间复杂度为O(n).</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br>1.普通方法，遍历数组求解最大和：<br><br> 在遍历数组过程中，我们设定一个变量cur_sum用来统计当前和，设定一个变量max_sum用来保存当前已经遍历过的元素组成的数组里的最大子数组和。 在每一步遍历中，我们都比较cur_sum和我们记录的max_sum, 将较大的那个值设定为新的max_sum：<br><br>如果cur_sum当前值为正，那么cur_sum加上当前遍历元素可能比cur_sum要更大，此时cur_sum 就加上当前遍历元素；<br><br>如果cur_sum当前值为负，那么cur_sum机上当前遍历元素一定要比当前遍历到的元素小，那么明显的这个cur_sum不可能是最大的子数组和，此时将cur_sum设置为当前遍历到的元素，开启一个新的子数组和的计算。</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">FindGreatestSumOfSubArray</span><span class="hljs-params">(self, array)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> array <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(array) &lt; <span class="hljs-number">2</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> sum(array)</span><br><span class="line"></span><br><span class="line">        max_sum = min(array)</span><br><span class="line">        cur_sum = <span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> array:</span><br><span class="line">            <span class="hljs-keyword">if</span> cur_sum &lt; <span class="hljs-number">0</span>:</span><br><span class="line">                cur_sum = item</span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                cur_sum += item</span><br><span class="line"></span><br><span class="line">            <span class="hljs-keyword">if</span> cur_sum &gt; max_sum:</span><br><span class="line">                max_sum = cur_sum</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> max_sum</span><br></pre></td></tr></table></figure>
+<p>2.使用动态规划：<br></p>
+<blockquote>
+<p>状态方程： <br><br>233333，这题用动态规划好简单。。<br><br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f(n) = f(n-1) + arr[n] if f(n-1) &gt; 0 &lt;br&gt;</span><br><span class="line">f(n) = arr[n] if f(n-1) &lt;= 0</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">FindGreatestSumOfSubArray</span><span class="hljs-params">(self, arr)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> arr <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(arr) &lt; <span class="hljs-number">2</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> sum(arr)</span><br><span class="line"></span><br><span class="line">        res = [arr[<span class="hljs-number">0</span>] <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(len(arr))]</span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, len(arr)):</span><br><span class="line">            <span class="hljs-keyword">if</span> res[i<span class="hljs-number">-1</span>] &lt;= <span class="hljs-number">0</span>:</span><br><span class="line">                res[i] = arr[i]</span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                res[i] = res[i<span class="hljs-number">-1</span>] + arr[i]</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> max(res)</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题43：1-n整数中1出现的次数"><a href="#题43：1-n整数中1出现的次数" class="headerlink" title="题43：1~n整数中1出现的次数"></a>题43：1~n整数中1出现的次数</h3><blockquote>
+<p>输入一个整数n，求1~n这n个数整数的十进制表示中1出现的次数。例如，输入12，1~12这些证书中包含1的数字有1、10、11和12，1一共出现了5次。</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br><img src="/assets/blog_images/occurrencesOf1.jpeg" alt="1-n中1出现的次数"></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GetOccurTimesOfOne</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-string">"""计算1-n中所有数字中1出现的次数"""</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_occur_time_of_one</span><span class="hljs-params">(self, num)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> num <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">or</span> num &lt; <span class="hljs-number">1</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line"></span><br><span class="line">        length = self.get_num_length(num)</span><br><span class="line">        first = int(str(num)[<span class="hljs-number">0</span>])</span><br><span class="line">        <span class="hljs-comment"># 第一位</span></span><br><span class="line">        <span class="hljs-keyword">if</span> first == <span class="hljs-number">1</span>:</span><br><span class="line">            first_sum = num % self.base_10(length<span class="hljs-number">-1</span>) + <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">if</span> first != <span class="hljs-number">1</span>:</span><br><span class="line">            first_sum = self.base_10(length - <span class="hljs-number">1</span>)</span><br><span class="line">        <span class="hljs-comment"># 其他位</span></span><br><span class="line">        other_num = self.base_10(length - <span class="hljs-number">2</span>) * (length - <span class="hljs-number">1</span>) * first</span><br><span class="line">        next_num = self.get_occur_time_of_one(num % self.base_10(length<span class="hljs-number">-1</span>))</span><br><span class="line">        <span class="hljs-keyword">return</span> first_sum + other_num + next_num</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">base_10</span><span class="hljs-params">(self, length)</span>:</span></span><br><span class="line">        num = <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">while</span> length &gt; <span class="hljs-number">0</span>:</span><br><span class="line">            num *= <span class="hljs-number">10</span></span><br><span class="line">            length -= <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">return</span> num</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_num_length</span><span class="hljs-params">(self, num)</span>:</span></span><br><span class="line">        length = <span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">while</span> num != <span class="hljs-number">0</span>:</span><br><span class="line">            length += <span class="hljs-number">1</span></span><br><span class="line">            num = num // <span class="hljs-number">10</span></span><br><span class="line">        <span class="hljs-keyword">return</span> length</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题44：-数字序列中某一位的数字"><a href="#题44：-数字序列中某一位的数字" class="headerlink" title="题44： 数字序列中某一位的数字"></a>题44： 数字序列中某一位的数字</h3><blockquote>
+<p>数字以 0123456789101112131415…的格式序列化到一个字符序列中。在这个序列中，第5位（从0开始计数）是5，第13位是1， 第19位是4，等等。倾斜一个函数，求任意第n位对应的数字。</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br><img src="/assets/blog_images/nth_int_in_sequence.jpeg" alt="解法"></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="hljs-keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_nth_num_of_sequence</span><span class="hljs-params">(n)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">if</span> n <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">or</span> n &lt; <span class="hljs-number">0</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line">    <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">10</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> n</span><br><span class="line">    <span class="hljs-comment"># 判断第n位的数组是几位数组以及对应位数数组在序列中开始的位置</span></span><br><span class="line">    full_length, start = get_length_and_delta(n)</span><br><span class="line">    <span class="hljs-comment"># n位为几位数的第几个数的第几位</span></span><br><span class="line">    nth, delta = (n - start) // full_length, (n - start) % full_length</span><br><span class="line">    num = base_10(full_length - <span class="hljs-number">1</span>) + nth</span><br><span class="line">    <span class="hljs-keyword">return</span> int(str(num)[delta])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_nth_of_num</span><span class="hljs-params">(num, i)</span>:</span></span><br><span class="line">    num = list(str(num))</span><br><span class="line">    <span class="hljs-keyword">return</span> int(num[i])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">base_10</span><span class="hljs-params">(length)</span>:</span></span><br><span class="line">    num = <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">while</span> length &gt; <span class="hljs-number">0</span>:</span><br><span class="line">        num *= <span class="hljs-number">10</span></span><br><span class="line">        length -= <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">return</span> num</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_length_and_delta</span><span class="hljs-params">(n)</span>:</span></span><br><span class="line">    start = i = <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">while</span> start &lt;= n:</span><br><span class="line">        more = <span class="hljs-number">9</span> * (<span class="hljs-number">10</span> ** (i - <span class="hljs-number">1</span>)) * i</span><br><span class="line">        start += more</span><br><span class="line">        i += <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">return</span> i - <span class="hljs-number">1</span>, start - more</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:</span><br><span class="line">    n = int(sys.argv[<span class="hljs-number">1</span>])</span><br><span class="line">    print(get_nth_num_of_sequence(n))</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题45：把数组排成最小的数"><a href="#题45：把数组排成最小的数" class="headerlink" title="题45：把数组排成最小的数"></a>题45：把数组排成最小的数</h3><blockquote>
+<p>输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。例如，输入数组{3， 32， 321}， 则打印出这三个数字能排成的最小数字321323.</p>
+</blockquote>
+<p><strong>解法：</strong> <br></p>
+<ol>
+<li>剑指offer上的解法定义自定义比较器很贪心，自己用了另外一种解法，更清楚明了。<br><img src="/assets/blog_images/arrange_list_to_min_value.jpeg" alt="arrange list to min value"></li>
+</ol>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">PrintMinNumber</span><span class="hljs-params">(self, numbers)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> numbers <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">or</span> len(numbers) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line"></span><br><span class="line">        temp_dict = &#123;key: str(value) <span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> enumerate(numbers)&#125;</span><br><span class="line">        longest = self.get_longest(temp_dict.values())</span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(temp_dict)):</span><br><span class="line">            <span class="hljs-keyword">while</span> len(temp_dict[i]) &lt; longest:</span><br><span class="line">                temp_dict[i] = temp_dict[i] + temp_dict[i][<span class="hljs-number">-1</span>]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">        <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> sorted(temp_dict.items(), key=<span class="hljs-keyword">lambda</span> item: item[<span class="hljs-number">1</span>]):</span><br><span class="line">            res.append(numbers[item[<span class="hljs-number">0</span>]])</span><br><span class="line">        <span class="hljs-keyword">return</span> int(<span class="hljs-string">''</span>.join(map(str, res)))</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_longest</span><span class="hljs-params">(self, arr)</span>:</span></span><br><span class="line">        longest = <span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> arr:</span><br><span class="line">            <span class="hljs-keyword">if</span> len(item) &gt; longest:</span><br><span class="line">                longest = len(item)</span><br><span class="line">        <span class="hljs-keyword">return</span> longest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:</span><br><span class="line">    nums = [<span class="hljs-number">3</span>, <span class="hljs-number">32</span>, <span class="hljs-number">321</span>]</span><br><span class="line">    ex = Solution()</span><br><span class="line">    print(ex.PrintMinNumber(nums))</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题46：把数字翻译成字符串"><a href="#题46：把数字翻译成字符串" class="headerlink" title="题46：把数字翻译成字符串"></a>题46：把数字翻译成字符串</h3><blockquote>
+<p>给定一个数字，我们按照如下规则把它翻译成字符串：0翻译成’a’, 1翻译成‘b’， ……， 11翻译成‘I’， ……， 25翻译成‘z’。一个数字可能有多个翻译。例如，12258有5种不同的翻译，分别是’bccfi’、‘bwfi’、‘bczi’、‘mcfi’和’mzi’。请编程实现一个函数，用来计算一个数字有多少种不同的翻译方法。</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br><img src="/assets/blog_images/convert_int_to_str.jpeg" alt="convert int to str"></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-comment"># 暴力递归版本</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">convert_int_to_str_recur</span><span class="hljs-params">(self, num)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> num &lt; <span class="hljs-number">0</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line"></span><br><span class="line">        num = str(num)</span><br><span class="line">        <span class="hljs-keyword">return</span> self.process(num, <span class="hljs-number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">process</span><span class="hljs-params">(self, num, index)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> index &gt;= len(num) - <span class="hljs-number">1</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span></span><br><span class="line"></span><br><span class="line">        p1 = self.process(num, index+<span class="hljs-number">1</span>)</span><br><span class="line">        p2 = self.process(num, index+<span class="hljs-number">2</span>) <span class="hljs-keyword">if</span> int(num[index:index+<span class="hljs-number">2</span>]) &lt;= <span class="hljs-number">25</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> p1 + p2</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># 动态规划版本</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">convert_int_to_str</span><span class="hljs-params">(self, num)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> num &lt; <span class="hljs-number">0</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line"></span><br><span class="line">        num = str(num)</span><br><span class="line">        res = [<span class="hljs-number">0</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(num))]</span><br><span class="line">        res [<span class="hljs-number">-1</span>], res[<span class="hljs-number">-2</span>] = <span class="hljs-number">1</span>, <span class="hljs-number">2</span> <span class="hljs-keyword">if</span> int(num[<span class="hljs-number">-2</span>:]) &lt;= <span class="hljs-number">25</span> <span class="hljs-keyword">else</span> <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(num)<span class="hljs-number">-3</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>):</span><br><span class="line">            res[i] = res[i+<span class="hljs-number">1</span>]</span><br><span class="line">            <span class="hljs-keyword">if</span> int(num[i:i+<span class="hljs-number">2</span>]) &lt;= <span class="hljs-number">25</span>:</span><br><span class="line">                res[i] += res[i+<span class="hljs-number">2</span>]</span><br><span class="line">        <span class="hljs-keyword">return</span> res[<span class="hljs-number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:</span><br><span class="line">    num = <span class="hljs-number">12226</span></span><br><span class="line">    ex = Solution()</span><br><span class="line">    print(ex.convert_int_to_str(num))</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题47：礼物的最大价值"><a href="#题47：礼物的最大价值" class="headerlink" title="题47：礼物的最大价值"></a>题47：礼物的最大价值</h3><blockquote>
+<p>在一个mxn的棋盘的每一格都放有一个礼物，每个礼物都有一定的价值（价值大于0）。你可以从棋盘左下角开始拿格子里的礼物，并且每次向右或者向下移动一格，直到到达棋盘的右下角。给定一个棋盘以及上面的礼物，请计算能达到的最大价值数。</p>
+</blockquote>
+<p><img src="/assets/blog_images/max_value_of_presents.jpeg" alt="max value of presents"></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">max_value_of_presents_recur</span><span class="hljs-params">(self, arr)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> arr <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(arr) == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> len(arr[<span class="hljs-number">0</span>]) == <span class="hljs-number">0</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line"></span><br><span class="line">        row_l = len(arr)</span><br><span class="line">        col_l = len(arr[<span class="hljs-number">0</span>])</span><br><span class="line">        <span class="hljs-keyword">return</span> self.process(arr, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, row_l<span class="hljs-number">-1</span>, col_l<span class="hljs-number">-1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">process</span><span class="hljs-params">(self, arr, i, j, row_l, col_l)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> i == row_l <span class="hljs-keyword">and</span> j == col_l:</span><br><span class="line">            <span class="hljs-keyword">return</span> arr[i][j]</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">if</span> i == row_l:</span><br><span class="line">            res = arr[i][j] + self.process(arr, i, j+<span class="hljs-number">1</span>, row_l, col_l)</span><br><span class="line">        <span class="hljs-keyword">elif</span> j == col_l:</span><br><span class="line">            res = arr[i][j] + self.process(arr, i+<span class="hljs-number">1</span>, j, row_l, col_l)</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            res = arr[i][j] + max(self.process(arr, i, j+<span class="hljs-number">1</span>, row_l, col_l),</span><br><span class="line">                                  self.process(arr, i+<span class="hljs-number">1</span>, j, row_l, col_l))</span><br><span class="line">        <span class="hljs-keyword">return</span> res</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># 动态规划版本</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">max_value_of_presents</span><span class="hljs-params">(self, arr)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> arr <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(arr) == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> len(arr[<span class="hljs-number">0</span>]) == <span class="hljs-number">0</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line"></span><br><span class="line">        row_l = len(arr)</span><br><span class="line">        col_l = len(arr[<span class="hljs-number">0</span>])</span><br><span class="line">        res = [[<span class="hljs-number">0</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(arr[<span class="hljs-number">0</span>]))] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(arr))]</span><br><span class="line">        res[row_l<span class="hljs-number">-1</span>][col_l<span class="hljs-number">-1</span>] = arr[row_l<span class="hljs-number">-1</span>][col_l<span class="hljs-number">-1</span>]</span><br><span class="line"></span><br><span class="line">        i = row_l - <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(col_l<span class="hljs-number">-2</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>):</span><br><span class="line">            res[i][j] = arr[i][j] + res[i][j+<span class="hljs-number">1</span>]</span><br><span class="line"></span><br><span class="line">        j = col_l - <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(row_l<span class="hljs-number">-2</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>):</span><br><span class="line">            res[i][j] = arr[i][j] + res[i+<span class="hljs-number">1</span>][j]</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(row_l<span class="hljs-number">-2</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(col_l<span class="hljs-number">-2</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>):</span><br><span class="line">                res[i][j] = arr[i][j] + max(res[i+<span class="hljs-number">1</span>][j], res[i][j+<span class="hljs-number">1</span>])</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> res[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:</span><br><span class="line">    arr = [[<span class="hljs-number">1</span>, <span class="hljs-number">10</span>, <span class="hljs-number">3</span>, <span class="hljs-number">8</span>],</span><br><span class="line">           [<span class="hljs-number">12</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">6</span>],</span><br><span class="line">           [<span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">4</span>, <span class="hljs-number">11</span>],</span><br><span class="line">           [<span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">16</span>, <span class="hljs-number">5</span>],</span><br><span class="line">           ]</span><br><span class="line">    ex = Solution()</span><br><span class="line">    print(ex.max_value_of_presents(arr))</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题48：最长不含重复字符的子字符串"><a href="#题48：最长不含重复字符的子字符串" class="headerlink" title="题48：最长不含重复字符的子字符串"></a>题48：最长不含重复字符的子字符串</h3><blockquote>
+<p>请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长字符串的长度。假设字符串中只包含‘a’-‘z’的字符。例如，在字符串“arabcacfr”中，最长的不含重复字符的字符串是“acfr”，长度为4.</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br><img src="/assets/blog_images/max_length_of_undup_str.jpeg" alt="max length of undup str"></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_max_length_of_undup_str</span><span class="hljs-params">(self, string)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> string <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">or</span> len(string) &lt;= <span class="hljs-number">1</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> int(string) <span class="hljs-keyword">if</span> string <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">else</span> <span class="hljs-keyword">None</span></span><br><span class="line"></span><br><span class="line">        res = [<span class="hljs-number">0</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(string))]</span><br><span class="line">        index_arr = [<span class="hljs-number">-1</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">52</span>)]</span><br><span class="line">        res[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span></span><br><span class="line">        index_arr[self.get_index(<span class="hljs-number">0</span>, string)] = <span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, len(string)):</span><br><span class="line">            char_index = self.get_index(i, string)</span><br><span class="line">            delta = i - index_arr[char_index]</span><br><span class="line">            <span class="hljs-keyword">if</span> index_arr[char_index] == <span class="hljs-number">-1</span> <span class="hljs-keyword">or</span> delta &gt; res[i<span class="hljs-number">-1</span>]:</span><br><span class="line">                res[i] = res[i<span class="hljs-number">-1</span>] + <span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                res[i] = delta</span><br><span class="line">            <span class="hljs-comment"># 更新当前字符的最新索引</span></span><br><span class="line">            index_arr[char_index] = i</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> res[<span class="hljs-number">-1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_index</span><span class="hljs-params">(self, index, string)</span>:</span></span><br><span class="line">        temp = ord(string[index])</span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-number">65</span> &lt;= temp &lt;= <span class="hljs-number">90</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> temp - ord(<span class="hljs-string">'A'</span>)</span><br><span class="line">        <span class="hljs-keyword">elif</span> <span class="hljs-number">97</span> &lt;= temp &lt;= <span class="hljs-number">122</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> temp - ord(<span class="hljs-string">'a'</span>) + <span class="hljs-number">26</span></span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            <span class="hljs-keyword">raise</span> TypeError(<span class="hljs-string">'not a valid char!'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:</span><br><span class="line">    string = <span class="hljs-string">'arabcacfr'</span> <span class="hljs-comment"># answer is 4</span></span><br><span class="line">    ex = Solution()</span><br><span class="line">    print(ex.get_max_length_of_undup_str(string))</span><br></pre></td></tr></table></figure>
+<h2 id="时间效率与空间效率的平衡"><a href="#时间效率与空间效率的平衡" class="headerlink" title="时间效率与空间效率的平衡"></a>时间效率与空间效率的平衡</h2><p>鱼与熊掌兼得</p>
+<hr>
+<h3 id="题49：-丑数"><a href="#题49：-丑数" class="headerlink" title="题49： 丑数"></a>题49： 丑数</h3><blockquote>
+<p>我们把只包含因子2、3和5的数称为丑数（Ugly Number）。求从小到大的书序的第1500个丑数。例如6、8都是丑数，但14不是，因为它包含因子7.习惯上我们把1当做第一个丑数。</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br><img src="/assets/blog_images/ugly_number.jpeg" alt="ugly number"></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="hljs-keyword">import</span> numbers</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">GetUglyNumber_Solution</span><span class="hljs-params">(self, index)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">assert</span> isinstance(index, numbers.Integral)</span><br><span class="line">        <span class="hljs-keyword">if</span> index &lt; <span class="hljs-number">1</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line"></span><br><span class="line">        ugly = [<span class="hljs-number">1</span>]</span><br><span class="line">        <span class="hljs-keyword">while</span> len(ugly) &lt;= index:</span><br><span class="line">            <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> ugly:</span><br><span class="line">                <span class="hljs-keyword">if</span> item * <span class="hljs-number">2</span> &gt; ugly[<span class="hljs-number">-1</span>]:</span><br><span class="line">                    <span class="hljs-keyword">break</span></span><br><span class="line">            p1 = item * <span class="hljs-number">2</span></span><br><span class="line">            <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> ugly:</span><br><span class="line">                <span class="hljs-keyword">if</span> item * <span class="hljs-number">3</span> &gt; ugly[<span class="hljs-number">-1</span>]:</span><br><span class="line">                    <span class="hljs-keyword">break</span></span><br><span class="line">            p2 = item * <span class="hljs-number">3</span></span><br><span class="line">            <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> ugly:</span><br><span class="line">                <span class="hljs-keyword">if</span> item * <span class="hljs-number">5</span> &gt; ugly[<span class="hljs-number">-1</span>]:</span><br><span class="line">                    <span class="hljs-keyword">break</span></span><br><span class="line">            p3 = item * <span class="hljs-number">5</span></span><br><span class="line">            ugly.append(min(p1, p2, p3))</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> ugly[<span class="hljs-number">-1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:</span><br><span class="line">    n = [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>]</span><br><span class="line">    ex = Solution()</span><br><span class="line">    <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> n:</span><br><span class="line">        print(ex.GetUglyNumber_Solution(item))</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题50：第一个只出现一次的字符"><a href="#题50：第一个只出现一次的字符" class="headerlink" title="题50：第一个只出现一次的字符"></a>题50：第一个只出现一次的字符</h3><blockquote>
+<p>在字符串中找出第一个只出现一次的字符。如输入“abaccdeff”, 则输出‘b’</p>
+</blockquote>
+<p><strong>解法：</strong> <br></p>
+<ol>
+<li>耍流氓式解法：利用Python标准库Counter计数器。<br>Counter计算器会根据字符在字符串中出现的先后顺序返回字符在字符串中出现的次数，我们只要找到Counter中第一个value值为1的key就好了。</li>
+</ol>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">FirstNotRepeatingChar</span><span class="hljs-params">(self, s)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> s <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(s) == <span class="hljs-number">0</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span></span><br><span class="line"></span><br><span class="line">        counter = Counter(s)</span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(s)):</span><br><span class="line">            <span class="hljs-keyword">if</span> counter[s[i]] == <span class="hljs-number">1</span>:</span><br><span class="line">                <span class="hljs-keyword">return</span> i</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题51：-数组中的逆序对"><a href="#题51：-数组中的逆序对" class="headerlink" title="题51： 数组中的逆序对"></a>题51： 数组中的逆序对</h3><p><strong>解法：</strong> <br><br><img src="/assets/blog_images/Inversed_pairs.jpeg" alt="Inverse Pairs"></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">InversePairs_recur</span><span class="hljs-params">(self, data)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> data <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">or</span> len(data) &lt; <span class="hljs-number">2</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> self.merge(data, <span class="hljs-number">0</span>, len(data)<span class="hljs-number">-1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge</span><span class="hljs-params">(self, data, left, right)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> left == right:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line"></span><br><span class="line">        middle = left + ((right - left) &gt;&gt; <span class="hljs-number">1</span>)</span><br><span class="line">        left_pairs = self.merge(data, left, middle)</span><br><span class="line">        right_pairs = self.merge(data, middle+<span class="hljs-number">1</span>, right)</span><br><span class="line">        merge_pairs = self.process(data, left, right, middle)</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> left_pairs + right_pairs + merge_pairs</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">process</span><span class="hljs-params">(self, data, left, right, middle)</span>:</span></span><br><span class="line">        l, r = left, middle+<span class="hljs-number">1</span></span><br><span class="line">        pairs = <span class="hljs-number">0</span></span><br><span class="line">        cur = left</span><br><span class="line">        temp_arr = [<span class="hljs-number">0</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(data))]</span><br><span class="line">        <span class="hljs-keyword">while</span> l &lt;= middle <span class="hljs-keyword">and</span> r &lt;= right:</span><br><span class="line">            <span class="hljs-comment"># 如果左边数组元素l大于右边数组元素r，则有逆序对middle - l + 1</span></span><br><span class="line">            <span class="hljs-keyword">if</span> data[l] &gt; data[r]:</span><br><span class="line">                temp_arr[cur] = data[r]</span><br><span class="line">                r += <span class="hljs-number">1</span></span><br><span class="line">                cur += <span class="hljs-number">1</span></span><br><span class="line">                pairs += middle - l + <span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                temp_arr[cur] = data[l]</span><br><span class="line">                l += <span class="hljs-number">1</span></span><br><span class="line">                cur += <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">while</span> l &lt;= middle:</span><br><span class="line">            temp_arr[cur] = data[l]</span><br><span class="line">            cur += <span class="hljs-number">1</span></span><br><span class="line">            l += <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">while</span> r &lt;= right:</span><br><span class="line">            temp_arr[cur] = data[r]</span><br><span class="line">            r += <span class="hljs-number">1</span></span><br><span class="line">            cur += <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(left, right+<span class="hljs-number">1</span>):</span><br><span class="line">            data[i] = temp_arr[i]</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> pairs</span><br></pre></td></tr></table></figure>
+<p><strong>牛客网提示这个算法超时，我开始以为写的有问题，还改成了非递归归并，后来仔细想了想，不管是递归归并还是非递归归并时间复杂度都是O(nlogn)，所以应该是牛客的问题，后来果然发现，随便直接输出一个值也会提示超时。。。呵呵哒。。</strong></p>
+<hr>
+<h3 id="题52：两个链表的第一个公共节点"><a href="#题52：两个链表的第一个公共节点" class="headerlink" title="题52：两个链表的第一个公共节点"></a>题52：两个链表的第一个公共节点</h3><blockquote>
+<p>输入两个链表，找出他们的第一个公共节点。链表节点定义如下：<br><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span></span></span><br><span class="line"><span class="hljs-class">&#123;</span></span><br><span class="line">	<span class="hljs-keyword">int</span>		  m_nkey;</span><br><span class="line">	ListNode* m_pNext;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>解法：</strong> <br><br><img src="/assets/blog_images/common_node_of_LinkedLists.jpeg" alt="common node of linkedlists"></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListNode</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.next = <span class="hljs-keyword">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">FindFirstCommonNode</span><span class="hljs-params">(self, pHead1, pHead2)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> pHead1 <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">or</span> pHead2 <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line"></span><br><span class="line">        loop1 = self.check_loop(pHead1)</span><br><span class="line">        loop2 = self.check_loop(pHead2)</span><br><span class="line">        <span class="hljs-comment"># 都有环</span></span><br><span class="line">        <span class="hljs-keyword">if</span> loop1 <span class="hljs-keyword">and</span> loop2:</span><br><span class="line">            p = loop1</span><br><span class="line">            <span class="hljs-keyword">while</span> p.next != loop1:</span><br><span class="line">                <span class="hljs-keyword">if</span> p == loop2:</span><br><span class="line">                    <span class="hljs-keyword">return</span> loop1</span><br><span class="line">                p = p.next</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line">        <span class="hljs-comment"># 都无环</span></span><br><span class="line">        <span class="hljs-keyword">elif</span> (<span class="hljs-keyword">not</span> loop1) <span class="hljs-keyword">and</span> (<span class="hljs-keyword">not</span> loop2):</span><br><span class="line">            p1, p2 = pHead1, pHead2</span><br><span class="line">            <span class="hljs-keyword">while</span> p1 != p2:</span><br><span class="line">                p1 = pHead1 <span class="hljs-keyword">if</span> p1 <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">else</span> p1.next</span><br><span class="line">                p2 = pHead2 <span class="hljs-keyword">if</span> p2 <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">else</span> p2.next</span><br><span class="line">            <span class="hljs-keyword">return</span> p1</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">    @staticmethod</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">check_loop</span><span class="hljs-params">(pHead)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> pHead.next <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span></span><br><span class="line"></span><br><span class="line">        buf_dict = &#123;&#125;</span><br><span class="line">        p = pHead</span><br><span class="line">        <span class="hljs-keyword">while</span> p <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">            <span class="hljs-keyword">if</span> p <span class="hljs-keyword">in</span> buf_dict:</span><br><span class="line">                <span class="hljs-keyword">return</span> p</span><br><span class="line">            buf_dict[pHead] = <span class="hljs-number">0</span></span><br><span class="line">            p = p.next</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/剑指offer/">剑指offer</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/09/11/reading-notes-of-PEP3333-WSGI/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued]</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/08/25/offer53-66/">
+                <span class="level-item">剑指offer 第六章 题53-66题解 Python版</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://todebug.com/2018/08/25/offer39-52/';
+        this.page.identifier = '2018/08/25/offer39-52/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'todebug' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+                
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-3 column-right">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/assets/avatar.jpg">
+                    
+                    <p class="is-size-4 is-block">
+                        杨凯
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        后端开发
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>北京，海淀</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        42
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        12
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        22
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/bryceyang">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/bryceyang">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com/poplar50">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#时间效率类考察题：">
+        <span class="has-mr-6">1</span>
+        <span>时间效率类考察题：</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#题39：数组中出现次数超过一半的数字">
+        <span class="has-mr-6">1.1</span>
+        <span>题39：数组中出现次数超过一半的数字</span>
+        </a></li><li>
+        <a class="is-flex" href="#题39衍生题：给定整数K，求长度为N的数组中元素出现次数超过N-K的元素">
+        <span class="has-mr-6">1.2</span>
+        <span>题39衍生题：给定整数K，求长度为N的数组中元素出现次数超过N/K的元素</span>
+        </a></li><li>
+        <a class="is-flex" href="#题40：最小的k个数">
+        <span class="has-mr-6">1.3</span>
+        <span>题40：最小的k个数</span>
+        </a></li><li>
+        <a class="is-flex" href="#题41：数据流中的中位数">
+        <span class="has-mr-6">1.4</span>
+        <span>题41：数据流中的中位数</span>
+        </a></li><li>
+        <a class="is-flex" href="#题42：连续子数组的最大和">
+        <span class="has-mr-6">1.5</span>
+        <span>题42：连续子数组的最大和</span>
+        </a></li><li>
+        <a class="is-flex" href="#题43：1-n整数中1出现的次数">
+        <span class="has-mr-6">1.6</span>
+        <span>题43：1~n整数中1出现的次数</span>
+        </a></li><li>
+        <a class="is-flex" href="#题44：-数字序列中某一位的数字">
+        <span class="has-mr-6">1.7</span>
+        <span>题44： 数字序列中某一位的数字</span>
+        </a></li><li>
+        <a class="is-flex" href="#题45：把数组排成最小的数">
+        <span class="has-mr-6">1.8</span>
+        <span>题45：把数组排成最小的数</span>
+        </a></li><li>
+        <a class="is-flex" href="#题46：把数字翻译成字符串">
+        <span class="has-mr-6">1.9</span>
+        <span>题46：把数字翻译成字符串</span>
+        </a></li><li>
+        <a class="is-flex" href="#题47：礼物的最大价值">
+        <span class="has-mr-6">1.10</span>
+        <span>题47：礼物的最大价值</span>
+        </a></li><li>
+        <a class="is-flex" href="#题48：最长不含重复字符的子字符串">
+        <span class="has-mr-6">1.11</span>
+        <span>题48：最长不含重复字符的子字符串</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#时间效率与空间效率的平衡">
+        <span class="has-mr-6">2</span>
+        <span>时间效率与空间效率的平衡</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#题49：-丑数">
+        <span class="has-mr-6">2.1</span>
+        <span>题49： 丑数</span>
+        </a></li><li>
+        <a class="is-flex" href="#题50：第一个只出现一次的字符">
+        <span class="has-mr-6">2.2</span>
+        <span>题50：第一个只出现一次的字符</span>
+        </a></li><li>
+        <a class="is-flex" href="#题51：-数组中的逆序对">
+        <span class="has-mr-6">2.3</span>
+        <span>题51： 数组中的逆序对</span>
+        </a></li><li>
+        <a class="is-flex" href="#题52：两个链表的第一个公共节点">
+        <span class="has-mr-6">2.4</span>
+        <span>题52：两个链表的第一个公共节点</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/10/22/union-find/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用Python实现并查集">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-21T16:00:00.000Z">2018-10-22</time></div>
+                    <a href="/2018/10/22/union-find/" class="has-link-black-ter is-size-6">使用Python实现并查集</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/数据结构/">数据结构</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/10/06/BFPRT/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="BFPRT算法——Top-K问题求解">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-05T16:00:00.000Z">2018-10-06</time></div>
+                    <a href="/2018/10/06/BFPRT/" class="has-link-black-ter is-size-6">BFPRT算法——Top-K问题求解</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/09/27/manacher/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Manacher算法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-26T16:00:00.000Z">2018-09-27</time></div>
+                    <a href="/2018/09/27/manacher/" class="has-link-black-ter is-size-6">Manacher算法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/09/27/use-fail2ban-to-protest-your-vps/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用fail2ban防止ssh暴力登录">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-26T16:00:00.000Z">2018-09-27</time></div>
+                    <a href="/2018/09/27/use-fail2ban-to-protest-your-vps/" class="has-link-black-ter is-size-6">使用fail2ban防止ssh暴力登录</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Linux/">Linux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/09/23/vim-snippets/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="在vim中使用snippets">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-22T16:00:00.000Z">2018-09-23</time></div>
+                    <a href="/2018/09/23/vim-snippets/" class="has-link-black-ter is-size-6">在vim中使用snippets</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VIM/">VIM</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/arch/" style="font-size: 15px;">arch</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/fortran/" style="font-size: 10px;">fortran</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/i3wm/" style="font-size: 10px;">i3wm</a> <a href="/tags/jekyll/" style="font-size: 12.5px;">jekyll</a> <a href="/tags/jupyter/" style="font-size: 10px;">jupyter</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/leetcode/" style="font-size: 15px;">leetcode</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/pep/" style="font-size: 10px;">pep</a> <a href="/tags/pip/" style="font-size: 10px;">pip</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/spider/" style="font-size: 10px;">spider</a> <a href="/tags/stackoverflow/" style="font-size: 12.5px;">stackoverflow</a> <a href="/tags/tips/" style="font-size: 20px;">tips</a> <a href="/tags/ubuntu/" style="font-size: 17.5px;">ubuntu</a> <a href="/tags/vim/" style="font-size: 17.5px;">vim</a> <a href="/tags/剑指offer/" style="font-size: 20px;">剑指offer</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a>
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">https://hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">https://github.com/ppoffice</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/favicon.svg" alt="" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2018 Kai Yang&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+    <script>
+        (function ($) {
+            $(document).ready(function () {
+                if (typeof($.fn.lightGallery) === 'function') {
+                    $('.article').lightGallery({ selector: '.gallery-item' });
+                }
+                if (typeof($.fn.justifiedGallery) === 'function') {
+                    $('.justified-gallery').justifiedGallery();
+                }
+            });
+        })(jQuery);
+    </script>
+    
+
+    
+    
+    
+    <div id="outdated">
+        <h6>Your browser is out-of-date!</h6>
+        <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+        <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // plugin function, place inside DOM ready function
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'flex'
+            })
+        });
+    </script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/animejs@2.2.0/anime.js"></script>
+    <script>
+    function isIE() {
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf('MSIE ');
+        var trident = ua.indexOf('Trident/');
+        return (msie > 0 || trident > 0);
+    }
+
+    $(document).ready(function () {
+        $('body>.navbar,body>.section,body>.footer').css('opacity', 1);
+        if (!isIE()) {
+            ['.column-main > .card',
+             '.column-left > .card',
+             '.column-right > .card'].map(function(target) {
+                anime({
+                    targets: target,
+                    scale: [0.8, 1],
+                    opacity: [0, 1],
+                    duration: 300,
+                    easing: 'easeOutSine',
+                    delay: function(el, i, l) {
+                        return i * 100;
+                    }
+                })
+            });
+
+            anime({
+                targets: '.navbar-main',
+                translateY: [-100, 0],
+                opacity: [0, 1],
+                duration: 300,
+                easing: 'easeOutSine'
+            });
+        }
+    });
+    </script>
+    
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<style>
+#back-to-top {
+    position: fixed;
+    padding: 8px 0;
+    transition: 0.4s ease opacity, 0.4s ease width, 0.4s ease transform, 0.4s ease border-radius;
+    opacity: 0;
+    line-height: 24px;
+    outline: none;
+    transform: translateY(120px);
+}
+#back-to-top.fade-in {
+    opacity: 1;
+}
+#back-to-top.rise-up {
+    transform: translateY(0);
+}
+</style>
+<script src="/js/back-to-top.js"></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js"></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js"></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

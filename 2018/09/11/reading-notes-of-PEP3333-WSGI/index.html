@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
 <title>PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued] - V</title>
@@ -8,23 +8,25 @@
 
 
     <meta name="description" content="PEP 3333 Python Web Server Gateway Interface 阅读笔记">
-<meta name="keywords" content="python,pep">
+<meta name="keywords" content="pep">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued]">
 <meta property="og:url" content="https://todebug.com/2018/09/11/reading-notes-of-PEP3333-WSGI/index.html">
 <meta property="og:site_name" content="V">
 <meta property="og:description" content="PEP 3333 Python Web Server Gateway Interface 阅读笔记">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-03T17:15:03.756Z">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-11-05T08:44:48.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued]">
 <meta name="twitter:description" content="PEP 3333 Python Web Server Gateway Interface 阅读笔记">
 
 
 
+<link rel="alternative" href="atom.xml" title="PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued]" type="application/atom+xml">
 
 
-<link rel="icon" href="/images/favicon.svg">
+
+<link rel="icon" href="/images/favicon.ico">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -99,13 +101,13 @@
 
 
 </head>
-<body class="is-3-column">
+<body class="is-2-column">
     <nav class="navbar navbar-main">
     <div class="container">
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="" height="28">
+                <img src="/images/favicon.svg" alt="" height="28">
             
             </a>
         </div>
@@ -129,7 +131,7 @@
                 
                     
                     
-                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/bryceyang">
                         
                         <i class="fab fa-github"></i>
                         
@@ -149,7 +151,7 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
     
     <div class="card-content article ">
         
@@ -165,7 +167,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    20 minutes read (About 3059 words)
+                    20 minutes read (About 3041 words)
                 </span>
                 
             </div>
@@ -177,13 +179,9 @@
             
         </h1>
         <div class="content">
-            <p><strong>目录：</strong></p>
-<ul>
-<li>Kramdown table of content<br>{:toc .toc}</li>
-</ul>
-<hr>
-<h1 id="PEP-3333-–-Python-Web-Server-Gateway-Interface-阅读笔记"><a href="#PEP-3333-–-Python-Web-Server-Gateway-Interface-阅读笔记" class="headerlink" title="PEP 3333 – Python Web Server Gateway Interface 阅读笔记"></a>PEP 3333 – Python Web Server Gateway Interface 阅读笔记</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>PEP 3333 是PEP 333的更新，对于原来和PEP 333兼容的应用和服务器，它们和PEP 3333仍然是兼容的。</p>
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>PEP 3333 是PEP 333的更新，对于原来和PEP 333兼容的应用和服务器，它们和PEP 3333仍然是兼容的。</p>
 <p>对于Python3来说，编写应用或者服务器必须要遵循下面两个标题命名的版块里提到的规则：<code>A Note On String Types</code>,和<code>Unicode Issues</code>。</p>
+<a id="more"></a>
 <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>如果有人问你WSGI是啥，就可以参考下面这句话回答他了：“This document specifies a proposed standard interface between web servers and Python web applications or frameworks, to promote web application protability across a variety of web servers. ”</p>
 <h2 id="出发点和目标（Original-Rationale-and-Goals）"><a href="#出发点和目标（Original-Rationale-and-Goals）" class="headerlink" title="出发点和目标（Original Rationale and Goals）"></a>出发点和目标（Original Rationale and Goals）</h2><p><strong>出发点：</strong> <br><br>Python目前有很多web应用程序框架，众多的选择给Python新用户带来一个问题：在选择web框架的同时，也限制了他们对于可用的web服务器的选择，反过来也是一样。</p>
 <p>作为比较，Java也有很多的web应用框架，但是Java的<code>servlet</code>API可以让任何Java web应用框架在支持这种API的web服务器上运行。</p>
@@ -237,7 +235,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/pep/">pep</a>, <a class="has-link-grey -link" href="/tags/python/">python</a>
+                    <a class="has-link-grey -link" href="/tags/pep/">pep</a>
                 </div>
             </div>
         </div>
@@ -252,23 +250,55 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/09/20/kmp/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/09/11/master-formula-of-recursive/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">KMP算法</span>
+                <span class="level-item">递归时间复杂度计算：master公式</span>
             </a>
         </div>
         
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/08/25/offer39-52/">
+                <span class="level-item">剑指offer 第五章 题39-52题解 Python版</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
         
     </div>
 </div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://todebug.com/2018/09/11/reading-notes-of-PEP3333-WSGI/';
+        this.page.identifier = '2018/09/11/reading-notes-of-PEP3333-WSGI/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'todebug' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+    </div>
+</div>
+</div>
+                
                 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left">
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-3 column-right">
     
         
 <div class="card widget">
@@ -276,21 +306,21 @@
         <nav class="level">
             <div class="level-item has-text-centered">
                 <div>
-                    <img class="image is-128x128 has-mb-6" src="/images/avatar.png">
+                    <img class="image is-128x128 has-mb-6" src="/assets/avatar.jpg">
                     
                     <p class="is-size-4 is-block">
-                        Your name
+                        杨凯
                     </p>
                     
                     
                     <p class="is-size-6 is-block">
-                        Your title
+                        后端开发
                     </p>
                     
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Your location</span>
+                        <span>北京，海淀</span>
                     </p>
                     
                 </div>
@@ -303,7 +333,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        42
                     </p>
                 </div>
             </div>
@@ -313,7 +343,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        12
                     </p>
                 </div>
             </div>
@@ -323,44 +353,32 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        22
                     </p>
                 </div>
             </div>
         </nav>
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="http://github.com/ppoffice">
+            <a class="level-item button is-link is-rounded" href="https://github.com/bryceyang">
                 Follow</a>
         </div>
         
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/ppoffice">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/bryceyang">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="http://facebook.com">
-                
-                <i class="fab fa-facebook"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="http://twitter.com">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com/poplar50">
                 
                 <i class="fab fa-twitter"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="http://dribbble.com">
-                
-                <i class="fab fa-dribbble"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
                 
                 <i class="fas fa-rss"></i>
                 
@@ -372,6 +390,166 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#前言">
+        <span class="has-mr-6">1</span>
+        <span>前言</span>
+        </a></li><li>
+        <a class="is-flex" href="#摘要">
+        <span class="has-mr-6">2</span>
+        <span>摘要</span>
+        </a></li><li>
+        <a class="is-flex" href="#出发点和目标（Original-Rationale-and-Goals）">
+        <span class="has-mr-6">3</span>
+        <span>出发点和目标（Original Rationale and Goals）</span>
+        </a></li><li>
+        <a class="is-flex" href="#规范综述（Specification-Overview）">
+        <span class="has-mr-6">4</span>
+        <span>规范综述（Specification Overview）</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#一个字符串类型需要注意的地方（A-Note-On-String-Types）">
+        <span class="has-mr-6">4.1</span>
+        <span>一个字符串类型需要注意的地方（A Note On String Types）</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#应用-框架端">
+        <span class="has-mr-6">5</span>
+        <span>应用/框架端</span>
+        </a></li><li>
+        <a class="is-flex" href="#服务器-网关端">
+        <span class="has-mr-6">6</span>
+        <span>服务器/网关端</span>
+        </a></li><li>
+        <a class="is-flex" href="#中间件：左右逢源的组件（Middleware-Components-that-Play-Both-Sides）">
+        <span class="has-mr-6">7</span>
+        <span>中间件：左右逢源的组件（Middleware: Components that Play Both Sides）</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/10/22/union-find/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用Python实现并查集">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-21T16:00:00.000Z">2018-10-22</time></div>
+                    <a href="/2018/10/22/union-find/" class="has-link-black-ter is-size-6">使用Python实现并查集</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/数据结构/">数据结构</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/10/06/BFPRT/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="BFPRT算法——Top-K问题求解">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-05T16:00:00.000Z">2018-10-06</time></div>
+                    <a href="/2018/10/06/BFPRT/" class="has-link-black-ter is-size-6">BFPRT算法——Top-K问题求解</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/09/27/manacher/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Manacher算法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-26T16:00:00.000Z">2018-09-27</time></div>
+                    <a href="/2018/09/27/manacher/" class="has-link-black-ter is-size-6">Manacher算法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/09/27/use-fail2ban-to-protest-your-vps/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用fail2ban防止ssh暴力登录">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-26T16:00:00.000Z">2018-09-27</time></div>
+                    <a href="/2018/09/27/use-fail2ban-to-protest-your-vps/" class="has-link-black-ter is-size-6">使用fail2ban防止ssh暴力登录</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Linux/">Linux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/09/23/vim-snippets/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="在vim中使用snippets">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-22T16:00:00.000Z">2018-09-23</time></div>
+                    <a href="/2018/09/23/vim-snippets/" class="has-link-black-ter is-size-6">在vim中使用snippets</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VIM/">VIM</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/arch/" style="font-size: 15px;">arch</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/fortran/" style="font-size: 10px;">fortran</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/i3wm/" style="font-size: 10px;">i3wm</a> <a href="/tags/jekyll/" style="font-size: 12.5px;">jekyll</a> <a href="/tags/jupyter/" style="font-size: 10px;">jupyter</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/leetcode/" style="font-size: 15px;">leetcode</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/pep/" style="font-size: 10px;">pep</a> <a href="/tags/pip/" style="font-size: 10px;">pip</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/spider/" style="font-size: 10px;">spider</a> <a href="/tags/stackoverflow/" style="font-size: 12.5px;">stackoverflow</a> <a href="/tags/tips/" style="font-size: 20px;">tips</a> <a href="/tags/ubuntu/" style="font-size: 17.5px;">ubuntu</a> <a href="/tags/vim/" style="font-size: 17.5px;">vim</a> <a href="/tags/剑指offer/" style="font-size: 20px;">剑指offer</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a>
+    </div>
+</div>
+
     
         
 
@@ -412,450 +590,6 @@
 
 
     
-        
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Categories
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/Algorithm/">
-            <span class="level-start">
-                <span class="level-item">Algorithm</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Algorithm/Code/">
-            <span class="level-start">
-                <span class="level-item">Code</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Code/">
-            <span class="level-start">
-                <span class="level-item">Code</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Code/Algorithm/">
-            <span class="level-start">
-                <span class="level-item">Algorithm</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Python/">
-            <span class="level-start">
-                <span class="level-item">Python</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Python/PEP/">
-            <span class="level-start">
-                <span class="level-item">PEP</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li>
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Tag Cloud
-        </h3>
-        <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/code/" style="font-size: 20px;">code</a> <a href="/tags/pep/" style="font-size: 10px;">pep</a> <a href="/tags/python/" style="font-size: 10px;">python</a>
-    </div>
-</div>
-
-    
-    
-        <div class="card card-transparent is-hidden-widescreen">
-        
-            
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Recent
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2018/11/03/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-03T15:08:08.797Z">2018-11-03</time></div>
-                    <a href="/2018/11/03/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/09/27/manacher/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Manacher算法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-26T16:00:00.000Z">2018-09-27</time></div>
-                    <a href="/2018/09/27/manacher/" class="has-link-black-ter is-size-6">Manacher算法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/Code/">Code</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/09/20/kmp/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="KMP算法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-19T16:00:00.000Z">2018-09-20</time></div>
-                    <a href="/2018/09/20/kmp/" class="has-link-black-ter is-size-6">KMP算法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Code/">Code</a> / <a class="has-link-grey -link" href="/categories/Code/Algorithm/">Algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/09/11/reading-notes-of-PEP3333-WSGI/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued]">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-10T16:00:00.000Z">2018-09-11</time></div>
-                    <a href="/2018/09/11/reading-notes-of-PEP3333-WSGI/" class="has-link-black-ter is-size-6">PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued]</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Python/">Python</a> / <a class="has-link-grey -link" href="/categories/Python/PEP/">PEP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            Archives
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/11/">
-                <span class="level-start">
-                    <span class="level-item">November 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/09/">
-                <span class="level-start">
-                    <span class="level-item">September 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">3</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Tags
-            </h3>
-            <ul class="menu-list">
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/algorithm/">
-                        <span class="level-start">
-                            <span class="level-item">algorithm</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/code/">
-                        <span class="level-start">
-                            <span class="level-item">code</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/pep/">
-                        <span class="level-start">
-                            <span class="level-item">pep</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/python/">
-                        <span class="level-start">
-                            <span class="level-item">python</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-        
-        </div>
-    
-</div>
-
-                
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right">
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Recent
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2018/11/03/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-03T15:08:08.797Z">2018-11-03</time></div>
-                    <a href="/2018/11/03/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/09/27/manacher/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Manacher算法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-26T16:00:00.000Z">2018-09-27</time></div>
-                    <a href="/2018/09/27/manacher/" class="has-link-black-ter is-size-6">Manacher算法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a> / <a class="has-link-grey -link" href="/categories/Algorithm/Code/">Code</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/09/20/kmp/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="KMP算法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-19T16:00:00.000Z">2018-09-20</time></div>
-                    <a href="/2018/09/20/kmp/" class="has-link-black-ter is-size-6">KMP算法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Code/">Code</a> / <a class="has-link-grey -link" href="/categories/Code/Algorithm/">Algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/09/11/reading-notes-of-PEP3333-WSGI/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued]">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-10T16:00:00.000Z">2018-09-11</time></div>
-                    <a href="/2018/09/11/reading-notes-of-PEP3333-WSGI/" class="has-link-black-ter is-size-6">PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued]</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Python/">Python</a> / <a class="has-link-grey -link" href="/categories/Python/PEP/">PEP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            Archives
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/11/">
-                <span class="level-start">
-                    <span class="level-item">November 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/09/">
-                <span class="level-start">
-                    <span class="level-item">September 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">3</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Tags
-            </h3>
-            <ul class="menu-list">
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/algorithm/">
-                        <span class="level-start">
-                            <span class="level-item">algorithm</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/code/">
-                        <span class="level-start">
-                            <span class="level-item">code</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/pep/">
-                        <span class="level-start">
-                            <span class="level-item">pep</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/python/">
-                        <span class="level-start">
-                            <span class="level-item">python</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
     
 </div>
 
@@ -868,7 +602,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="" height="28">
+                    <img src="/images/favicon.svg" alt="" height="28">
                 
                 </a>
                 <p class="is-size-7">
