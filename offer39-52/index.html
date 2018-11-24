@@ -170,7 +170,7 @@
 <meta property="og:image" content="https://todebug.com/assets/blog_images/ugly_number.jpeg">
 <meta property="og:image" content="https://todebug.com/assets/blog_images/Inversed_pairs.jpeg">
 <meta property="og:image" content="https://todebug.com/assets/blog_images/common_node_of_LinkedLists.jpeg">
-<meta property="og:updated_time" content="2018-11-05T08:44:48.019Z">
+<meta property="og:updated_time" content="2018-11-24T16:04:46.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指offer 第五章 题39-52题解 Python版">
 <meta name="twitter:description" content="剑指offer39-52题解">
@@ -527,7 +527,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-05 16:44:48" itemprop="dateModified" datetime="2018-11-05T16:44:48+08:00">2018-11-05</time>
+                <time title="修改时间：2018-11-25 00:04:46" itemprop="dateModified" datetime="2018-11-25T00:04:46+08:00">2018-11-25</time>
               
             
           </span>
@@ -545,6 +545,13 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Coding/" itemprop="url" rel="index"><span itemprop="name">Coding</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Coding/剑指offer/" itemprop="url" rel="index"><span itemprop="name">剑指offer</span></a></span>
 
                 
                 
@@ -602,7 +609,6 @@
 
       
         <p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JyeWNleWFuZy9weXRob25fdG9fdGhlX29mZmVy" title="https://github.com/bryceyang/python_to_the_offer">Github<i class="fa fa-external-link"></i></span></p>
-<a id="more"></a>
 <h2 id="时间效率类考察题："><a href="#时间效率类考察题：" class="headerlink" title="时间效率类考察题："></a>时间效率类考察题：</h2><p>节省时间就是延长生命。：）</p>
 <hr>
 <h3 id="题39：数组中出现次数超过一半的数字"><a href="#题39：数组中出现次数超过一半的数字" class="headerlink" title="题39：数组中出现次数超过一半的数字"></a>题39：数组中出现次数超过一半的数字</h3><blockquote>
@@ -612,6 +618,7 @@
 <blockquote>
 <p>如果一个元素在数组中出现次数超过一半，那么该元素一定也占据<strong>排序数组</strong>中位数位置。我们可以利用快排partition过程求得数组中位数元素。</p>
 </blockquote>
+<a id="more"></a>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">MoreThanHalfNum_Solution</span><span class="params">(self, numbers)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> len(numbers) &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        length = len(numbers)</span><br><span class="line">        l, r = <span class="number">0</span>, length - <span class="number">1</span></span><br><span class="line">        middle = length &gt;&gt; <span class="number">1</span></span><br><span class="line">        m_left, m_right = self.partition(numbers, l, r)</span><br><span class="line">        <span class="keyword">while</span> middle <span class="keyword">not</span> <span class="keyword">in</span> range(m_left, m_right+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> middle &lt; m_left:</span><br><span class="line">                r = m_left - <span class="number">1</span></span><br><span class="line">                m_left, m_right = self.partition(numbers, l, r)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                l = m_right + <span class="number">1</span></span><br><span class="line">                m_left, m_right = self.partition(numbers, l, r)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> numbers[middle] <span class="keyword">if</span> numbers.count(numbers[middle]) &gt; length // <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(self, numbers, l, r)</span>:</span></span><br><span class="line">        <span class="string">"""快排partition过程</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Arguments:</span></span><br><span class="line"><span class="string">            numbers &#123;list&#125; -- 数组</span></span><br><span class="line"><span class="string">            l &#123;int&#125; -- 左边界</span></span><br><span class="line"><span class="string">            r &#123;int&#125; -- 右边界</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Returns:</span></span><br><span class="line"><span class="string">            tuple -- 第一个元素为本轮选中元素占据的最左索引，第二个元素为本轮选中元素占据的最右索引</span></span><br><span class="line"><span class="string">                     如果本轮选中元素在数组中只有一个，那么tuple中两个元素就是相等的。</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        self.swap(numbers, random.randint(l, r), r)</span><br><span class="line">        start = l - <span class="number">1</span></span><br><span class="line">        end = r</span><br><span class="line">        <span class="keyword">while</span> l &lt; end:</span><br><span class="line">            <span class="keyword">if</span> numbers[l] &lt; numbers[r]:</span><br><span class="line">                start += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> start != l:</span><br><span class="line">                    self.swap(numbers, start, l)</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> numbers[l] == numbers[r]:</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                end -= <span class="number">1</span></span><br><span class="line">                self.swap(numbers, l, end)</span><br><span class="line">        self.swap(numbers, end, r)</span><br><span class="line">        <span class="keyword">return</span> start + <span class="number">1</span>, end</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">swap</span><span class="params">(self, numbers, i, j)</span>:</span></span><br><span class="line">        numbers[i], numbers[j] = numbers[j], numbers[i]</span><br></pre></td></tr></table></figure>
 <p>2.使用题目中元素特性<br></p>
 <blockquote>
@@ -867,7 +874,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -910,7 +917,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -965,15 +972,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

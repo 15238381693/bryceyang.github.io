@@ -161,7 +161,7 @@
 <meta property="og:site_name" content="V">
 <meta property="og:description" content="深入浅出mysql数据库开发 第二章学习笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-05T08:44:49.009Z">
+<meta property="og:updated_time" content="2018-11-24T16:32:50.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出mysql数据库开发 第二章学习笔记">
 <meta name="twitter:description" content="深入浅出mysql数据库开发 第二章学习笔记">
@@ -517,7 +517,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-05 16:44:49" itemprop="dateModified" datetime="2018-11-05T16:44:49+08:00">2018-11-05</time>
+                <time title="修改时间：2018-11-25 00:32:50" itemprop="dateModified" datetime="2018-11-25T00:32:50+08:00">2018-11-25</time>
               
             
           </span>
@@ -599,13 +599,13 @@
 
       
         <p><strong>motivation - 小知识点老是忘，好记性不如烂笔头。</strong></p>
-<a id="more"></a>
 <p>sql语句可以划分为三类：</p>
 <ol>
 <li>DDL(Data Definition Languages)语句：数据定义语言，这些语句定义了不同的数据段、数据库、表、列、索引等数据库对象的定义。常用关键字包括<code>create</code>、<code>drop</code>、<code>alter</code>;</li>
 <li>DML(Data Manipulation Language)语句：数据操作语句，也就是增删改查。主要有<code>insert</code>、<code>delete</code>、<code>update</code>和<code>select</code>等；</li>
 <li>DCL(Data Control Language)语句：数据控制语句。主要是用于控制许可和访问级别，主要有<code>grant</code>, <code>revoke</code>。</li>
 </ol>
+<a id="more"></a>
 <p>以下所写语句均为实际操作语句而不是语法说明，例子一直是围绕一个<strong>test</strong>数据库中的<strong>emp</strong>和<strong>dept</strong>表。</p>
 <h2 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h2><h3 id="建库切库："><a href="#建库切库：" class="headerlink" title="建库切库："></a>建库切库：</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> <span class="keyword">test</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="keyword">test</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="建表："><a href="#建表：" class="headerlink" title="建表："></a>建表：</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> emp(</span><br><span class="line">        ename <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">        hiredate <span class="built_in">date</span>,</span><br><span class="line">        sal <span class="built_in">decimal</span>(<span class="number">10</span>, <span class="number">2</span>),</span><br><span class="line">        deptno <span class="built_in">int</span>(<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
@@ -789,7 +789,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -832,7 +832,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -887,15 +887,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

@@ -153,18 +153,18 @@
 
 
 
-  <meta name="description" content="推荐使用vim-plug作为vim包管理器，轻量且能异步更新，还支持插件分支。">
+  <meta name="description" content="推荐使用vim-plug作为vim包管理器，轻量且能异步更新，还支持插件分支。 1. 所用插件1234567&quot; vim-plug配置插件方式&quot; supertab用来防止使用tab展开snippet与youcompleteme的tab补全发生冲突Plug &apos;ervandew/supertab&apos;&quot; ultisnips是引擎Plug &apos;SirVer/ultisnips&apos;&quot; 所有常用snippet都在vi">
 <meta name="keywords" content="vim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在vim中使用snippets">
 <meta property="og:url" content="https://todebug.com/vim-snippets/index.html">
 <meta property="og:site_name" content="V">
-<meta property="og:description" content="推荐使用vim-plug作为vim包管理器，轻量且能异步更新，还支持插件分支。">
+<meta property="og:description" content="推荐使用vim-plug作为vim包管理器，轻量且能异步更新，还支持插件分支。 1. 所用插件1234567&quot; vim-plug配置插件方式&quot; supertab用来防止使用tab展开snippet与youcompleteme的tab补全发生冲突Plug &apos;ervandew/supertab&apos;&quot; ultisnips是引擎Plug &apos;SirVer/ultisnips&apos;&quot; 所有常用snippet都在vi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-05T08:44:49.258Z">
+<meta property="og:updated_time" content="2018-11-24T16:14:03.870Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在vim中使用snippets">
-<meta name="twitter:description" content="推荐使用vim-plug作为vim包管理器，轻量且能异步更新，还支持插件分支。">
+<meta name="twitter:description" content="推荐使用vim-plug作为vim包管理器，轻量且能异步更新，还支持插件分支。 1. 所用插件1234567&quot; vim-plug配置插件方式&quot; supertab用来防止使用tab展开snippet与youcompleteme的tab补全发生冲突Plug &apos;ervandew/supertab&apos;&quot; ultisnips是引擎Plug &apos;SirVer/ultisnips&apos;&quot; 所有常用snippet都在vi">
 
 
 
@@ -517,7 +517,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-05 16:44:49" itemprop="dateModified" datetime="2018-11-05T16:44:49+08:00">2018-11-05</time>
+                <time title="修改时间：2018-11-25 00:14:03" itemprop="dateModified" datetime="2018-11-25T00:14:03+08:00">2018-11-25</time>
               
             
           </span>
@@ -590,8 +590,8 @@
 
       
         <p>推荐使用<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2p1bmVndW5uL3ZpbS1wbHVn" title="https://github.com/junegunn/vim-plug">vim-plug<i class="fa fa-external-link"></i></span>作为vim包管理器，轻量且能异步更新，还支持插件分支。</p>
-<a id="more"></a>
 <h2 id="1-所用插件"><a href="#1-所用插件" class="headerlink" title="1. 所用插件"></a>1. 所用插件</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">" vim-plug配置插件方式</span></span><br><span class="line"><span class="comment">" supertab用来防止使用tab展开snippet与youcompleteme的tab补全发生冲突</span></span><br><span class="line">Plug <span class="string">'ervandew/supertab'</span></span><br><span class="line"><span class="comment">" ultisnips是引擎</span></span><br><span class="line">Plug <span class="string">'SirVer/ultisnips'</span></span><br><span class="line"><span class="comment">" 所有常用snippet都在vim-snippets里</span></span><br><span class="line">Plug <span class="string">'honza/vim-snippets'</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="2-插件设置，以及YCM与UltiSnips不冲突的设置方法"><a href="#2-插件设置，以及YCM与UltiSnips不冲突的设置方法" class="headerlink" title="2. 插件设置，以及YCM与UltiSnips不冲突的设置方法"></a>2. 插件设置，以及YCM与UltiSnips不冲突的设置方法</h2><p>具体<code>supertab</code>插件以及<code>UltiSnip</code>插件设置如下：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">" make YCM compatible with UltiSnips (using supertab)</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:ycm_key_list_select_completion</span> = [<span class="string">'&lt;C-n&gt;'</span>, <span class="string">'&lt;Down&gt;'</span>]</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:ycm_key_list_previous_completion</span> = [<span class="string">'&lt;C-p&gt;'</span>, <span class="string">'&lt;Up&gt;'</span>]</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:SuperTabDefaultCompletionType</span> = <span class="string">'&lt;C-n&gt;'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" better key bindings for UltiSnipsExpandTrigger</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:UltiSnipsSnippetDirectories</span> = [<span class="string">'~/.vim/UltiSnips'</span>, <span class="string">'UltiSnips'</span>]</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:UltiSnipsExpandTrigger</span> = <span class="string">"&lt;tab&gt;"</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:UltiSnipsJumpForwardTrigger</span> = <span class="string">"&lt;tab&gt;"</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:UltiSnipsJumpBackwardTrigger</span> = <span class="string">"&lt;s-tab&gt;"</span></span><br><span class="line"><span class="comment">" If you want :UltiSnipsEdit to split your window.</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:UltiSnipsEditSplit</span>=<span class="string">"vertical"</span></span><br></pre></td></tr></table></figure></p>
 <p>这样YouCompleteMe就被绑定到了<code>Ctrl+n</code>，然后这个快捷键又被<code>SuperTab</code>绑定到<code>tab</code>。</p>
 <h2 id="3-自定义snippet"><a href="#3-自定义snippet" class="headerlink" title="3.  自定义snippet"></a>3.  自定义snippet</h2><p>可以使用<code>UltiSnips</code>的语法自定义代码块，比如<code>jekyll</code>博客，我们每次新建博客的时候都要加入固定的博客头，我们想要实现输入<code>head</code>然后按下<code>tab</code>键自动补全固定表头。</p>
@@ -747,7 +747,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -790,7 +790,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -845,15 +845,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
