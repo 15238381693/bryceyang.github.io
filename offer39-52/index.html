@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.5.0',
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="剑指offer39-52题解">
+<meta name="keywords" content="剑指offer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="剑指offer 第五章 题39-52题解 Python版">
+<meta property="og:url" content="https://todebug.com/offer39-52/index.html">
+<meta property="og:site_name" content="debugging">
+<meta property="og:description" content="剑指offer39-52题解">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/occurrencesOf1.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/nth_int_in_sequence.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/arrange_list_to_min_value.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/convert_int_to_str.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/max_value_of_presents.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/max_length_of_undup_str.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/ugly_number.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/Inversed_pairs.jpeg">
+<meta property="og:image" content="https://todebug.com/assets/blog_images/common_node_of_LinkedLists.jpeg">
+<meta property="og:updated_time" content="2018-11-05T08:44:48.019Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="剑指offer 第五章 题39-52题解 Python版">
+<meta name="twitter:description" content="剑指offer39-52题解">
+<meta name="twitter:image" content="https://todebug.com/assets/blog_images/occurrencesOf1.jpeg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="debugging" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://todebug.com/offer39-52/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>剑指offer 第五章 题39-52题解 Python版 | debugging</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100095499-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100095499-2');
+</script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">debugging</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">For man is man and master of his fate.</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/404.html" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://todebug.com/offer39-52/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Da Hufa">
+      <meta itemprop="description" content="学习记录">
+      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="debugging">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">剑指offer 第五章 题39-52题解 Python版
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-25 00:00:00" itemprop="dateCreated datePublished" datetime="2018-08-25T00:00:00+08:00">2018-08-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-05 16:44:48" itemprop="dateModified" datetime="2018-11-05T16:44:48+08:00">2018-11-05</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Coding/" itemprop="url" rel="index"><span itemprop="name">Coding</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/offer39-52/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/offer39-52/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/offer39-52/" class="leancloud_visitors" data-flag-title="剑指offer 第五章 题39-52题解 Python版">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">剑指offer39-52题解</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JyeWNleWFuZy9weXRob25fdG9fdGhlX29mZmVy" title="https://github.com/bryceyang/python_to_the_offer">Github<i class="fa fa-external-link"></i></span></p>
+<a id="more"></a>
+<h2 id="时间效率类考察题："><a href="#时间效率类考察题：" class="headerlink" title="时间效率类考察题："></a>时间效率类考察题：</h2><p>节省时间就是延长生命。：）</p>
+<hr>
+<h3 id="题39：数组中出现次数超过一半的数字"><a href="#题39：数组中出现次数超过一半的数字" class="headerlink" title="题39：数组中出现次数超过一半的数字"></a>题39：数组中出现次数超过一半的数字</h3><blockquote>
+<p>数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如，输入一个长度为9的数组{1， 2， 3，2， 2， 2， 5， 4， 2}</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br>1.借用partition函数：<br></p>
+<blockquote>
+<p>如果一个元素在数组中出现次数超过一半，那么该元素一定也占据<strong>排序数组</strong>中位数位置。我们可以利用快排partition过程求得数组中位数元素。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">MoreThanHalfNum_Solution</span><span class="params">(self, numbers)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> len(numbers) &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        length = len(numbers)</span><br><span class="line">        l, r = <span class="number">0</span>, length - <span class="number">1</span></span><br><span class="line">        middle = length &gt;&gt; <span class="number">1</span></span><br><span class="line">        m_left, m_right = self.partition(numbers, l, r)</span><br><span class="line">        <span class="keyword">while</span> middle <span class="keyword">not</span> <span class="keyword">in</span> range(m_left, m_right+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> middle &lt; m_left:</span><br><span class="line">                r = m_left - <span class="number">1</span></span><br><span class="line">                m_left, m_right = self.partition(numbers, l, r)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                l = m_right + <span class="number">1</span></span><br><span class="line">                m_left, m_right = self.partition(numbers, l, r)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> numbers[middle] <span class="keyword">if</span> numbers.count(numbers[middle]) &gt; length // <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(self, numbers, l, r)</span>:</span></span><br><span class="line">        <span class="string">"""快排partition过程</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Arguments:</span></span><br><span class="line"><span class="string">            numbers &#123;list&#125; -- 数组</span></span><br><span class="line"><span class="string">            l &#123;int&#125; -- 左边界</span></span><br><span class="line"><span class="string">            r &#123;int&#125; -- 右边界</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Returns:</span></span><br><span class="line"><span class="string">            tuple -- 第一个元素为本轮选中元素占据的最左索引，第二个元素为本轮选中元素占据的最右索引</span></span><br><span class="line"><span class="string">                     如果本轮选中元素在数组中只有一个，那么tuple中两个元素就是相等的。</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        self.swap(numbers, random.randint(l, r), r)</span><br><span class="line">        start = l - <span class="number">1</span></span><br><span class="line">        end = r</span><br><span class="line">        <span class="keyword">while</span> l &lt; end:</span><br><span class="line">            <span class="keyword">if</span> numbers[l] &lt; numbers[r]:</span><br><span class="line">                start += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> start != l:</span><br><span class="line">                    self.swap(numbers, start, l)</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> numbers[l] == numbers[r]:</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                end -= <span class="number">1</span></span><br><span class="line">                self.swap(numbers, l, end)</span><br><span class="line">        self.swap(numbers, end, r)</span><br><span class="line">        <span class="keyword">return</span> start + <span class="number">1</span>, end</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">swap</span><span class="params">(self, numbers, i, j)</span>:</span></span><br><span class="line">        numbers[i], numbers[j] = numbers[j], numbers[i]</span><br></pre></td></tr></table></figure>
+<p>2.使用题目中元素特性<br></p>
+<blockquote>
+<p>如果数组中一个元素出现的次数大于数组长度的一半，那么该元素出现的次数大于数组中其他元素出现的次数和。所以可以设计一个count变量用来统计元素个数，具体过程如下：<br><br>1.count初始值设为0， 遍历数组<br><br>2.当前遍历到的数组元素假定为cur，那么如果此时count值为0，count值就加一，继续遍历，如果遍历到的元素等于cur，count值就加一，反之就减一；<br><br>3.返回最后一个将count设为1的元素；<br><br>同样的，我们需要检测最后输出元素是否出现次数是大于数组长度的一半的。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">MoreThanHalfNum_Solution</span><span class="params">(self, numbers)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> len(numbers) &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(numbers)):</span><br><span class="line">            <span class="keyword">if</span> count == <span class="number">0</span>:</span><br><span class="line">                flag = numbers[i]</span><br><span class="line">                count += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> numbers[i] != flag:</span><br><span class="line">                    count -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> flag <span class="keyword">if</span> numbers.count(flag) &gt; len(numbers) // <span class="number">2</span> <span class="keyword">else</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题39衍生题：给定整数K，求长度为N的数组中元素出现次数超过N-K的元素"><a href="#题39衍生题：给定整数K，求长度为N的数组中元素出现次数超过N-K的元素" class="headerlink" title="题39衍生题：给定整数K，求长度为N的数组中元素出现次数超过N/K的元素"></a>题39衍生题：给定整数K，求长度为N的数组中元素出现次数超过N/K的元素</h3><p><strong>解法：</strong> <br><br>这个题跟题39一脉相承，在题39中，我们的解法原型其实是每次都数组里删除两个不同的元素，如果数组中存在出现次数超过数组一般的元素，那么不同元素对删除完成之后剩下的元素一定是所求元素。<br><br>现在拓展开来，如果我们要求数组中出现次数大于N/K的元素，那么我们一次删除k-1个，最后剩余的k-1个也就包含出现次数大于N/K的元素。<br><br>拓展情况是包括题39的，拓展情况代码流程如下：<br><br>&emsp;&emsp;1.首先设定一个大小为k-1的字典（出现次数超过N/K的元素，最多只可能有k-1个）;<br><br>&emsp;&emsp;2.遍历数组，检测当前元素是否在字典里，<br><br>&emsp;&emsp;&emsp;&emsp;1.如果在字典里，字典里对应key的value值加一; <br><br>&emsp;&emsp;&emsp;&emsp;2.如果不在字典里:<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;字典未满时，以当前遍历到的数组元素为key，value设为1;<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;如果字典已满，那么将字典中所有key对应的value值都减去1（即从数组中删除了K个不同的元素）;<br><br>&emsp;&emsp;3.每遍历一个元素，删除字典中value值小于1的元素。<br><br>最后在字典里的元素就包括所求元素，我们做最后的检查就行了。<br>上面两种情况所求的的数据，我们都要最终校验数据是不是真的出现了符合要求的次数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_nk_item</span><span class="params">(arr, k)</span>:</span></span><br><span class="line">    <span class="string">"""求数组中出现次数超过N/K的元素</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Arguments:</span></span><br><span class="line"><span class="string">        arr &#123;list&#125; -- 数组</span></span><br><span class="line"><span class="string">        k &#123;int&#125; -- 分母</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        tuple -- 所求元素</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> len(arr) &lt; k:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    buf_dict = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr)):</span><br><span class="line">        <span class="keyword">if</span> arr[i] <span class="keyword">in</span> buf_dict:</span><br><span class="line">            buf_dict[arr[i]] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> len(buf_dict) &lt; k - <span class="number">1</span>:</span><br><span class="line">                buf_dict[arr[i]] = <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">for</span> item <span class="keyword">in</span> buf_dict:</span><br><span class="line">                    buf_dict[item] -= <span class="number">1</span></span><br><span class="line">        remove_invalid(buf_dict)</span><br><span class="line"></span><br><span class="line">    check_valid(arr, k, buf_dict)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> tuple(buf_dict.keys())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_invalid</span><span class="params">(buf_dict)</span>:</span></span><br><span class="line">    <span class="string">"""删除buf_dict中value值小于1的元素"""</span></span><br><span class="line"></span><br><span class="line">    buf_remove = []</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> buf_dict:</span><br><span class="line">        <span class="keyword">if</span> buf_dict[item] &lt; <span class="number">1</span>:</span><br><span class="line">            buf_remove.append(item)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> buf_remove:</span><br><span class="line">        buf_dict.pop(item)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check_valid</span><span class="params">(arr, k, buf_dict)</span>:</span></span><br><span class="line">    <span class="string">"""检测所求的元素是否满足次数要求"""</span></span><br><span class="line"></span><br><span class="line">    buf_remove = []</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> buf_dict:</span><br><span class="line">        <span class="keyword">if</span> arr.count(item) &lt;= len(arr) // k:</span><br><span class="line">            buf_remove.append(item)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> buf_remove:</span><br><span class="line">        buf_dict.pop(item)</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题40：最小的k个数"><a href="#题40：最小的k个数" class="headerlink" title="题40：最小的k个数"></a>题40：最小的k个数</h3><blockquote>
+<p>输入n个整数，找出其中个最小的k个数。例如，输入4、5、1、6、2、7、3、8这八个数，则最小的4个数字是1、2、3、4.</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br>1.借用partition函数<br></p>
+<blockquote>
+<p>如题39，我们可以借用partition函数在O(n)的时间复杂度内找到排序数组中索引为k的元素，然后输出前k个元素就行了，<strong>注意：此时输出的前k个元素是无序的。</strong></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GetLeastNumbers_Solution</span><span class="params">(self, tinput, k)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> tinput <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> k <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> k &gt; len(tinput) <span class="keyword">or</span> k &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="keyword">if</span> k == len(tinput):</span><br><span class="line">            <span class="keyword">return</span> tinput</span><br><span class="line"></span><br><span class="line">        l, r = <span class="number">0</span>, len(tinput) - <span class="number">1</span></span><br><span class="line">        m_left, m_right = self.partition(tinput, l, r)</span><br><span class="line">        <span class="keyword">while</span> k <span class="keyword">not</span> <span class="keyword">in</span> range(m_left, m_right+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> k &lt; m_left:</span><br><span class="line">                r = m_left - <span class="number">1</span></span><br><span class="line">                m_left, m_right = self.partition(tinput, l, r)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                l = m_right + <span class="number">1</span></span><br><span class="line">                m_left, m_right = self.partition(tinput, l, r)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> tinput[:k]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(self, arr, l, r)</span>:</span></span><br><span class="line">        self.swap(arr, random.randint(l, r), r)</span><br><span class="line">        start = l - <span class="number">1</span></span><br><span class="line">        end = r</span><br><span class="line">        <span class="keyword">while</span> l &lt; end:</span><br><span class="line">            <span class="keyword">if</span> arr[l] &lt; arr[r]:</span><br><span class="line">                start += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> l != start:</span><br><span class="line">                    self.swap(arr, l, start)</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> arr[l] == arr[r]:</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                end -= <span class="number">1</span></span><br><span class="line">                self.swap(arr, l, end)</span><br><span class="line">        self.swap(arr, end, r)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> start+<span class="number">1</span>, end</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">swap</span><span class="params">(self, arr, i, j)</span>:</span></span><br><span class="line">        arr[i], arr[j] = arr[j], arr[i]</span><br></pre></td></tr></table></figure>
+<p>2.借用堆的概念<br></p>
+<blockquote>
+<p>使用partition函数我们会破坏原有数组，如果不破坏原有数组就得复制一个新数组，如果数组很长，那么无疑partition的解法就有了缺点；<br><br>使用堆我们就能很好的处理大数据的问题：<br><br>1.首先我们利用数组前k个元素建立一个大小为k的最大堆；<br><br>2.然后从数组第k+1个元素开始, <br><br>&emsp;&emsp;如果当前元素小于堆顶，那么将堆顶弹出，然后将当前元素加入堆，并再次调节好堆, 继续遍历过程；<br><br>&emsp;&emsp;如果当前元素大于堆顶，那么继续遍历；<br></p>
+</blockquote>
+<p><strong>在方法二的代码实现中，我利用了python自带模块<code>heapq</code>.</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GetLeastNumbers_Solution</span><span class="params">(self, tinput, k)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> tinput <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> k <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> k &gt; len(tinput) <span class="keyword">or</span> k &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">            res.append(-tinput[i])</span><br><span class="line">        heapq.heapify(res)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(k, len(tinput)):</span><br><span class="line">            <span class="keyword">if</span> tinput[i] &lt; -res[<span class="number">0</span>]:</span><br><span class="line">                res[<span class="number">0</span>] = -tinput[i]</span><br><span class="line">                heapq.heapify(res)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sorted(list(map(<span class="keyword">lambda</span> x: -x, res)))</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题41：数据流中的中位数"><a href="#题41：数据流中的中位数" class="headerlink" title="题41：数据流中的中位数"></a>题41：数据流中的中位数</h3><blockquote>
+<p>如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数组排序之后位于中间的值。如果从数据流中读出偶数个个数值，那么中位数就是所有数组排序之后中间两个数的平均值。</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br>要求中位数随时可以求得，那么构建一个最大堆，一个最小堆，并且保持最大堆与最小堆中元素个数差值不超过2.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.min_heap = list([])</span><br><span class="line">        self.max_heap = list([])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Insert</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.min_heap <span class="keyword">and</span> <span class="keyword">not</span> self.max_heap:</span><br><span class="line">            heapq.heappush(self.min_heap, num)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> num &gt; self.min_heap[<span class="number">0</span>]:</span><br><span class="line">            heapq.heappush(self.min_heap, num)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            heapq.heappush(self.max_heap, -num)</span><br><span class="line">        <span class="keyword">if</span> abs(len(self.min_heap) - len(self.max_heap)) &gt; <span class="number">1</span>:</span><br><span class="line">            self.balance()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">balance</span><span class="params">(self)</span>:</span></span><br><span class="line">        pop_heap, push_heap = (self.min_heap, self.max_heap) <span class="keyword">if</span> len(</span><br><span class="line">            self.min_heap) &gt; len(self.max_heap) <span class="keyword">else</span> (self.max_heap, self.min_heap)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> len(pop_heap) - len(push_heap) &gt; <span class="number">1</span>:</span><br><span class="line">            heapq.heappush(push_heap, -heapq.heappop(pop_heap))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GetMedian</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> len(self.max_heap) == len(self.min_heap):</span><br><span class="line">            <span class="keyword">return</span> (-self.max_heap[<span class="number">0</span>] + self.min_heap[<span class="number">0</span>]) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> -self.max_heap[<span class="number">0</span>] <span class="keyword">if</span> len(self.max_heap) &gt; len(self.min_heap) <span class="keyword">else</span> self.min_heap[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题42：连续子数组的最大和"><a href="#题42：连续子数组的最大和" class="headerlink" title="题42：连续子数组的最大和"></a>题42：连续子数组的最大和</h3><blockquote>
+<p>输入一个整型数组，数组里有正数也有负数。数组中一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。要求时间复杂度为O(n).</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br>1.普通方法，遍历数组求解最大和：<br><br> 在遍历数组过程中，我们设定一个变量cur_sum用来统计当前和，设定一个变量max_sum用来保存当前已经遍历过的元素组成的数组里的最大子数组和。 在每一步遍历中，我们都比较cur_sum和我们记录的max_sum, 将较大的那个值设定为新的max_sum：<br><br>如果cur_sum当前值为正，那么cur_sum加上当前遍历元素可能比cur_sum要更大，此时cur_sum 就加上当前遍历元素；<br><br>如果cur_sum当前值为负，那么cur_sum机上当前遍历元素一定要比当前遍历到的元素小，那么明显的这个cur_sum不可能是最大的子数组和，此时将cur_sum设置为当前遍历到的元素，开启一个新的子数组和的计算。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">FindGreatestSumOfSubArray</span><span class="params">(self, array)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> array <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">if</span> len(array) &lt; <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> sum(array)</span><br><span class="line"></span><br><span class="line">        max_sum = min(array)</span><br><span class="line">        cur_sum = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> array:</span><br><span class="line">            <span class="keyword">if</span> cur_sum &lt; <span class="number">0</span>:</span><br><span class="line">                cur_sum = item</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur_sum += item</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> cur_sum &gt; max_sum:</span><br><span class="line">                max_sum = cur_sum</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max_sum</span><br></pre></td></tr></table></figure>
+<p>2.使用动态规划：<br></p>
+<blockquote>
+<p>状态方程： <br><br>233333，这题用动态规划好简单。。<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f(n) = f(n-1) + arr[n] if f(n-1) &gt; 0 &lt;br&gt;</span><br><span class="line">f(n) = arr[n] if f(n-1) &lt;= 0</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">FindGreatestSumOfSubArray</span><span class="params">(self, arr)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> arr <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">if</span> len(arr) &lt; <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> sum(arr)</span><br><span class="line"></span><br><span class="line">        res = [arr[<span class="number">0</span>] <span class="keyword">for</span> x <span class="keyword">in</span> range(len(arr))]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(arr)):</span><br><span class="line">            <span class="keyword">if</span> res[i<span class="number">-1</span>] &lt;= <span class="number">0</span>:</span><br><span class="line">                res[i] = arr[i]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res[i] = res[i<span class="number">-1</span>] + arr[i]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max(res)</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题43：1-n整数中1出现的次数"><a href="#题43：1-n整数中1出现的次数" class="headerlink" title="题43：1~n整数中1出现的次数"></a>题43：1~n整数中1出现的次数</h3><blockquote>
+<p>输入一个整数n，求1~n这n个数整数的十进制表示中1出现的次数。例如，输入12，1~12这些证书中包含1的数字有1、10、11和12，1一共出现了5次。</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br><img src="/assets/blog_images/occurrencesOf1.jpeg" alt="1-n中1出现的次数"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GetOccurTimesOfOne</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""计算1-n中所有数字中1出现的次数"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_occur_time_of_one</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> num <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> num &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        length = self.get_num_length(num)</span><br><span class="line">        first = int(str(num)[<span class="number">0</span>])</span><br><span class="line">        <span class="comment"># 第一位</span></span><br><span class="line">        <span class="keyword">if</span> first == <span class="number">1</span>:</span><br><span class="line">            first_sum = num % self.base_10(length<span class="number">-1</span>) + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> first != <span class="number">1</span>:</span><br><span class="line">            first_sum = self.base_10(length - <span class="number">1</span>)</span><br><span class="line">        <span class="comment"># 其他位</span></span><br><span class="line">        other_num = self.base_10(length - <span class="number">2</span>) * (length - <span class="number">1</span>) * first</span><br><span class="line">        next_num = self.get_occur_time_of_one(num % self.base_10(length<span class="number">-1</span>))</span><br><span class="line">        <span class="keyword">return</span> first_sum + other_num + next_num</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">base_10</span><span class="params">(self, length)</span>:</span></span><br><span class="line">        num = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> length &gt; <span class="number">0</span>:</span><br><span class="line">            num *= <span class="number">10</span></span><br><span class="line">            length -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> num</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_num_length</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        length = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> num != <span class="number">0</span>:</span><br><span class="line">            length += <span class="number">1</span></span><br><span class="line">            num = num // <span class="number">10</span></span><br><span class="line">        <span class="keyword">return</span> length</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题44：-数字序列中某一位的数字"><a href="#题44：-数字序列中某一位的数字" class="headerlink" title="题44： 数字序列中某一位的数字"></a>题44： 数字序列中某一位的数字</h3><blockquote>
+<p>数字以 0123456789101112131415…的格式序列化到一个字符序列中。在这个序列中，第5位（从0开始计数）是5，第13位是1， 第19位是4，等等。倾斜一个函数，求任意第n位对应的数字。</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br><img src="/assets/blog_images/nth_int_in_sequence.jpeg" alt="解法"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_nth_num_of_sequence</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> n &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">10</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="comment"># 判断第n位的数组是几位数组以及对应位数数组在序列中开始的位置</span></span><br><span class="line">    full_length, start = get_length_and_delta(n)</span><br><span class="line">    <span class="comment"># n位为几位数的第几个数的第几位</span></span><br><span class="line">    nth, delta = (n - start) // full_length, (n - start) % full_length</span><br><span class="line">    num = base_10(full_length - <span class="number">1</span>) + nth</span><br><span class="line">    <span class="keyword">return</span> int(str(num)[delta])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_nth_of_num</span><span class="params">(num, i)</span>:</span></span><br><span class="line">    num = list(str(num))</span><br><span class="line">    <span class="keyword">return</span> int(num[i])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">base_10</span><span class="params">(length)</span>:</span></span><br><span class="line">    num = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> length &gt; <span class="number">0</span>:</span><br><span class="line">        num *= <span class="number">10</span></span><br><span class="line">        length -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> num</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_length_and_delta</span><span class="params">(n)</span>:</span></span><br><span class="line">    start = i = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> start &lt;= n:</span><br><span class="line">        more = <span class="number">9</span> * (<span class="number">10</span> ** (i - <span class="number">1</span>)) * i</span><br><span class="line">        start += more</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> i - <span class="number">1</span>, start - more</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    n = int(sys.argv[<span class="number">1</span>])</span><br><span class="line">    print(get_nth_num_of_sequence(n))</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题45：把数组排成最小的数"><a href="#题45：把数组排成最小的数" class="headerlink" title="题45：把数组排成最小的数"></a>题45：把数组排成最小的数</h3><blockquote>
+<p>输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。例如，输入数组{3， 32， 321}， 则打印出这三个数字能排成的最小数字321323.</p>
+</blockquote>
+<p><strong>解法：</strong> <br></p>
+<ol>
+<li>剑指offer上的解法定义自定义比较器很贪心，自己用了另外一种解法，更清楚明了。<br><img src="/assets/blog_images/arrange_list_to_min_value.jpeg" alt="arrange list to min value"></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">PrintMinNumber</span><span class="params">(self, numbers)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> numbers <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> len(numbers) &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        temp_dict = &#123;key: str(value) <span class="keyword">for</span> key, value <span class="keyword">in</span> enumerate(numbers)&#125;</span><br><span class="line">        longest = self.get_longest(temp_dict.values())</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(temp_dict)):</span><br><span class="line">            <span class="keyword">while</span> len(temp_dict[i]) &lt; longest:</span><br><span class="line">                temp_dict[i] = temp_dict[i] + temp_dict[i][<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> sorted(temp_dict.items(), key=<span class="keyword">lambda</span> item: item[<span class="number">1</span>]):</span><br><span class="line">            res.append(numbers[item[<span class="number">0</span>]])</span><br><span class="line">        <span class="keyword">return</span> int(<span class="string">''</span>.join(map(str, res)))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_longest</span><span class="params">(self, arr)</span>:</span></span><br><span class="line">        longest = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> arr:</span><br><span class="line">            <span class="keyword">if</span> len(item) &gt; longest:</span><br><span class="line">                longest = len(item)</span><br><span class="line">        <span class="keyword">return</span> longest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    nums = [<span class="number">3</span>, <span class="number">32</span>, <span class="number">321</span>]</span><br><span class="line">    ex = Solution()</span><br><span class="line">    print(ex.PrintMinNumber(nums))</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题46：把数字翻译成字符串"><a href="#题46：把数字翻译成字符串" class="headerlink" title="题46：把数字翻译成字符串"></a>题46：把数字翻译成字符串</h3><blockquote>
+<p>给定一个数字，我们按照如下规则把它翻译成字符串：0翻译成’a’, 1翻译成‘b’， ……， 11翻译成‘I’， ……， 25翻译成‘z’。一个数字可能有多个翻译。例如，12258有5种不同的翻译，分别是’bccfi’、‘bwfi’、‘bczi’、‘mcfi’和’mzi’。请编程实现一个函数，用来计算一个数字有多少种不同的翻译方法。</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br><img src="/assets/blog_images/convert_int_to_str.jpeg" alt="convert int to str"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 暴力递归版本</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">convert_int_to_str_recur</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> num &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        num = str(num)</span><br><span class="line">        <span class="keyword">return</span> self.process(num, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">(self, num, index)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> index &gt;= len(num) - <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        p1 = self.process(num, index+<span class="number">1</span>)</span><br><span class="line">        p2 = self.process(num, index+<span class="number">2</span>) <span class="keyword">if</span> int(num[index:index+<span class="number">2</span>]) &lt;= <span class="number">25</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> p1 + p2</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 动态规划版本</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">convert_int_to_str</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> num &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        num = str(num)</span><br><span class="line">        res = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(len(num))]</span><br><span class="line">        res [<span class="number">-1</span>], res[<span class="number">-2</span>] = <span class="number">1</span>, <span class="number">2</span> <span class="keyword">if</span> int(num[<span class="number">-2</span>:]) &lt;= <span class="number">25</span> <span class="keyword">else</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(num)<span class="number">-3</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            res[i] = res[i+<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">if</span> int(num[i:i+<span class="number">2</span>]) &lt;= <span class="number">25</span>:</span><br><span class="line">                res[i] += res[i+<span class="number">2</span>]</span><br><span class="line">        <span class="keyword">return</span> res[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    num = <span class="number">12226</span></span><br><span class="line">    ex = Solution()</span><br><span class="line">    print(ex.convert_int_to_str(num))</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题47：礼物的最大价值"><a href="#题47：礼物的最大价值" class="headerlink" title="题47：礼物的最大价值"></a>题47：礼物的最大价值</h3><blockquote>
+<p>在一个mxn的棋盘的每一格都放有一个礼物，每个礼物都有一定的价值（价值大于0）。你可以从棋盘左下角开始拿格子里的礼物，并且每次向右或者向下移动一格，直到到达棋盘的右下角。给定一个棋盘以及上面的礼物，请计算能达到的最大价值数。</p>
+</blockquote>
+<p><img src="/assets/blog_images/max_value_of_presents.jpeg" alt="max value of presents"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">max_value_of_presents_recur</span><span class="params">(self, arr)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> arr <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">if</span> len(arr) == <span class="number">0</span> <span class="keyword">or</span> len(arr[<span class="number">0</span>]) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        row_l = len(arr)</span><br><span class="line">        col_l = len(arr[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> self.process(arr, <span class="number">0</span>, <span class="number">0</span>, row_l<span class="number">-1</span>, col_l<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">(self, arr, i, j, row_l, col_l)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> i == row_l <span class="keyword">and</span> j == col_l:</span><br><span class="line">            <span class="keyword">return</span> arr[i][j]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> i == row_l:</span><br><span class="line">            res = arr[i][j] + self.process(arr, i, j+<span class="number">1</span>, row_l, col_l)</span><br><span class="line">        <span class="keyword">elif</span> j == col_l:</span><br><span class="line">            res = arr[i][j] + self.process(arr, i+<span class="number">1</span>, j, row_l, col_l)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            res = arr[i][j] + max(self.process(arr, i, j+<span class="number">1</span>, row_l, col_l),</span><br><span class="line">                                  self.process(arr, i+<span class="number">1</span>, j, row_l, col_l))</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 动态规划版本</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">max_value_of_presents</span><span class="params">(self, arr)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> arr <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">if</span> len(arr) == <span class="number">0</span> <span class="keyword">or</span> len(arr[<span class="number">0</span>]) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        row_l = len(arr)</span><br><span class="line">        col_l = len(arr[<span class="number">0</span>])</span><br><span class="line">        res = [[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr[<span class="number">0</span>]))] <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr))]</span><br><span class="line">        res[row_l<span class="number">-1</span>][col_l<span class="number">-1</span>] = arr[row_l<span class="number">-1</span>][col_l<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">        i = row_l - <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(col_l<span class="number">-2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            res[i][j] = arr[i][j] + res[i][j+<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">        j = col_l - <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(row_l<span class="number">-2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            res[i][j] = arr[i][j] + res[i+<span class="number">1</span>][j]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(row_l<span class="number">-2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(col_l<span class="number">-2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">                res[i][j] = arr[i][j] + max(res[i+<span class="number">1</span>][j], res[i][j+<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    arr = [[<span class="number">1</span>, <span class="number">10</span>, <span class="number">3</span>, <span class="number">8</span>],</span><br><span class="line">           [<span class="number">12</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">6</span>],</span><br><span class="line">           [<span class="number">5</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">11</span>],</span><br><span class="line">           [<span class="number">3</span>, <span class="number">7</span>, <span class="number">16</span>, <span class="number">5</span>],</span><br><span class="line">           ]</span><br><span class="line">    ex = Solution()</span><br><span class="line">    print(ex.max_value_of_presents(arr))</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题48：最长不含重复字符的子字符串"><a href="#题48：最长不含重复字符的子字符串" class="headerlink" title="题48：最长不含重复字符的子字符串"></a>题48：最长不含重复字符的子字符串</h3><blockquote>
+<p>请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长字符串的长度。假设字符串中只包含‘a’-‘z’的字符。例如，在字符串“arabcacfr”中，最长的不含重复字符的字符串是“acfr”，长度为4.</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br><img src="/assets/blog_images/max_length_of_undup_str.jpeg" alt="max length of undup str"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_max_length_of_undup_str</span><span class="params">(self, string)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> string <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> len(string) &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> int(string) <span class="keyword">if</span> string <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">else</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        res = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(len(string))]</span><br><span class="line">        index_arr = [<span class="number">-1</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">52</span>)]</span><br><span class="line">        res[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">        index_arr[self.get_index(<span class="number">0</span>, string)] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(string)):</span><br><span class="line">            char_index = self.get_index(i, string)</span><br><span class="line">            delta = i - index_arr[char_index]</span><br><span class="line">            <span class="keyword">if</span> index_arr[char_index] == <span class="number">-1</span> <span class="keyword">or</span> delta &gt; res[i<span class="number">-1</span>]:</span><br><span class="line">                res[i] = res[i<span class="number">-1</span>] + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res[i] = delta</span><br><span class="line">            <span class="comment"># 更新当前字符的最新索引</span></span><br><span class="line">            index_arr[char_index] = i</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res[<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_index</span><span class="params">(self, index, string)</span>:</span></span><br><span class="line">        temp = ord(string[index])</span><br><span class="line">        <span class="keyword">if</span> <span class="number">65</span> &lt;= temp &lt;= <span class="number">90</span>:</span><br><span class="line">            <span class="keyword">return</span> temp - ord(<span class="string">'A'</span>)</span><br><span class="line">        <span class="keyword">elif</span> <span class="number">97</span> &lt;= temp &lt;= <span class="number">122</span>:</span><br><span class="line">            <span class="keyword">return</span> temp - ord(<span class="string">'a'</span>) + <span class="number">26</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span> TypeError(<span class="string">'not a valid char!'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    string = <span class="string">'arabcacfr'</span> <span class="comment"># answer is 4</span></span><br><span class="line">    ex = Solution()</span><br><span class="line">    print(ex.get_max_length_of_undup_str(string))</span><br></pre></td></tr></table></figure>
+<h2 id="时间效率与空间效率的平衡"><a href="#时间效率与空间效率的平衡" class="headerlink" title="时间效率与空间效率的平衡"></a>时间效率与空间效率的平衡</h2><p>鱼与熊掌兼得</p>
+<hr>
+<h3 id="题49：-丑数"><a href="#题49：-丑数" class="headerlink" title="题49： 丑数"></a>题49： 丑数</h3><blockquote>
+<p>我们把只包含因子2、3和5的数称为丑数（Ugly Number）。求从小到大的书序的第1500个丑数。例如6、8都是丑数，但14不是，因为它包含因子7.习惯上我们把1当做第一个丑数。</p>
+</blockquote>
+<p><strong>解法：</strong> <br><br><img src="/assets/blog_images/ugly_number.jpeg" alt="ugly number"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> numbers</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GetUglyNumber_Solution</span><span class="params">(self, index)</span>:</span></span><br><span class="line">        <span class="keyword">assert</span> isinstance(index, numbers.Integral)</span><br><span class="line">        <span class="keyword">if</span> index &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        ugly = [<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">while</span> len(ugly) &lt;= index:</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> ugly:</span><br><span class="line">                <span class="keyword">if</span> item * <span class="number">2</span> &gt; ugly[<span class="number">-1</span>]:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            p1 = item * <span class="number">2</span></span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> ugly:</span><br><span class="line">                <span class="keyword">if</span> item * <span class="number">3</span> &gt; ugly[<span class="number">-1</span>]:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            p2 = item * <span class="number">3</span></span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> ugly:</span><br><span class="line">                <span class="keyword">if</span> item * <span class="number">5</span> &gt; ugly[<span class="number">-1</span>]:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            p3 = item * <span class="number">5</span></span><br><span class="line">            ugly.append(min(p1, p2, p3))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ugly[<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    n = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">    ex = Solution()</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> n:</span><br><span class="line">        print(ex.GetUglyNumber_Solution(item))</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题50：第一个只出现一次的字符"><a href="#题50：第一个只出现一次的字符" class="headerlink" title="题50：第一个只出现一次的字符"></a>题50：第一个只出现一次的字符</h3><blockquote>
+<p>在字符串中找出第一个只出现一次的字符。如输入“abaccdeff”, 则输出‘b’</p>
+</blockquote>
+<p><strong>解法：</strong> <br></p>
+<ol>
+<li>耍流氓式解法：利用Python标准库Counter计数器。<br>Counter计算器会根据字符在字符串中出现的先后顺序返回字符在字符串中出现的次数，我们只要找到Counter中第一个value值为1的key就好了。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">FirstNotRepeatingChar</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> s <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        <span class="keyword">if</span> len(s) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">        counter = Counter(s)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">            <span class="keyword">if</span> counter[s[i]] == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题51：-数组中的逆序对"><a href="#题51：-数组中的逆序对" class="headerlink" title="题51： 数组中的逆序对"></a>题51： 数组中的逆序对</h3><p><strong>解法：</strong> <br><br><img src="/assets/blog_images/Inversed_pairs.jpeg" alt="Inverse Pairs"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">InversePairs_recur</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> data <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> len(data) &lt; <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.merge(data, <span class="number">0</span>, len(data)<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, data, left, right)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> left == right:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        middle = left + ((right - left) &gt;&gt; <span class="number">1</span>)</span><br><span class="line">        left_pairs = self.merge(data, left, middle)</span><br><span class="line">        right_pairs = self.merge(data, middle+<span class="number">1</span>, right)</span><br><span class="line">        merge_pairs = self.process(data, left, right, middle)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> left_pairs + right_pairs + merge_pairs</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">(self, data, left, right, middle)</span>:</span></span><br><span class="line">        l, r = left, middle+<span class="number">1</span></span><br><span class="line">        pairs = <span class="number">0</span></span><br><span class="line">        cur = left</span><br><span class="line">        temp_arr = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(len(data))]</span><br><span class="line">        <span class="keyword">while</span> l &lt;= middle <span class="keyword">and</span> r &lt;= right:</span><br><span class="line">            <span class="comment"># 如果左边数组元素l大于右边数组元素r，则有逆序对middle - l + 1</span></span><br><span class="line">            <span class="keyword">if</span> data[l] &gt; data[r]:</span><br><span class="line">                temp_arr[cur] = data[r]</span><br><span class="line">                r += <span class="number">1</span></span><br><span class="line">                cur += <span class="number">1</span></span><br><span class="line">                pairs += middle - l + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                temp_arr[cur] = data[l]</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">                cur += <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l &lt;= middle:</span><br><span class="line">            temp_arr[cur] = data[l]</span><br><span class="line">            cur += <span class="number">1</span></span><br><span class="line">            l += <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> r &lt;= right:</span><br><span class="line">            temp_arr[cur] = data[r]</span><br><span class="line">            r += <span class="number">1</span></span><br><span class="line">            cur += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(left, right+<span class="number">1</span>):</span><br><span class="line">            data[i] = temp_arr[i]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> pairs</span><br></pre></td></tr></table></figure>
+<p><strong>牛客网提示这个算法超时，我开始以为写的有问题，还改成了非递归归并，后来仔细想了想，不管是递归归并还是非递归归并时间复杂度都是O(nlogn)，所以应该是牛客的问题，后来果然发现，随便直接输出一个值也会提示超时。。。呵呵哒。。</strong></p>
+<hr>
+<h3 id="题52：两个链表的第一个公共节点"><a href="#题52：两个链表的第一个公共节点" class="headerlink" title="题52：两个链表的第一个公共节点"></a>题52：两个链表的第一个公共节点</h3><blockquote>
+<p>输入两个链表，找出他们的第一个公共节点。链表节点定义如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span>		  m_nkey;</span><br><span class="line">	ListNode* m_pNext;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>解法：</strong> <br><br><img src="/assets/blog_images/common_node_of_LinkedLists.jpeg" alt="common node of linkedlists"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">FindFirstCommonNode</span><span class="params">(self, pHead1, pHead2)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> pHead1 <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> pHead2 <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        loop1 = self.check_loop(pHead1)</span><br><span class="line">        loop2 = self.check_loop(pHead2)</span><br><span class="line">        <span class="comment"># 都有环</span></span><br><span class="line">        <span class="keyword">if</span> loop1 <span class="keyword">and</span> loop2:</span><br><span class="line">            p = loop1</span><br><span class="line">            <span class="keyword">while</span> p.next != loop1:</span><br><span class="line">                <span class="keyword">if</span> p == loop2:</span><br><span class="line">                    <span class="keyword">return</span> loop1</span><br><span class="line">                p = p.next</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="comment"># 都无环</span></span><br><span class="line">        <span class="keyword">elif</span> (<span class="keyword">not</span> loop1) <span class="keyword">and</span> (<span class="keyword">not</span> loop2):</span><br><span class="line">            p1, p2 = pHead1, pHead2</span><br><span class="line">            <span class="keyword">while</span> p1 != p2:</span><br><span class="line">                p1 = pHead1 <span class="keyword">if</span> p1 <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">else</span> p1.next</span><br><span class="line">                p2 = pHead2 <span class="keyword">if</span> p2 <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">else</span> p2.next</span><br><span class="line">            <span class="keyword">return</span> p1</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">check_loop</span><span class="params">(pHead)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> pHead.next <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">        buf_dict = &#123;&#125;</span><br><span class="line">        p = pHead</span><br><span class="line">        <span class="keyword">while</span> p <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">if</span> p <span class="keyword">in</span> buf_dict:</span><br><span class="line">                <span class="keyword">return</span> p</span><br><span class="line">            buf_dict[pHead] = <span class="number">0</span></span><br><span class="line">            p = p.next</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Da Hufa</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://todebug.com/offer39-52/" title="剑指offer 第五章 题39-52题解 Python版">https://todebug.com/offer39-52/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA 4.0</span> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/剑指offer/" rel="tag"># 剑指offer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/offer53-66/" rel="next" title="剑指offer 第六章 题53-66题解 Python版">
+                <i class="fa fa-chevron-left"></i> 剑指offer 第六章 题53-66题解 Python版
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/reading-notes-of-PEP3333-WSGI/" rel="prev" title="PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued]">
+                PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg" alt="Da Hufa">
+            
+              <p class="site-author-name" itemprop="name">Da Hufa</p>
+              <p class="site-description motion-element" itemprop="description">学习记录</p>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=527335918&auto=0&height=66"></iframe>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JyeWNleWFuZw==" title="GitHub &rarr; https://github.com/bryceyang"><i class="fa fa-fw fa-github"></i>GitHub</span>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9wb3BsYXI0MA==" title="Twitter &rarr; https://twitter.com/poplar40"><i class="fa fa-fw fa-twitter"></i>Twitter</span>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间效率类考察题："><span class="nav-number">1.</span> <span class="nav-text">时间效率类考察题：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题39：数组中出现次数超过一半的数字"><span class="nav-number">1.1.</span> <span class="nav-text">题39：数组中出现次数超过一半的数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题39衍生题：给定整数K，求长度为N的数组中元素出现次数超过N-K的元素"><span class="nav-number">1.2.</span> <span class="nav-text">题39衍生题：给定整数K，求长度为N的数组中元素出现次数超过N/K的元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题40：最小的k个数"><span class="nav-number">1.3.</span> <span class="nav-text">题40：最小的k个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题41：数据流中的中位数"><span class="nav-number">1.4.</span> <span class="nav-text">题41：数据流中的中位数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题42：连续子数组的最大和"><span class="nav-number">1.5.</span> <span class="nav-text">题42：连续子数组的最大和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题43：1-n整数中1出现的次数"><span class="nav-number">1.6.</span> <span class="nav-text">题43：1~n整数中1出现的次数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题44：-数字序列中某一位的数字"><span class="nav-number">1.7.</span> <span class="nav-text">题44： 数字序列中某一位的数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题45：把数组排成最小的数"><span class="nav-number">1.8.</span> <span class="nav-text">题45：把数组排成最小的数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题46：把数字翻译成字符串"><span class="nav-number">1.9.</span> <span class="nav-text">题46：把数字翻译成字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题47：礼物的最大价值"><span class="nav-number">1.10.</span> <span class="nav-text">题47：礼物的最大价值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题48：最长不含重复字符的子字符串"><span class="nav-number">1.11.</span> <span class="nav-text">题48：最长不含重复字符的子字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间效率与空间效率的平衡"><span class="nav-number">2.</span> <span class="nav-text">时间效率与空间效率的平衡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题49：-丑数"><span class="nav-number">2.1.</span> <span class="nav-text">题49： 丑数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题50：第一个只出现一次的字符"><span class="nav-number">2.2.</span> <span class="nav-text">题50：第一个只出现一次的字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题51：-数组中的逆序对"><span class="nav-number">2.3.</span> <span class="nav-text">题51： 数组中的逆序对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题52：两个链表的第一个公共节点"><span class="nav-number">2.4.</span> <span class="nav-text">题52：两个链表的第一个公共节点</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">  <span class="exturl" data-url="aHR0cDovL3d3dy5taWl0YmVpYW4uZ292LmNu">京ICP备18028496号-2 </span>&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Da Hufa</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Muse</span> v6.5.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'HLsc9CeDYj59OhXST1WFSVxp-gzGzoHsz',
+        appKey: '0NC7WbRA5PBmLzybmVv4VJo2',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+  
+  
+  <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
+  <script type="text/javascript">pangu.spacingPage();</script>
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.5.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.5.0"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=6.5.0"></script>
+
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script type="text/javascript">
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+
+</body>
+</html>
