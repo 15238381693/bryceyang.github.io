@@ -11,6 +11,7 @@
 {"title":"使用nginx和uwsgi部署Django应用","url":"/deploy-django-app-with-nginx-and-uwsgi/"},
 {"title":"How the heck does async/await work in Python 3.5?","url":"/how-the-heck-does-async-and-await-work-in-python3.5/"},
 {"title":"使用pip一定更新所有包","url":"/how-to-use-pip-upgrade-all-outdated-packages/"},
+{"title":"使用pip一次更新所有包","url":"/how-to-use-pip-upgrade-all-outdated-packages/"},
 {"title":"使用vim编写fortran代码的一些相关设置","url":"/how-to-wirte-fortran-with-vim/"},
 {"title":"Ubuntu 16.04安装jekyll","url":"/install-jekyll-on-ubuntu/"},
 {"title":"Jekyll tips","url":"/jekyll-tips/"},

@@ -520,7 +520,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-24 23:52:36" itemprop="dateModified" datetime="2018-11-24T23:52:36+08:00">2018-11-24</time>
+                <time title="修改时间：2018-11-25 00:38:05" itemprop="dateModified" datetime="2018-11-25T00:38:05+08:00">2018-11-25</time>
               
             
           </span>
@@ -721,7 +721,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-24 23:52:47" itemprop="dateModified" datetime="2018-11-24T23:52:47+08:00">2018-11-24</time>
+                <time title="修改时间：2018-11-25 00:38:17" itemprop="dateModified" datetime="2018-11-25T00:38:17+08:00">2018-11-25</time>
               
             
           </span>
@@ -926,7 +926,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-24 23:53:20" itemprop="dateModified" datetime="2018-11-24T23:53:20+08:00">2018-11-24</time>
+                <time title="修改时间：2018-11-25 00:38:25" itemprop="dateModified" datetime="2018-11-25T00:38:25+08:00">2018-11-25</time>
               
             
           </span>
@@ -1125,7 +1125,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-24 23:51:53" itemprop="dateModified" datetime="2018-11-24T23:51:53+08:00">2018-11-24</time>
+                <time title="修改时间：2018-11-25 00:37:50" itemprop="dateModified" datetime="2018-11-25T00:37:50+08:00">2018-11-25</time>
               
             
           </span>
@@ -1308,7 +1308,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-25 00:24:55" itemprop="dateModified" datetime="2018-11-25T00:24:55+08:00">2018-11-25</time>
+                <time title="修改时间：2018-11-25 00:59:05" itemprop="dateModified" datetime="2018-11-25T00:59:05+08:00">2018-11-25</time>
               
             
           </span>
@@ -1388,16 +1388,23 @@
 
       
         
-          <h3 id="1-min的两种表示方法"><a href="#1-min的两种表示方法" class="headerlink" title="1.\min的两种表示方法"></a><strong>1.\min的两种表示方法</strong></h3>
-          <!--noindex-->
           
-            <div class="post-button text-center">
-              <a class="btn" href="/Latex-tips/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
+            <h3 id="1-min的两种表示方法"><a href="#1-min的两种表示方法" class="headerlink" title="1.\min的两种表示方法"></a><strong>1.\min的两种表示方法</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\min\limits_&#123;a&#125;</span><br><span class="line">\min\nolimits&#123;a&#125;</span><br></pre></td></tr></table></figure>
+<p>对应的显示效果如下：</p>
+<p><img src="/assets/blog_images/latex_min_1.png" alt="\min\limits_{a}"><br><img src="/assets/blog_images/latex_min_2.png" alt="\min\nolimits{a}"></p>
+<hr>
+<h3 id="2-latex插入python代码"><a href="#2-latex插入python代码" class="headerlink" title="2. latex插入python代码"></a><strong>2. latex插入python代码</strong></h3><blockquote>
+<p>在latex里插入python代码需要使用包<code>pythonhighlight</code>,如果你使用tex live 2017的话，这个包已经安装了，可以直接使用；</p>
+<p>如果你安装的latex版本默认没有这个包，你可以去<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29saXZpZXJ2ZXJkaWVyL3B5dGhvbi1sYXRleC1oaWdobGlnaHRpbmc=" title="https://github.com/olivierverdier/python-latex-highlighting">这个地址<i class="fa fa-external-link"></i></span>下载pythonhighlight.sty文件，然后放到自己的.tex文件目录下，就可以使用了。</p>
+</blockquote>
+<p>使用过程如下：</p>
+<p>先在latex导言区输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;graphicx&#125;</span><br><span class="line">\usepackage&#123;pythonhighlight&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>插入python代码有两种方式：</strong></p>
+<p>然后在需要插入代码的地方：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\inputpython&#123;python_filename.py&#125;&#123;begin line number&#125;&#123;end line number&#125;</span><br><span class="line">%或者使用这种方式</span><br><span class="line">\begin&#123;python&#125;</span><br><span class="line">contents</span><br><span class="line">\end&#123;python&#125;</span><br></pre></td></tr></table></figure>
+
+          
         
       
     </div>
@@ -1514,7 +1521,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-24 23:51:09" itemprop="dateModified" datetime="2018-11-24T23:51:09+08:00">2018-11-24</time>
+                <time title="修改时间：2018-11-25 00:37:37" itemprop="dateModified" datetime="2018-11-25T00:37:37+08:00">2018-11-25</time>
               
             
           </span>
@@ -1697,7 +1704,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-24 23:51:26" itemprop="dateModified" datetime="2018-11-24T23:51:26+08:00">2018-11-24</time>
+                <time title="修改时间：2018-11-25 00:37:19" itemprop="dateModified" datetime="2018-11-25T00:37:19+08:00">2018-11-25</time>
               
             
           </span>
@@ -1777,15 +1784,16 @@
 
       
         
-          常用软件收集
+          <p>习惯了Arch的yaourt之后再使用ubuntu ppa就有一种就怕货比货的感觉。</p>
+<p>收集一下常用的ubuntu软件安装，便于下次无脑重装。</p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/daily-software-of-ubuntu/">
+              <a class="btn" href="/daily-software-of-ubuntu/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
-          
+         
           <!--/noindex-->
         
       
