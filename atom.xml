@@ -5,9 +5,9 @@
   <subtitle>For man is man and master of his fate.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://todebug.com/"/>
+  <link href="https://bryceyang.github.io/"/>
   <updated>2018-11-24T16:46:02.430Z</updated>
-  <id>https://todebug.com/</id>
+  <id>https://bryceyang.github.io/</id>
   
   <author>
     <name>大护法</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>使用Python实现并查集</title>
-    <link href="https://todebug.com/union-find/"/>
-    <id>https://todebug.com/union-find/</id>
+    <link href="https://bryceyang.github.io/union-find/"/>
+    <id>https://bryceyang.github.io/union-find/</id>
     <published>2018-10-21T16:00:00.000Z</published>
     <updated>2018-11-24T16:46:02.430Z</updated>
     
@@ -36,19 +36,19 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
-      <category term="Python" scheme="https://todebug.com/categories/Coding/Python/"/>
+      <category term="Python" scheme="https://bryceyang.github.io/categories/Coding/Python/"/>
     
     
-      <category term="数据结构" scheme="https://todebug.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://bryceyang.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>BFPRT算法——Top-K问题求解</title>
-    <link href="https://todebug.com/BFPRT/"/>
-    <id>https://todebug.com/BFPRT/</id>
+    <link href="https://bryceyang.github.io/BFPRT/"/>
+    <id>https://bryceyang.github.io/BFPRT/</id>
     <published>2018-10-05T16:00:00.000Z</published>
     <updated>2018-11-24T16:45:30.624Z</updated>
     
@@ -60,17 +60,17 @@
     
     </summary>
     
-      <category term="Algorithm" scheme="https://todebug.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://bryceyang.github.io/categories/Algorithm/"/>
     
     
-      <category term="algorithm" scheme="https://todebug.com/tags/algorithm/"/>
+      <category term="algorithm" scheme="https://bryceyang.github.io/tags/algorithm/"/>
     
   </entry>
   
   <entry>
     <title>Manacher算法</title>
-    <link href="https://todebug.com/manacher/"/>
-    <id>https://todebug.com/manacher/</id>
+    <link href="https://bryceyang.github.io/manacher/"/>
+    <id>https://bryceyang.github.io/manacher/</id>
     <published>2018-09-26T16:00:00.000Z</published>
     <updated>2018-11-24T16:45:05.127Z</updated>
     
@@ -82,17 +82,17 @@
     
     </summary>
     
-      <category term="Algorithm" scheme="https://todebug.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://bryceyang.github.io/categories/Algorithm/"/>
     
     
-      <category term="algorithm" scheme="https://todebug.com/tags/algorithm/"/>
+      <category term="algorithm" scheme="https://bryceyang.github.io/tags/algorithm/"/>
     
   </entry>
   
   <entry>
     <title>使用fail2ban防止ssh暴力登录</title>
-    <link href="https://todebug.com/use-fail2ban-to-protest-your-vps/"/>
-    <id>https://todebug.com/use-fail2ban-to-protest-your-vps/</id>
+    <link href="https://bryceyang.github.io/use-fail2ban-to-protest-your-vps/"/>
+    <id>https://bryceyang.github.io/use-fail2ban-to-protest-your-vps/</id>
     <published>2018-09-26T16:00:00.000Z</published>
     <updated>2018-11-24T16:45:18.184Z</updated>
     
@@ -104,15 +104,15 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://todebug.com/categories/Linux/"/>
+      <category term="Linux" scheme="https://bryceyang.github.io/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
     <title>在vim中使用snippets</title>
-    <link href="https://todebug.com/vim-snippets/"/>
-    <id>https://todebug.com/vim-snippets/</id>
+    <link href="https://bryceyang.github.io/vim-snippets/"/>
+    <id>https://bryceyang.github.io/vim-snippets/</id>
     <published>2018-09-22T16:00:00.000Z</published>
     <updated>2018-11-24T16:44:22.198Z</updated>
     
@@ -125,17 +125,17 @@
     
     </summary>
     
-      <category term="VIM" scheme="https://todebug.com/categories/VIM/"/>
+      <category term="VIM" scheme="https://bryceyang.github.io/categories/VIM/"/>
     
     
-      <category term="vim" scheme="https://todebug.com/tags/vim/"/>
+      <category term="vim" scheme="https://bryceyang.github.io/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>Jekyll tips</title>
-    <link href="https://todebug.com/jekyll-tips/"/>
-    <id>https://todebug.com/jekyll-tips/</id>
+    <link href="https://bryceyang.github.io/jekyll-tips/"/>
+    <id>https://bryceyang.github.io/jekyll-tips/</id>
     <published>2018-09-20T16:00:00.000Z</published>
     <updated>2018-11-24T16:44:02.292Z</updated>
     
@@ -153,19 +153,19 @@
     
     </summary>
     
-      <category term="Tips" scheme="https://todebug.com/categories/Tips/"/>
+      <category term="Tips" scheme="https://bryceyang.github.io/categories/Tips/"/>
     
-      <category term="Jekyll" scheme="https://todebug.com/categories/Tips/Jekyll/"/>
+      <category term="Jekyll" scheme="https://bryceyang.github.io/categories/Tips/Jekyll/"/>
     
     
-      <category term="jekyll" scheme="https://todebug.com/tags/jekyll/"/>
+      <category term="jekyll" scheme="https://bryceyang.github.io/tags/jekyll/"/>
     
   </entry>
   
   <entry>
     <title>KMP算法</title>
-    <link href="https://todebug.com/kmp/"/>
-    <id>https://todebug.com/kmp/</id>
+    <link href="https://bryceyang.github.io/kmp/"/>
+    <id>https://bryceyang.github.io/kmp/</id>
     <published>2018-09-19T16:00:00.000Z</published>
     <updated>2018-11-24T16:43:48.261Z</updated>
     
@@ -177,17 +177,17 @@
     
     </summary>
     
-      <category term="Algorithm" scheme="https://todebug.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://bryceyang.github.io/categories/Algorithm/"/>
     
     
-      <category term="algorithm" scheme="https://todebug.com/tags/algorithm/"/>
+      <category term="algorithm" scheme="https://bryceyang.github.io/tags/algorithm/"/>
     
   </entry>
   
   <entry>
     <title>深入浅出mysql数据库开发 第二章学习笔记</title>
-    <link href="https://todebug.com/reading-notes-of-chapter-2-in-depth-explantion-of-mysql/"/>
-    <id>https://todebug.com/reading-notes-of-chapter-2-in-depth-explantion-of-mysql/</id>
+    <link href="https://bryceyang.github.io/reading-notes-of-chapter-2-in-depth-explantion-of-mysql/"/>
+    <id>https://bryceyang.github.io/reading-notes-of-chapter-2-in-depth-explantion-of-mysql/</id>
     <published>2018-09-18T16:00:00.000Z</published>
     <updated>2018-11-24T16:43:22.797Z</updated>
     
@@ -205,19 +205,19 @@
     
     </summary>
     
-      <category term="读书笔记" scheme="https://todebug.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="https://bryceyang.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="MySQL" scheme="https://todebug.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/MySQL/"/>
+      <category term="MySQL" scheme="https://bryceyang.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/MySQL/"/>
     
     
-      <category term="mysql" scheme="https://todebug.com/tags/mysql/"/>
+      <category term="mysql" scheme="https://bryceyang.github.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode每日一题题解集</title>
-    <link href="https://todebug.com/leetcode-daily/"/>
-    <id>https://todebug.com/leetcode-daily/</id>
+    <link href="https://bryceyang.github.io/leetcode-daily/"/>
+    <id>https://bryceyang.github.io/leetcode-daily/</id>
     <published>2018-09-17T16:00:00.000Z</published>
     <updated>2018-11-24T16:43:11.276Z</updated>
     
@@ -236,19 +236,19 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
-      <category term="Python" scheme="https://todebug.com/categories/Coding/Python/"/>
+      <category term="Python" scheme="https://bryceyang.github.io/categories/Coding/Python/"/>
     
     
-      <category term="leetcode" scheme="https://todebug.com/tags/leetcode/"/>
+      <category term="leetcode" scheme="https://bryceyang.github.io/tags/leetcode/"/>
     
   </entry>
   
   <entry>
     <title>给Jekyll博客添加Latex公式支持</title>
-    <link href="https://todebug.com/add-eqution-support-in-jekyll/"/>
-    <id>https://todebug.com/add-eqution-support-in-jekyll/</id>
+    <link href="https://bryceyang.github.io/add-eqution-support-in-jekyll/"/>
+    <id>https://bryceyang.github.io/add-eqution-support-in-jekyll/</id>
     <published>2018-09-12T16:00:00.000Z</published>
     <updated>2018-11-24T16:43:01.902Z</updated>
     
@@ -260,19 +260,19 @@
     
     </summary>
     
-      <category term="Tips" scheme="https://todebug.com/categories/Tips/"/>
+      <category term="Tips" scheme="https://bryceyang.github.io/categories/Tips/"/>
     
-      <category term="Jekyll" scheme="https://todebug.com/categories/Tips/Jekyll/"/>
+      <category term="Jekyll" scheme="https://bryceyang.github.io/categories/Tips/Jekyll/"/>
     
     
-      <category term="jekyll" scheme="https://todebug.com/tags/jekyll/"/>
+      <category term="jekyll" scheme="https://bryceyang.github.io/tags/jekyll/"/>
     
   </entry>
   
   <entry>
     <title>递归时间复杂度计算：master公式</title>
-    <link href="https://todebug.com/master-formula-of-recursive/"/>
-    <id>https://todebug.com/master-formula-of-recursive/</id>
+    <link href="https://bryceyang.github.io/master-formula-of-recursive/"/>
+    <id>https://bryceyang.github.io/master-formula-of-recursive/</id>
     <published>2018-09-10T16:00:00.000Z</published>
     <updated>2018-11-24T16:51:54.287Z</updated>
     
@@ -290,15 +290,15 @@
     
     </summary>
     
-      <category term="Algorithm" scheme="https://todebug.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://bryceyang.github.io/categories/Algorithm/"/>
     
     
   </entry>
   
   <entry>
     <title>PEP 3333 -- Python Web Server Gateway Interface 阅读笔记[to be continued]</title>
-    <link href="https://todebug.com/reading-notes-of-PEP3333-WSGI/"/>
-    <id>https://todebug.com/reading-notes-of-PEP3333-WSGI/</id>
+    <link href="https://bryceyang.github.io/reading-notes-of-PEP3333-WSGI/"/>
+    <id>https://bryceyang.github.io/reading-notes-of-PEP3333-WSGI/</id>
     <published>2018-09-10T16:00:00.000Z</published>
     <updated>2018-11-24T16:42:52.658Z</updated>
     
@@ -312,19 +312,19 @@
     
     </summary>
     
-      <category term="Python" scheme="https://todebug.com/categories/Python/"/>
+      <category term="Python" scheme="https://bryceyang.github.io/categories/Python/"/>
     
-      <category term="PEP" scheme="https://todebug.com/categories/Python/PEP/"/>
+      <category term="PEP" scheme="https://bryceyang.github.io/categories/Python/PEP/"/>
     
     
-      <category term="pep" scheme="https://todebug.com/tags/pep/"/>
+      <category term="pep" scheme="https://bryceyang.github.io/tags/pep/"/>
     
   </entry>
   
   <entry>
     <title>剑指offer 第五章 题39-52题解 Python版</title>
-    <link href="https://todebug.com/offer39-52/"/>
-    <id>https://todebug.com/offer39-52/</id>
+    <link href="https://bryceyang.github.io/offer39-52/"/>
+    <id>https://bryceyang.github.io/offer39-52/</id>
     <published>2018-08-24T16:00:00.000Z</published>
     <updated>2018-11-24T16:41:56.129Z</updated>
     
@@ -345,19 +345,19 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
-      <category term="剑指offer" scheme="https://todebug.com/categories/Coding/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/categories/Coding/%E5%89%91%E6%8C%87offer/"/>
     
     
-      <category term="剑指offer" scheme="https://todebug.com/tags/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
   <entry>
     <title>剑指offer 第六章 题53-66题解 Python版</title>
-    <link href="https://todebug.com/offer53-66/"/>
-    <id>https://todebug.com/offer53-66/</id>
+    <link href="https://bryceyang.github.io/offer53-66/"/>
+    <id>https://bryceyang.github.io/offer53-66/</id>
     <published>2018-08-24T16:00:00.000Z</published>
     <updated>2018-11-24T16:42:11.602Z</updated>
     
@@ -370,19 +370,19 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
-      <category term="剑指offer" scheme="https://todebug.com/categories/Coding/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/categories/Coding/%E5%89%91%E6%8C%87offer/"/>
     
     
-      <category term="剑指offer" scheme="https://todebug.com/tags/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
   <entry>
     <title>How the heck does async/await work in Python 3.5?</title>
-    <link href="https://todebug.com/how-the-heck-does-async-and-await-work-in-python3.5/"/>
-    <id>https://todebug.com/how-the-heck-does-async-and-await-work-in-python3.5/</id>
+    <link href="https://bryceyang.github.io/how-the-heck-does-async-and-await-work-in-python3.5/"/>
+    <id>https://bryceyang.github.io/how-the-heck-does-async-and-await-work-in-python3.5/</id>
     <published>2018-08-22T16:00:00.000Z</published>
     <updated>2018-11-24T16:41:41.466Z</updated>
     
@@ -396,17 +396,17 @@
     
     </summary>
     
-      <category term="Python" scheme="https://todebug.com/categories/Python/"/>
+      <category term="Python" scheme="https://bryceyang.github.io/categories/Python/"/>
     
     
-      <category term="翻译" scheme="https://todebug.com/tags/%E7%BF%BB%E8%AF%91/"/>
+      <category term="翻译" scheme="https://bryceyang.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
     
   </entry>
   
   <entry>
     <title>剑指offer 第四章 题27-38题解 Python版</title>
-    <link href="https://todebug.com/offer27-38/"/>
-    <id>https://todebug.com/offer27-38/</id>
+    <link href="https://bryceyang.github.io/offer27-38/"/>
+    <id>https://bryceyang.github.io/offer27-38/</id>
     <published>2018-08-20T16:00:00.000Z</published>
     <updated>2018-11-24T16:41:28.555Z</updated>
     
@@ -421,19 +421,19 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
-      <category term="剑指offer" scheme="https://todebug.com/categories/Coding/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/categories/Coding/%E5%89%91%E6%8C%87offer/"/>
     
     
-      <category term="剑指offer" scheme="https://todebug.com/tags/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
   <entry>
     <title>剑指offer 第三章 题16-26题解 Python版</title>
-    <link href="https://todebug.com/offer16-26/"/>
-    <id>https://todebug.com/offer16-26/</id>
+    <link href="https://bryceyang.github.io/offer16-26/"/>
+    <id>https://bryceyang.github.io/offer16-26/</id>
     <published>2018-08-19T16:00:00.000Z</published>
     <updated>2018-11-24T16:41:17.450Z</updated>
     
@@ -452,19 +452,19 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
-      <category term="剑指offer" scheme="https://todebug.com/categories/Coding/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/categories/Coding/%E5%89%91%E6%8C%87offer/"/>
     
     
-      <category term="剑指offer" scheme="https://todebug.com/tags/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
   <entry>
     <title>排序总结</title>
-    <link href="https://todebug.com/summary-of-sort/"/>
-    <id>https://todebug.com/summary-of-sort/</id>
+    <link href="https://bryceyang.github.io/summary-of-sort/"/>
+    <id>https://bryceyang.github.io/summary-of-sort/</id>
     <published>2018-08-18T16:00:00.000Z</published>
     <updated>2018-11-24T16:41:05.083Z</updated>
     
@@ -479,15 +479,15 @@
     
     </summary>
     
-      <category term="Algorithm" scheme="https://todebug.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://bryceyang.github.io/categories/Algorithm/"/>
     
     
   </entry>
   
   <entry>
     <title>剑指offer 第二章 题3-15题解 Python版</title>
-    <link href="https://todebug.com/offer3-15/"/>
-    <id>https://todebug.com/offer3-15/</id>
+    <link href="https://bryceyang.github.io/offer3-15/"/>
+    <id>https://bryceyang.github.io/offer3-15/</id>
     <published>2018-08-18T16:00:00.000Z</published>
     <updated>2018-11-24T16:40:52.567Z</updated>
     
@@ -511,19 +511,19 @@
     
     </summary>
     
-      <category term="Coding" scheme="https://todebug.com/categories/Coding/"/>
+      <category term="Coding" scheme="https://bryceyang.github.io/categories/Coding/"/>
     
-      <category term="剑指offer" scheme="https://todebug.com/categories/Coding/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/categories/Coding/%E5%89%91%E6%8C%87offer/"/>
     
     
-      <category term="剑指offer" scheme="https://todebug.com/tags/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="https://bryceyang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
   <entry>
     <title>单调栈题总结</title>
-    <link href="https://todebug.com/summary-of-monotous-stack-questions/"/>
-    <id>https://todebug.com/summary-of-monotous-stack-questions/</id>
+    <link href="https://bryceyang.github.io/summary-of-monotous-stack-questions/"/>
+    <id>https://bryceyang.github.io/summary-of-monotous-stack-questions/</id>
     <published>2018-08-15T16:00:00.000Z</published>
     <updated>2018-11-24T16:40:43.116Z</updated>
     
@@ -544,7 +544,7 @@
     
     </summary>
     
-      <category term="Algorithm" scheme="https://todebug.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://bryceyang.github.io/categories/Algorithm/"/>
     
     
   </entry>

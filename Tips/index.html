@@ -157,17 +157,17 @@
 <meta name="keywords" content="git,jupyter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git和jupyter使用小技巧">
-<meta property="og:url" content="https://todebug.com/Tips/index.html">
+<meta property="og:url" content="https://bryceyang.github.io/Tips/index.html">
 <meta property="og:site_name" content="V">
 <meta property="og:description" content="git1. git push 免密码通用情况1.使用文件创建用户名和密码 文件创建在用户主目录下： 123touch .git-credentialsvim .git-credentialshttps://&amp;#123;username&amp;#125;:&amp;#123;password&amp;#125;@github.com 记得在真正输入的时候是没有大括号的。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://todebug.com/assets/blog_images/decode_error.png">
-<meta property="og:image" content="https://todebug.com/assets/blog_images/decode_fixed.png">
+<meta property="og:image" content="https://bryceyang.github.io/assets/blog_images/decode_error.png">
+<meta property="og:image" content="https://bryceyang.github.io/assets/blog_images/decode_fixed.png">
 <meta property="og:updated_time" content="2018-11-24T15:49:18.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git和jupyter使用小技巧">
 <meta name="twitter:description" content="git1. git push 免密码通用情况1.使用文件创建用户名和密码 文件创建在用户主目录下： 123touch .git-credentialsvim .git-credentialshttps://&amp;#123;username&amp;#125;:&amp;#123;password&amp;#125;@github.com 记得在真正输入的时候是没有大括号的。">
-<meta name="twitter:image" content="https://todebug.com/assets/blog_images/decode_error.png">
+<meta name="twitter:image" content="https://bryceyang.github.io/assets/blog_images/decode_error.png">
 
 
 
@@ -176,7 +176,7 @@
 
 
 
-  <link rel="canonical" href="https://todebug.com/Tips/">
+  <link rel="canonical" href="https://bryceyang.github.io/Tips/">
 
 
 
@@ -461,7 +461,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://todebug.com/Tips/">
+    <link itemprop="mainEntityOfPage" href="https://bryceyang.github.io/Tips/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
@@ -618,7 +618,7 @@
 <p><img src="/assets/blog_images/decode_fixed.png" alt="效果"></p>
 <p>可以看出中文已经正确显示了。</p>
 <hr>
-<h3 id="3-git迁移仓库到另外一个仓库"><a href="#3-git迁移仓库到另外一个仓库" class="headerlink" title="3. git迁移仓库到另外一个仓库"></a>3. git迁移仓库到另外一个仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 仅保留历史提交信息</span><br><span class="line">git clone --bare yourrepository</span><br></pre></td></tr></table></figure>
+<h3 id="3-git迁移仓库到另外一个仓库"><a href="#3-git迁移仓库到另外一个仓库" class="headerlink" title="3. git迁移仓库到另外一个仓库"></a>3. git迁移仓库到另外一个仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 仅保留历史提交信息</span></span><br><span class="line">git clone --bare yourrepository</span><br></pre></td></tr></table></figure>
 <p>然后在你的其他服务，比如gogs新建一个仓库，然后进入你上步克隆出的仓库中，执行：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --mirror yourNewRepository</span><br></pre></td></tr></table></figure></p>
 <p>然后你就可以删除原来的仓库，然后<code>git clone</code>新仓库就行了。</p>
 <hr>
@@ -663,7 +663,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://todebug.com/Tips/" title="git和jupyter使用小技巧">https://todebug.com/Tips/</a>
+    <a href="https://bryceyang.github.io/Tips/" title="git和jupyter使用小技巧">https://bryceyang.github.io/Tips/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA 4.0</span> 许可协议。转载请注明出处！</li>
