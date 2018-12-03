@@ -24,6 +24,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[使用fail2ban防止ssh暴力登录]]></title>
+    <url>%2Fuse-fail2ban-to-protest-your-vps%2F</url>
+    <content type="text"><![CDATA[今天中午，心血来潮统计了一下ssh失败登陆次数，发现最高的一个ip有4000多次登录失败记录。fail2ban可以设置规则自动拦截尝试失败次数过多的IP，部署方法如下： 安装fail2ban1yum -y install fail2ban 请注意防火墙软件是firewalld而不是iptables 12345678# 查看状态firewall-cmd --state# 启动firewalldsystemctl start firewalld# 开机启动systemctl enable firewalld 默认的firewalld会禁用所有端口连接，因此你需要手动的放行端口，比如你的博客服务的web端口：1234567firewall-cmd --zone=public --add-port=80/tcp --permanent# 重载配置firewall-cmd --reload# 查看已经放行的端口firewall-cmd --zone=public --list-ports 配置fail2banfail2ban的配置文件位于/etc/fail2ban/， 我们在该目录新建一个自定义配置文件jail.local然后加入如下信息：12345678910111213141516[DEFAULT]ignoreip = 127.0.0.1/8bantime = 86400findtime = 600maxretry = 5banaction = firewallcmd-ipsetsender = email@email.comsenername = Fail2Banaction = %(action_mwl)s[sshd]enabled = truefilter = sshdport = 22action = %(action_mwl)slogpath = /var/log/secure 启动fail2ban1systemctl start fail2ban 查看fail2ban日志以及ip禁用列表12345# 查看日志tail -F /var/log/fail2ban# 查看禁用ipfail2ban-client status sshd]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Manacher算法]]></title>
     <url>%2Fmanacher%2F</url>
     <content type="text"><![CDATA[Manacher算法用作求字符串中的最长回文串长度。 算法过程 利用manacher求解LeetCode第五题最长回文子串问题123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384## [5] Longest Palindromic Substring## https://leetcode.com/problems/longest-palindromic-substring/description/## algorithms# Medium (25.62%)# Total Accepted: 370.8K# Total Submissions: 1.4M# Testcase Example: '"babad"'## Given a string s, find the longest palindromic substring in s. You may assume# that the maximum length of s is 1000.## Example 1:### Input: "babad"# Output: "bab"# Note: "aba" is also a valid answer.### Example 2:### Input: "cbbd"# Output: "bb"###class Solution: def longestPalindrome(self, s): """ :type s: str :rtype: str """ if s is None: return '' length = len(s) if length &lt; 2: return s s = self.str_trans(s) length = len(s) res = [1 for i in range(length)] right = c = -1 for i in range(length): res[i] = min(res[2*c-i], right-i) if right &gt; i else 1 while i-res[i] &gt; -1 and i+res[i] &lt; length: if s[i-res[i]] == s[i+res[i]]: res[i] += 1 else: break res[i] -= 1 if i + res[i] &gt; right: right = i + res[i] c = i lp = max(res) lp_index = res.index(lp) lp = s[lp_index-lp:lp_index+lp+1] return lp.replace('#', '') def str_trans(self, s): s = list(s) for i in range(len(s)): s[i] = '#' + s[i] s.append('#') return ''.join(s)def main(): s = 'babad' ex = Solution() print(ex.longestPalindrome(s))if __name__ == "__main__": main()]]></content>
@@ -33,14 +41,6 @@
       <tags>
         <tag>algorithm</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[使用fail2ban防止ssh暴力登录]]></title>
-    <url>%2Fuse-fail2ban-to-protest-your-vps%2F</url>
-    <content type="text"><![CDATA[今天中午，心血来潮统计了一下ssh失败登陆次数，发现最高的一个ip有4000多次登录失败记录。fail2ban可以设置规则自动拦截尝试失败次数过多的IP，部署方法如下： 安装fail2ban1yum -y install fail2ban 请注意防火墙软件是firewalld而不是iptables 12345678# 查看状态firewall-cmd --state# 启动firewalldsystemctl start firewalld# 开机启动systemctl enable firewalld 默认的firewalld会禁用所有端口连接，因此你需要手动的放行端口，比如你的博客服务的web端口：1234567firewall-cmd --zone=public --add-port=80/tcp --permanent# 重载配置firewall-cmd --reload# 查看已经放行的端口firewall-cmd --zone=public --list-ports 配置fail2banfail2ban的配置文件位于/etc/fail2ban/， 我们在该目录新建一个自定义配置文件jail.local然后加入如下信息：12345678910111213141516[DEFAULT]ignoreip = 127.0.0.1/8bantime = 86400findtime = 600maxretry = 5banaction = firewallcmd-ipsetsender = email@email.comsenername = Fail2Banaction = %(action_mwl)s[sshd]enabled = truefilter = sshdport = 22action = %(action_mwl)slogpath = /var/log/secure 启动fail2ban1systemctl start fail2ban 查看fail2ban日志以及ip禁用列表12345# 查看日志tail -F /var/log/fail2ban# 查看禁用ipfail2ban-client status sshd]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
   </entry>
   <entry>
     <title><![CDATA[在vim中使用snippets]]></title>
