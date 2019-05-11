@@ -153,18 +153,17 @@
 
 
 
-  <meta name="description" content="并查集主要实现两个功能：  检测两个元素是否在同一个集合； 合并两个元素所在集合；  本次实现使用的优化方法为路径压缩, 路径压缩的主要原理就是，在合并过程中将每个集合头和其他集合元素之间的距离调整为1。">
-<meta name="keywords" content="数据结构">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用Python实现并查集">
-<meta property="og:url" content="https://bryceyang.github.io/union-find/index.html">
+  <meta name="description" content="学习记录">
+<meta name="keywords" content="Python, coding, algorithm, data structure">
+<meta property="og:type" content="website">
+<meta property="og:title" content="V">
+<meta property="og:url" content="https://bryceyang.github.io/tags/hexo/index.html">
 <meta property="og:site_name" content="V">
-<meta property="og:description" content="并查集主要实现两个功能：  检测两个元素是否在同一个集合； 合并两个元素所在集合；  本次实现使用的优化方法为路径压缩, 路径压缩的主要原理就是，在合并过程中将每个集合头和其他集合元素之间的距离调整为1。">
+<meta property="og:description" content="学习记录">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-03T05:05:20.852Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Python实现并查集">
-<meta name="twitter:description" content="并查集主要实现两个功能：  检测两个元素是否在同一个集合； 合并两个元素所在集合；  本次实现使用的优化方法为路径压缩, 路径压缩的主要原理就是，在合并过程中将每个集合头和其他集合元素之间的距离调整为1。">
+<meta name="twitter:title" content="V">
+<meta name="twitter:description" content="学习记录">
 
 
 
@@ -173,7 +172,7 @@
 
 
 
-  <link rel="canonical" href="https://bryceyang.github.io/union-find/">
+  <link rel="canonical" href="https://bryceyang.github.io/tags/hexo/">
 
 
 
@@ -183,19 +182,19 @@
   };
 </script>
 
-  <title>使用Python实现并查集 | V</title>
+  <title>标签: hexo | V</title>
   
 
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100095499-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100095499-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-100095499-1');
+  gtag('config', 'UA-100095499-2');
 </script>
 
 
@@ -241,7 +240,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-right ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -299,7 +298,7 @@
         
         
           
-          <li class="menu-item menu-item-tags">
+          <li class="menu-item menu-item-tags menu-item-active">
 
     
     
@@ -384,7 +383,7 @@
         
         
           
-          <li class="menu-item menu-item-雪中">
+          <li class="menu-item menu-item-烽火">
 
     
     
@@ -394,7 +393,7 @@
 
     
 
-    <a href="/xuezhong" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>雪中</a>
+    <a href="/fenghuo" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>烽火</a>
 
   </li>
 
@@ -413,6 +412,34 @@
 
   
     
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
 
   
 
@@ -459,267 +486,56 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h2>hexo<small>标签</small>
+        </h2>
+      </div>
 
-  
-  
-  
-
-  
+      
+        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bryceyang.github.io/union-find/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="大护法">
-      <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="V">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h3 class="post-title">
         
+            <a class="post-title-link" href="/use-gulp-with-hexo/" itemprop="url">
+              
+                <span itemprop="name">hexo优化之——使用gulp压缩资源</span>
+              
+            </a>
         
-          <h2 class="post-title" itemprop="name headline">使用Python实现并查集
-              
-            
-          </h2>
-        
+      </h3>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-22 00:00:00" itemprop="dateCreated datePublished" datetime="2018-10-22T00:00:00+08:00">2018-10-22</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Coding/" itemprop="url" rel="index"><span itemprop="name">Coding</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Coding/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/union-find/" class="leancloud_visitors" data-flag-title="使用Python实现并查集">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">3.1k 字 </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">3 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>并查集主要实现两个功能：</p>
-<ol>
-<li>检测两个元素是否在同一个集合；</li>
-<li>合并两个元素所在集合；</li>
-</ol>
-<p>本次实现使用的优化方法为路径压缩, 路径压缩的主要原理就是，在合并过程中将每个集合头和其他集合元素之间的距离调整为<code>1</code>。</p>
-<a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UnionFind</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""并查集实现</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self._fatherMap = dict()</span><br><span class="line">        self._sizeMap = dict()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeSets</span><span class="params">(self, nodes)</span>:</span></span><br><span class="line">        <span class="string">"""利用可迭代对象初始化并查集</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Args:</span></span><br><span class="line"><span class="string">            nodes (iterable): 元素集合</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        self._fatherMap.clear()</span><br><span class="line">        self._sizeMap.clear()</span><br><span class="line">        <span class="keyword">for</span> node <span class="keyword">in</span> nodes:</span><br><span class="line">            self._fatherMap[node] = node</span><br><span class="line">            self._sizeMap[node] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findHead</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        <span class="string">"""找集合头，其中有一个对长链的集合的平整操作,</span></span><br><span class="line"><span class="string">        平整操作执行的频率其实还需要进一步规整</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Raises:</span></span><br><span class="line"><span class="string">            KeyError: 如果本身传入的node就是不在全集里的就直接抛错</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.isValidNode(node):</span><br><span class="line">            <span class="keyword">raise</span> KeyError(<span class="string">'node not in set'</span>)</span><br><span class="line"></span><br><span class="line">        father = self._fatherMap.get(node)</span><br><span class="line">        <span class="keyword">if</span> father != node:</span><br><span class="line">            father = self.findHead(father)</span><br><span class="line">        self._fatherMap[node] = father</span><br><span class="line">        <span class="keyword">return</span> father</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findHeadNotIter</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        <span class="string">"""上面函数的非递归版</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.isValidNode(node):</span><br><span class="line">            <span class="keyword">raise</span> KeyError(<span class="string">'node not in set'</span>)</span><br><span class="line"></span><br><span class="line">        stack = []</span><br><span class="line">        father = self._fatherMap.get(node)</span><br><span class="line">        <span class="keyword">while</span> father != node:</span><br><span class="line">            stack.append(node)</span><br><span class="line">        <span class="keyword">while</span> stack:</span><br><span class="line">            temp = stack.pop()</span><br><span class="line">            self._sizeMap[self._fatherMap[temp]] -= <span class="number">1</span></span><br><span class="line">            self._fatherMap[temp] = father</span><br><span class="line">            self._sizeMap[father] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> father</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isSameSet</span><span class="params">(self, n1, n2)</span>:</span></span><br><span class="line">        <span class="string">"""检测两个元素是否在一个集合里</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Args:</span></span><br><span class="line"><span class="string">            n1 (nodeType): 元素</span></span><br><span class="line"><span class="string">            n2 (nodeType): 元素</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Returns:</span></span><br><span class="line"><span class="string">            bool: True or False</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.findHead(n1) == self.findHead(n2)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValidNode</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> node <span class="keyword">in</span> self._fatherMap</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">union</span><span class="params">(self, n1, n2)</span>:</span></span><br><span class="line">        <span class="string">"""合并两个元素所在集合，小的集合并入到大的集合里，目的还是不想让集合链路过长</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> n1 <span class="keyword">or</span> <span class="keyword">not</span> n2:</span><br><span class="line">            <span class="keyword">raise</span> KeyError(<span class="string">'node not valid'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.isValidNode(n1) <span class="keyword">or</span> <span class="keyword">not</span> self.isValidNode(n2):</span><br><span class="line">            <span class="keyword">raise</span> KeyError(<span class="string">'node not valid'</span>)</span><br><span class="line"></span><br><span class="line">        head1 = self.findHead(n1)</span><br><span class="line">        head2 = self.findHead(n2)</span><br><span class="line">        <span class="keyword">if</span> head1 != head2:</span><br><span class="line">            size1 = self._sizeMap[head1]</span><br><span class="line">            size2 = self._sizeMap[head2]</span><br><span class="line">            <span class="keyword">if</span> size1 &lt;= size2:</span><br><span class="line">                self._sizeMap[self._fatherMap[head1]] -= <span class="number">1</span></span><br><span class="line">                self._fatherMap[head1] = head2</span><br><span class="line">                self._sizeMap[head2] += size1</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self._sizeMap[self._fatherMap[head2]] -= <span class="number">1</span></span><br><span class="line">                self._fatherMap[head2] = head1</span><br><span class="line">                self._sizeMap[head1] += size2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    sets = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">    ex = UnionFind()</span><br><span class="line">    ex.makeSets(sets)</span><br><span class="line">    print(ex._fatherMap)</span><br><span class="line">    print(ex._sizeMap)</span><br><span class="line">    ex.union(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">    ex.union(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">    print(ex._fatherMap)</span><br><span class="line">    print(ex._sizeMap)</span><br><span class="line">    ex.union(<span class="number">5</span>, <span class="number">1</span>)</span><br><span class="line">    print(ex._fatherMap)</span><br><span class="line">    print(ex._sizeMap)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-      <div>
-        
-
-
-
-  
-
-
-
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>大护法</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    
-    <a href="https://bryceyang.github.io/union-find/" title="使用Python实现并查集">https://bryceyang.github.io/union-find/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA 4.0</span> 许可协议。转载请注明出处！</li>
-</ul>
-
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-01-04T23:59:41+08:00" content="2019-01-04">
+          01-04
+        </time>
       </div>
-    
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/BFPRT/" rel="next" title="BFPRT算法——Top-K问题求解">
-                <i class="fa fa-chevron-left"></i> BFPRT算法——Top-K问题求解
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
+      
+    </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM2MS8xNzkwOA=="></div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -747,7 +563,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg" alt="大护法">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="大护法">
             
               <p class="site-author-name" itemprop="name">大护法</p>
               <p class="site-description motion-element" itemprop="description">学习记录</p>
@@ -861,7 +677,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -942,7 +760,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">  <span class="exturl" data-url="aHR0cDovL3d3dy5taWl0YmVpYW4uZ292LmNu">京ICP备18028496号-2 </span>&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">  <span class="exturl" data-url="aHR0cDovL3d3dy5taWl0YmVpYW4uZ292LmNu">京ICP备18028496号-2 </span>&copy; 2017 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1054,10 +872,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
-
-
 
   
 
@@ -1068,22 +882,10 @@
 
   
 
-
-
   
-    <script type="text/javascript">
-      window.livereOptions = {
-        refer: 'union-find/'
-      };
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+    <script id="dsq-count-scr" src="https://todebug.disqus.com/count.js" async></script>
+  
+
   
 
 
@@ -1092,6 +894,33 @@
 
 
 
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Cp4JnShNDu1PmAsKbOSK7sKG-gzGzoHsz',
+        appKey: 'UwDWFgHWvJmduJVAI0cpf4Ho',
+        placeholder: 'Just go go',
+        avatar:'monsterid',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 
@@ -1426,35 +1255,43 @@
   
   <script>
     
-    function addCount(Counter) {
+    function showTime(Counter) {
+      var entries = [];
       var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
 
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
         .done(function ({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            
-            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
-            
-            .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-            })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
-            
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
           }
         })
-      .fail(function ({ responseJSON }) {
-        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
-      });
+        .fail(function ({ responseJSON }) {
+          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
+        });
     }
     
 
@@ -1474,7 +1311,9 @@
             });
           };
           
-          addCount(Counter);
+          if ($('.post-title-link').length >= 1) {
+            showTime(Counter);
+          }
           
         })
     });
@@ -1556,15 +1395,6 @@
 
 
   
-  
-  
-  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
-  <script type="text/javascript">
-  
-    bookmark.scrollToMark('auto', "#更多");
-  
-  </script>
-
 
   
   <style>

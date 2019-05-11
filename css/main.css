@@ -1991,7 +1991,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #66779c;
+  background: #b5ab50;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2792,7 +2792,7 @@ embed {
   display: inline-block;
 }
 .header {
-  background-image: url("https://wx2.sinaimg.cn/large/ce136eaely1fxg1o41q7xg20pv071wrh.gif");
+  background-image: url("/images/background.gif");
   background-size: cover;
 }
 .menu {

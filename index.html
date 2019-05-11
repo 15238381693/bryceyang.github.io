@@ -188,13 +188,13 @@
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100095499-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100095499-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-100095499-1');
+  gtag('config', 'UA-100095499-2');
 </script>
 
 
@@ -384,7 +384,7 @@
         
         
           
-          <li class="menu-item menu-item-雪中">
+          <li class="menu-item menu-item-烽火">
 
     
     
@@ -394,7 +394,7 @@
 
     
 
-    <a href="/xuezhong" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>雪中</a>
+    <a href="/fenghuo" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>烽火</a>
 
   </li>
 
@@ -475,12 +475,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bryceyang.github.io/union-find/">
+    <link itemprop="mainEntityOfPage" href="https://bryceyang.github.io/use-gulp-with-hexo/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
       <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -495,7 +495,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/union-find/" class="post-title-link" itemprop="https://bryceyang.github.io/index.html">使用Python实现并查集</a>
+                <a href="/use-gulp-with-hexo/" class="post-title-link" itemprop="https://bryceyang.github.io/index.html">hexo优化之——使用gulp压缩资源</a>
               
             
           </h2>
@@ -520,46 +520,32 @@
                 
               
 
-              <time title="创建时间：2018-10-22 00:00:00" itemprop="dateCreated datePublished" datetime="2018-10-22T00:00:00+08:00">2018-10-22</time>
+              <time title="创建时间：2019-01-04 23:59:41" itemprop="dateCreated datePublished" datetime="2019-01-04T23:59:41+08:00">2019-01-04</time>
             
 
             
           </span>
 
           
-            <span class="post-category">
+
+          
             
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/use-gulp-with-hexo/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="use-gulp-with-hexo/" itemprop="commentCount"></span>
+                </a>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Coding/" itemprop="url" rel="index"><span itemprop="name">Coding</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Coding/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
             
           
 
           
           
-             <span id="/union-find/" class="leancloud_visitors" data-flag-title="使用Python实现并查集">
+             <span id="/use-gulp-with-hexo/" class="leancloud_visitors" data-flag-title="hexo优化之——使用gulp压缩资源">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -584,7 +570,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.1k 字 </span>
+                <span title="本文字数">2k 字 </span>
               
 
               
@@ -598,7 +584,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -619,16 +605,14 @@
 
       
         
-          <p>并查集主要实现两个功能：</p>
-<ol>
-<li>检测两个元素是否在同一个集合；</li>
-<li>合并两个元素所在集合；</li>
-</ol>
-<p>本次实现使用的优化方法为路径压缩, 路径压缩的主要原理就是，在合并过程中将每个集合头和其他集合元素之间的距离调整为<code>1</code>。</p>
+          <h2 id="gulp压缩"><a href="#gulp压缩" class="headerlink" title="gulp压缩"></a>gulp压缩</h2><blockquote>
+<p>gulp is a toolkit for automating painful or time-consuming tasks in your development workflow, so you can stop messing around and build something.</p>
+</blockquote>
+<p>我们可以使用gulp压缩hexo站点使用的静态资源，从而提高站点的访问速度。</p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/union-find/#more" rel="contents">
+              <a class="btn" href="/use-gulp-with-hexo/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -693,7 +677,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
       <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -761,6 +745,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/BFPRT/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="BFPRT/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -790,7 +785,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.5k 字 </span>
+                <span title="本文字数">3.7k 字 </span>
               
 
               
@@ -894,7 +889,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
       <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -961,6 +956,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/use-fail2ban-to-protest-your-vps/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="use-fail2ban-to-protest-your-vps/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1095,7 +1101,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
       <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -1162,6 +1168,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/manacher/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="manacher/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1296,7 +1313,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
       <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -1363,6 +1380,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/vim-snippets/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="vim-snippets/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1498,7 +1526,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
       <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -1572,6 +1600,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/jekyll-tips/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="jekyll-tips/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1703,7 +1742,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
       <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -1770,6 +1809,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/kmp/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="kmp/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1904,7 +1954,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
       <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -1978,6 +2028,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/reading-notes-of-chapter-2-in-depth-explantion-of-mysql/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="reading-notes-of-chapter-2-in-depth-explantion-of-mysql/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -2118,7 +2179,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
       <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -2192,6 +2253,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/leetcode-daily/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="leetcode-daily/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -2333,7 +2405,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
       <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -2407,6 +2479,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/add-eqution-support-in-jekyll/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="add-eqution-support-in-jekyll/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -2559,7 +2642,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg" alt="大护法">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="大护法">
             
               <p class="site-author-name" itemprop="name">大护法</p>
               <p class="site-description motion-element" itemprop="description">学习记录</p>
@@ -2673,7 +2756,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2754,7 +2839,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">  <span class="exturl" data-url="aHR0cDovL3d3dy5taWl0YmVpYW4uZ292LmNu">京ICP备18028496号-2 </span>&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">  <span class="exturl" data-url="aHR0cDovL3d3dy5taWl0YmVpYW4uZ292LmNu">京ICP备18028496号-2 </span>&copy; 2017 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -2876,7 +2961,9 @@
 
   
 
-
+  
+    <script id="dsq-count-scr" src="https://todebug.disqus.com/count.js" async></script>
+  
 
   
 
@@ -2886,6 +2973,33 @@
 
 
 
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Cp4JnShNDu1PmAsKbOSK7sKG-gzGzoHsz',
+        appKey: 'UwDWFgHWvJmduJVAI0cpf4Ho',
+        placeholder: 'Just go go',
+        avatar:'monsterid',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 
@@ -3382,15 +3496,6 @@
 
 
   
-  
-  
-  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
-  <script type="text/javascript">
-  
-    bookmark.loadBookmark();
-  
-  </script>
-
 
   
   <style>

@@ -161,7 +161,7 @@
 <meta property="og:site_name" content="V">
 <meta property="og:description" content="这段儿时间使用Python3.6 + Django 1.11模仿慕课网某课做了一个Django小项目，已经完成了基本功能。在基本功能完成之后，自然想部署起来，既可以学习一下部署相关知识，也可以展示一下自己的成果。本次部署采用Nginx+uWSGI的方式。至于为什么采用这种方式，uwsgi官方文档里有一段话说的很清楚：  A web server faces the outside world. I">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-03T05:05:20.852Z">
+<meta property="og:updated_time" content="2019-05-11T08:20:56.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用nginx和uwsgi部署Django应用">
 <meta name="twitter:description" content="这段儿时间使用Python3.6 + Django 1.11模仿慕课网某课做了一个Django小项目，已经完成了基本功能。在基本功能完成之后，自然想部署起来，既可以学习一下部署相关知识，也可以展示一下自己的成果。本次部署采用Nginx+uWSGI的方式。至于为什么采用这种方式，uwsgi官方文档里有一段话说的很清楚：  A web server faces the outside world. I">
@@ -189,13 +189,13 @@
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100095499-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100095499-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-100095499-1');
+  gtag('config', 'UA-100095499-2');
 </script>
 
 
@@ -384,7 +384,7 @@
         
         
           
-          <li class="menu-item menu-item-雪中">
+          <li class="menu-item menu-item-烽火">
 
     
     
@@ -394,7 +394,7 @@
 
     
 
-    <a href="/xuezhong" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>雪中</a>
+    <a href="/fenghuo" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>烽火</a>
 
   </li>
 
@@ -480,7 +480,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
       <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -545,6 +545,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/deploy-django-app-with-nginx-and-uwsgi/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="deploy-django-app-with-nginx-and-uwsgi/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -574,7 +585,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.6k 字 </span>
+                <span title="本文字数">4.5k 字 </span>
               
 
               
@@ -614,7 +625,12 @@
 </blockquote>
 <a id="more"></a>
 <p><strong>部署完成后，整个的功能栈结构如下：</strong></p>
-<figure class="highlight plain"><figcaption><span>web client <-> the web server(nginx) <-> the socket <-> uwsgi <-> Django```</-></-></-></-></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">部署过程看了很多个教程，也翻看了不少Nginx和uwsgi的文档，但是坑永远都在，当你踩完之后它才会消失，所以记录下自己这次部署的记录，以便以后参考。</span><br><span class="line"></span><br><span class="line">### 1. 安装nginx</span><br><span class="line">&gt; 本次使用的是腾讯云的服务器，系统为Centos7，这里有一篇写的很好的文档：[centos7安装nginx](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7), 当然，为了省去跳转的功夫，这里将过程记录如下：</span><br><span class="line"></span><br><span class="line">```shell</span><br><span class="line"># 1. add the Centos7 EPEL repository:</span><br><span class="line">sudo yum install epel-release</span><br><span class="line"># 2. Install nginx</span><br><span class="line">sudo yum install nginx</span><br><span class="line"># 3. start nginx</span><br><span class="line">sudo systemctl start nginx</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the web client &lt;-&gt; the web server(nginx) &lt;-&gt; the socket &lt;-&gt; uwsgi &lt;-&gt; Django</span><br></pre></td></tr></table></figure>
+<p>部署过程看了很多个教程，也翻看了不少Nginx和uwsgi的文档，但是坑永远都在，当你踩完之后它才会消失，所以记录下自己这次部署的记录，以便以后参考。</p>
+<h3 id="1-安装nginx"><a href="#1-安装nginx" class="headerlink" title="1. 安装nginx"></a>1. 安装nginx</h3><blockquote>
+<p>本次使用的是腾讯云的服务器，系统为Centos7，这里有一篇写的很好的文档：<span class="exturl" data-url="aHR0cHM6Ly93d3cuZGlnaXRhbG9jZWFuLmNvbS9jb21tdW5pdHkvdHV0b3JpYWxzL2hvdy10by1pbnN0YWxsLW5naW54LW9uLWNlbnRvcy03" title="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7">centos7安装nginx<i class="fa fa-external-link"></i></span>, 当然，为了省去跳转的功夫，这里将过程记录如下：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1. add the Centos7 EPEL repository:</span></span><br><span class="line">sudo yum install epel-release</span><br><span class="line"><span class="meta">#</span><span class="bash"> 2. Install nginx</span></span><br><span class="line">sudo yum install nginx</span><br><span class="line"><span class="meta">#</span><span class="bash"> 3. start nginx</span></span><br><span class="line">sudo systemctl start nginx</span><br></pre></td></tr></table></figure>
 <p>在Nginx启动之后，对Nginx的便捷操控命令为：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1. reload</span></span><br><span class="line">sudo nginx -s reload</span><br><span class="line"><span class="meta">#</span><span class="bash"> 2. stop</span></span><br><span class="line">sudo nginx -s stop</span><br></pre></td></tr></table></figure></p>
 <h3 id="2-安装mariadb"><a href="#2-安装mariadb" class="headerlink" title="2. 安装mariadb"></a>2. 安装mariadb</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install mariadb-server</span><br></pre></td></tr></table></figure>
 <h4 id="2-1-在安装mariadb之后，首先修改mariadb的一些设置，使其支持中文："><a href="#2-1-在安装mariadb之后，首先修改mariadb的一些设置，使其支持中文：" class="headerlink" title="2.1 在安装mariadb之后，首先修改mariadb的一些设置，使其支持中文："></a>2.1 在安装mariadb之后，首先修改mariadb的一些设置，使其支持中文：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> yum安装的mariadb主配置文件在/etc/my.cnf， 并且在这个文件中包含/etc/my.cnf.d路径下的所有文件。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1. 编辑该目录下的client.cnf文件，在[client]下添加：</span></span><br><span class="line">default-character-set=utf8</span><br><span class="line"><span class="meta">#</span><span class="bash"> 2. 编辑my.conf.d目录中的mysql-clients.cnf,在[mysql]下添加：</span></span><br><span class="line">default-character-set=utf8</span><br><span class="line"><span class="meta">#</span><span class="bash"> 3. 编辑my.conf.d目录中的server.cnf，在[mysqld]下添加：</span></span><br><span class="line">init_connect='SET collation_connection = utf8_general_ci'</span><br><span class="line">init_connect='SET NAMES utf8'</span><br><span class="line">character-set-server=utf8</span><br><span class="line">collation-server=utf8_general_ci</span><br><span class="line">skip-character-set-client-handshake</span><br></pre></td></tr></table></figure>
@@ -745,7 +761,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM2MS8xNzkwOA=="></div>
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
     </div>
 
   
@@ -787,7 +805,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg" alt="大护法">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="大护法">
             
               <p class="site-author-name" itemprop="name">大护法</p>
               <p class="site-description motion-element" itemprop="description">学习记录</p>
@@ -901,7 +919,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -978,7 +998,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装mariadb"><span class="nav-number">1.</span> <span class="nav-text">2. 安装mariadb</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-在安装mariadb之后，首先修改mariadb的一些设置，使其支持中文："><span class="nav-number">1.1.</span> <span class="nav-text">2.1 在安装mariadb之后，首先修改mariadb的一些设置，使其支持中文：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-配置数据库远程访问："><span class="nav-number">1.2.</span> <span class="nav-text">2.2 配置数据库远程访问：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安装uwsgi"><span class="nav-number">2.</span> <span class="nav-text">3. 安装uwsgi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-开始配置"><span class="nav-number">3.</span> <span class="nav-text">4. 开始配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-测试uwsgi与Django链"><span class="nav-number">3.1.</span> <span class="nav-text">4.1 测试uwsgi与Django链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-配置nginx"><span class="nav-number">3.2.</span> <span class="nav-text">4.2 配置nginx</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装nginx"><span class="nav-number">1.</span> <span class="nav-text">1. 安装nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装mariadb"><span class="nav-number">2.</span> <span class="nav-text">2. 安装mariadb</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-在安装mariadb之后，首先修改mariadb的一些设置，使其支持中文："><span class="nav-number">2.1.</span> <span class="nav-text">2.1 在安装mariadb之后，首先修改mariadb的一些设置，使其支持中文：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-配置数据库远程访问："><span class="nav-number">2.2.</span> <span class="nav-text">2.2 配置数据库远程访问：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安装uwsgi"><span class="nav-number">3.</span> <span class="nav-text">3. 安装uwsgi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-开始配置"><span class="nav-number">4.</span> <span class="nav-text">4. 开始配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-测试uwsgi与Django链"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 测试uwsgi与Django链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-配置nginx"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 配置nginx</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -998,7 +1018,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">  <span class="exturl" data-url="aHR0cDovL3d3dy5taWl0YmVpYW4uZ292LmNu">京ICP备18028496号-2 </span>&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">  <span class="exturl" data-url="aHR0cDovL3d3dy5taWl0YmVpYW4uZ292LmNu">京ICP备18028496号-2 </span>&copy; 2017 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1124,21 +1144,26 @@
 
   
 
-
+  
+    <script id="dsq-count-scr" src="https://todebug.disqus.com/count.js" async></script>
+  
 
   
     <script type="text/javascript">
-      window.livereOptions = {
-        refer: 'deploy-django-app-with-nginx-and-uwsgi/'
-      };
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
+      var disqus_config = function () {
+        this.page.url = 'https://bryceyang.github.io/deploy-django-app-with-nginx-and-uwsgi/';
+        this.page.identifier = 'deploy-django-app-with-nginx-and-uwsgi/';
+        this.page.title = '使用nginx和uwsgi部署Django应用';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://todebug.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
     </script>
   
 
@@ -1148,6 +1173,33 @@
 
 
 
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Cp4JnShNDu1PmAsKbOSK7sKG-gzGzoHsz',
+        appKey: 'UwDWFgHWvJmduJVAI0cpf4Ho',
+        placeholder: 'Just go go',
+        avatar:'monsterid',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 
@@ -1612,15 +1664,6 @@
 
 
   
-  
-  
-  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
-  <script type="text/javascript">
-  
-    bookmark.scrollToMark('auto', "#更多");
-  
-  </script>
-
 
   
   <style>

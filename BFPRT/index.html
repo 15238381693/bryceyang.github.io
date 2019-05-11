@@ -162,7 +162,7 @@
 <meta property="og:description" content="BFPRT算法是一种用来求解Top-K问题的算法，其时间复杂度可以减小到O(n)。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://bryceyang.github.io/assets/blog_images/bfprt.jpg">
-<meta property="og:updated_time" content="2018-12-03T05:05:20.852Z">
+<meta property="og:updated_time" content="2019-05-11T08:20:56.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BFPRT算法——Top-K问题求解">
 <meta name="twitter:description" content="BFPRT算法是一种用来求解Top-K问题的算法，其时间复杂度可以减小到O(n)。">
@@ -191,13 +191,13 @@
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100095499-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100095499-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-100095499-1');
+  gtag('config', 'UA-100095499-2');
 </script>
 
 
@@ -386,7 +386,7 @@
         
         
           
-          <li class="menu-item menu-item-雪中">
+          <li class="menu-item menu-item-烽火">
 
     
     
@@ -396,7 +396,7 @@
 
     
 
-    <a href="/xuezhong" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>雪中</a>
+    <a href="/fenghuo" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>烽火</a>
 
   </li>
 
@@ -482,7 +482,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大护法">
       <meta itemprop="description" content="学习记录">
-      <meta itemprop="image" content="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg">
+      <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -547,6 +547,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/BFPRT/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="BFPRT/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -576,7 +587,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.5k 字 </span>
+                <span title="本文字数">3.7k 字 </span>
               
 
               
@@ -614,6 +625,7 @@
 <a id="more"></a>
 <h2 id="基本过程"><a href="#基本过程" class="headerlink" title="基本过程"></a>基本过程</h2><p><img src="/assets/blog_images/bfprt.jpg" alt="bfprt"></p>
 <h2 id="使用BFPRT求无序数组中第k小的元素，k从1开始"><a href="#使用BFPRT求无序数组中第k小的元素，k从1开始" class="headerlink" title="使用BFPRT求无序数组中第k小的元素，k从1开始"></a>使用BFPRT求无序数组中第k小的元素，k从1开始</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding=utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BFPRT</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""BFPRT算法实现：</span></span><br><span class="line"><span class="string">    BFPRT算法用来求解Top-K问题，时间复杂度可以做到严格的O(n)。</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bfprt</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""求得nums数组中第k小的元素，k从1开始</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Args:</span></span><br><span class="line"><span class="string">            nums (list): 给定数组</span></span><br><span class="line"><span class="string">            k (int): 所求元素位置</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Returns:</span></span><br><span class="line"><span class="string">            num_type: 所求元素</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums <span class="keyword">or</span> <span class="keyword">not</span> k:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        length = len(nums)</span><br><span class="line">        <span class="keyword">if</span> k &gt; length:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        nums = list(nums)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.process(nums, k<span class="number">-1</span>, <span class="number">0</span>, length<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">(self, nums, k, begin, end)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> begin == end:</span><br><span class="line">            <span class="keyword">return</span> nums[begin]</span><br><span class="line"></span><br><span class="line">        pivot = self.get_median_of_medians(nums, begin, end)</span><br><span class="line">        cur_range = self.partition(nums, pivot, begin, end)</span><br><span class="line">        <span class="keyword">if</span> k &gt;= cur_range[<span class="number">0</span>] <span class="keyword">and</span> k &lt;= cur_range[<span class="number">1</span>]:</span><br><span class="line">            <span class="keyword">return</span> nums[k]</span><br><span class="line">        <span class="keyword">elif</span> k &lt; cur_range[<span class="number">0</span>]:</span><br><span class="line">            <span class="keyword">return</span> self.process(nums, k, begin, cur_range[<span class="number">0</span>]<span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> self.process(nums, k, cur_range[<span class="number">1</span>]+<span class="number">1</span>, end)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(self, nums, pivot, begin, end)</span>:</span></span><br><span class="line">        left = begin - <span class="number">1</span></span><br><span class="line">        cur = begin</span><br><span class="line">        right = end + <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> cur &lt; right:</span><br><span class="line">            <span class="keyword">if</span> nums[cur] == pivot:</span><br><span class="line">                cur += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> nums[cur] &lt; pivot:</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">                self.swap(nums, left, cur)</span><br><span class="line">                cur += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">                self.swap(nums, right, cur)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> left+<span class="number">1</span>, right<span class="number">-1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_median_of_medians</span><span class="params">(self, nums, begin, end)</span>:</span></span><br><span class="line">        <span class="string">"""取得中位数数组中位数"""</span></span><br><span class="line"></span><br><span class="line">        cur_len = end - begin + <span class="number">1</span></span><br><span class="line">        offset = <span class="number">0</span> <span class="keyword">if</span> cur_len % <span class="number">5</span> == <span class="number">0</span> <span class="keyword">else</span> <span class="number">1</span></span><br><span class="line">        medians = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(cur_len//<span class="number">5</span> + offset)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(medians)):</span><br><span class="line">            begin_idx = begin + i * <span class="number">5</span></span><br><span class="line">            end_idx = begin_idx + <span class="number">4</span></span><br><span class="line">            medians[i] = self.get_median(nums, begin_idx, min(end_idx, end))</span><br><span class="line">        <span class="keyword">return</span> self.process(medians, len(medians)//<span class="number">2</span>, <span class="number">0</span>, len(medians)<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_median</span><span class="params">(self, nums, begin, end)</span>:</span></span><br><span class="line">        <span class="string">"""取得给定范围的上中位数"""</span></span><br><span class="line"></span><br><span class="line">        self.insert_sort(nums, begin, end)</span><br><span class="line">        mid = (begin + end) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> nums[mid]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert_sort</span><span class="params">(self, nums, begin, end)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(begin+<span class="number">1</span>, end+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i, begin, <span class="number">-1</span>):</span><br><span class="line">                <span class="keyword">if</span> nums[j] &lt; nums[j<span class="number">-1</span>]:</span><br><span class="line">                    self.swap(nums, j, j<span class="number">-1</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">swap</span><span class="params">(self, nums, i, j)</span>:</span></span><br><span class="line">        nums[i], nums[j] = nums[j], nums[i]</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Check</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""对数器"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generate_nums</span><span class="params">(self, max_length, max_value)</span>:</span></span><br><span class="line">        length = random.randint(<span class="number">0</span>, max_length)</span><br><span class="line">        nums = [random.randint(-max_value, max_value) <span class="keyword">for</span> i <span class="keyword">in</span> range(length)]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> nums</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    nums = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">6</span>, <span class="number">7</span>]  <span class="comment"># expect 4</span></span><br><span class="line">    ex = BFPRT()</span><br><span class="line">    ck = Check()</span><br><span class="line">    max_length, max_value = <span class="number">100</span>, <span class="number">100</span></span><br><span class="line">    start = time.time()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10000</span>):</span><br><span class="line">        nums = ck.generate_nums(max_length, max_value)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            res = ex.bfprt(nums, i+<span class="number">1</span>)</span><br><span class="line">            check_res = sorted(nums)[i]</span><br><span class="line">            <span class="keyword">if</span> res != check_res:</span><br><span class="line">                print(<span class="string">'oops, &#123;&#125;, &#123;&#125;, &#123;&#125;, &#123;&#125;'</span>, nums, i+<span class="number">1</span>, res, check_res)</span><br><span class="line">    print(time.time()-start)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p><strong>时隔两个月，再看自己代码，发现的确不咋认识了。而且发现了一个可以优化的地方。在求数组的中位数时，可以复用原来数组——将分组后每组求得的中位数和原数组对应下标为该组序号的数组元素互换，这样数组前面的部分就会是分组的中位数数组，然后再对这个中位数数组重复此过程，最终求到整个数组的中位数，然后继续<code>partition</code>过程。这样就可以节省掉原来的实现方法中每次临时开辟的数组空间。Nice.</strong></p>
 
       
     </div>
@@ -683,8 +695,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/union-find/" rel="prev" title="使用Python实现并查集">
-                使用Python实现并查集 <i class="fa fa-chevron-right"></i>
+              <a href="/use-gulp-with-hexo/" rel="prev" title="hexo优化之——使用gulp压缩资源">
+                hexo优化之——使用gulp压缩资源 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -709,7 +721,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM2MS8xNzkwOA=="></div>
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
     </div>
 
   
@@ -751,7 +765,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://wx4.sinaimg.cn/large/ce136eaely1fxfz09cor3j20fc0fc74s.jpg" alt="大护法">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="大护法">
             
               <p class="site-author-name" itemprop="name">大护法</p>
               <p class="site-description motion-element" itemprop="description">学习记录</p>
@@ -865,7 +879,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -962,7 +978,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">  <span class="exturl" data-url="aHR0cDovL3d3dy5taWl0YmVpYW4uZ292LmNu">京ICP备18028496号-2 </span>&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">  <span class="exturl" data-url="aHR0cDovL3d3dy5taWl0YmVpYW4uZ292LmNu">京ICP备18028496号-2 </span>&copy; 2017 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1088,21 +1104,26 @@
 
   
 
-
+  
+    <script id="dsq-count-scr" src="https://todebug.disqus.com/count.js" async></script>
+  
 
   
     <script type="text/javascript">
-      window.livereOptions = {
-        refer: 'BFPRT/'
-      };
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
+      var disqus_config = function () {
+        this.page.url = 'https://bryceyang.github.io/BFPRT/';
+        this.page.identifier = 'BFPRT/';
+        this.page.title = 'BFPRT算法——Top-K问题求解';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://todebug.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
     </script>
   
 
@@ -1112,6 +1133,33 @@
 
 
 
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Cp4JnShNDu1PmAsKbOSK7sKG-gzGzoHsz',
+        appKey: 'UwDWFgHWvJmduJVAI0cpf4Ho',
+        placeholder: 'Just go go',
+        avatar:'monsterid',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 
@@ -1576,15 +1624,6 @@
 
 
   
-  
-  
-  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
-  <script type="text/javascript">
-  
-    bookmark.scrollToMark('auto', "#更多");
-  
-  </script>
-
 
   
   <style>
